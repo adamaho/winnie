@@ -1,0 +1,8 @@
+:root {
+  --w-border-radius-1: calc(0px * var(--w-scale, 1));
+  --w-border-radius-2: calc(2px * var(--w-scale, 1));
+  --w-border-radius-3: calc(4px * var(--w-scale, 1));
+  --w-border-radius-4: calc(8px * var(--w-scale, 1));
+  --w-border-radius-5: calc(16px * var(--w-scale, 1));
+  --w-border-radius-6: calc(24px * var(--w-scale, 1));
+}

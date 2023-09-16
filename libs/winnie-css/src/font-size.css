@@ -1,0 +1,11 @@
+:root {
+  --w-font-size-1: calc(12px * var(--w-scale, 1));
+  --w-font-size-2: calc(14px * var(--w-scale, 1));
+  --w-font-size-3: calc(16px * var(--w-scale, 1));
+  --w-font-size-4: calc(18px * var(--w-scale, 1));
+  --w-font-size-5: calc(20px * var(--w-scale, 1));
+  --w-font-size-6: calc(24px * var(--w-scale, 1));
+  --w-font-size-7: calc(28px * var(--w-scale, 1));
+  --w-font-size-8: calc(35px * var(--w-scale, 1));
+  --w-font-size-9: calc(60px * var(--w-scale, 1));
+}

@@ -1,0 +1,18 @@
+{
+  "name": "winnie",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "format": "prettier --write \"**/*.{js,jsx,css}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "turbo": "^1.10.14",
+    "typescript": "^5.0.2"
+  }
+}

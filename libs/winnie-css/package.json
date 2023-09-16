@@ -1,0 +1,16 @@
+{
+  "name": "winnie-css",
+  "version": "0.0.1",
+  "description": "high-level css styles and tokens",
+  "exports": {
+    ".": {
+      "default": "./src/index.css"
+    }
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules"
+  },
+  "keywords": [],
+  "author": "Adam Aho",
+  "license": "ISC"
+}

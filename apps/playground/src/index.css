@@ -1,0 +1,14 @@
+@import "winnie-react/css";
+
+html {
+  background: var(--w-color-grey-1);
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+}

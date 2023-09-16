@@ -1,0 +1,440 @@
+:root {
+  /* mono */
+  --w-color-black: #000000;
+  --w-color-white: #ffffff;
+}
+
+.light {
+  /* red */
+  --w-color-red-1: hsl(359, 100%, 99.4%);
+  --w-color-red-2: hsl(0, 100%, 98.4%);
+  --w-color-red-3: hsl(360, 100%, 96.8%);
+  --w-color-red-4: hsl(360, 97.9%, 94.8%);
+  --w-color-red-5: hsl(360, 90.2%, 91.9%);
+  --w-color-red-6: hsl(360, 81.7%, 87.8%);
+  --w-color-red-7: hsl(359, 74.2%, 81.7%);
+  --w-color-red-8: hsl(359, 69.5%, 74.3%);
+  --w-color-red-9: hsl(358, 75%, 59%);
+  --w-color-red-10: hsl(358, 67.4%, 54.6%);
+  --w-color-red-11: hsl(358, 65%, 47%);
+  --w-color-red-12: hsl(350, 63%, 24%);
+
+  --w-color-red-a1: hsla(0, 100%, 51%, 0.012);
+  --w-color-red-a2: hsla(0, 100%, 51%, 0.032);
+  --w-color-red-a3: hsla(0, 100%, 50.2%, 0.063);
+  --w-color-red-a4: hsla(0, 100%, 50%, 0.102);
+  --w-color-red-a5: hsla(0, 99.9%, 47.5%, 0.153);
+  --w-color-red-a6: hsla(0, 99.5%, 44.9%, 0.224);
+  --w-color-red-a7: hsla(359, 99.7%, 42.7%, 0.318);
+  --w-color-red-a8: hsla(359, 99.6%, 41.1%, 0.436);
+  --w-color-red-a9: hsla(358, 99.9%, 42.9%, 0.718);
+  --w-color-red-a10: hsla(358, 99.9%, 40.2%, 0.761);
+  --w-color-red-a11: hsla(358, 99.8%, 36.7%, 0.836);
+  --w-color-red-a12: hsla(351, 99.9%, 16.6%, 0.91);
+
+  /* orange */
+  --w-color-orange-1: hsl(24, 70%, 99%);
+  --w-color-orange-2: hsl(22, 100%, 97.8%);
+  --w-color-orange-3: hsl(34, 100%, 91.7%);
+  --w-color-orange-4: hsl(33, 100%, 86.6%);
+  --w-color-orange-5: hsl(31, 100%, 82.2%);
+  --w-color-orange-6: hsl(27, 100%, 78.4%);
+  --w-color-orange-7: hsl(21, 100%, 74.5%);
+  --w-color-orange-8: hsl(19, 80.1%, 64.5%);
+  --w-color-orange-9: hsl(24, 94%, 50%);
+  --w-color-orange-10: hsl(24, 100%, 46.5%);
+  --w-color-orange-11: hsl(16, 45%, 41.5%);
+  --w-color-orange-12: hsl(16, 50%, 23%);
+
+  --w-color-orange-a1: hsla(20, 94.9%, 38.7%, 0.016);
+  --w-color-orange-a2: hsla(22, 100%, 51%, 0.044);
+  --w-color-orange-a3: hsla(34, 100%, 50.1%, 0.165);
+  --w-color-orange-a4: hsla(33, 100%, 50.1%, 0.267);
+  --w-color-orange-a5: hsla(31, 100%, 50%, 0.357);
+  --w-color-orange-a6: hsla(27, 100%, 50.1%, 0.432);
+  --w-color-orange-a7: hsla(21, 100%, 50%, 0.51);
+  --w-color-orange-a8: hsla(19, 99.7%, 44.5%, 0.64);
+  --w-color-orange-a9: hsla(24, 99.9%, 48.4%, 0.969);
+  --w-color-orange-a10: hsla(24, 100%, 46.5%, 1);
+  --w-color-orange-a11: hsla(16, 99.8%, 24.2%, 0.773);
+  --w-color-orange-a12: hsla(16, 99.4%, 13.1%, 0.887);
+
+  /* yellow */
+  --w-color-yellow-1: hsl(39, 70%, 99%);
+  --w-color-yellow-2: hsl(40, 100%, 96.5%);
+  --w-color-yellow-3: hsl(45, 100%, 90.8%);
+  --w-color-yellow-4: hsl(44, 100%, 85.8%);
+  --w-color-yellow-5: hsl(40, 100%, 81.5%);
+  --w-color-yellow-6: hsl(39, 83.6%, 75.4%);
+  --w-color-yellow-7: hsl(37, 66.9%, 68.2%);
+  --w-color-yellow-8: hsl(35, 59.8%, 60%);
+  --w-color-yellow-9: hsl(42, 100%, 62%);
+  --w-color-yellow-10: hsl(42, 100%, 55%);
+  --w-color-yellow-11: hsl(25, 50%, 38%);
+  --w-color-yellow-12: hsl(25, 40%, 22%);
+
+  --w-color-yellow-a1: hsla(40, 94.9%, 38.7%, 0.016);
+  --w-color-yellow-a2: hsla(40, 100%, 50.3%, 0.071);
+  --w-color-yellow-a3: hsla(45, 100%, 50.2%, 0.185);
+  --w-color-yellow-a4: hsla(44, 100%, 50.1%, 0.283);
+  --w-color-yellow-a5: hsla(40, 100%, 50.1%, 0.369);
+  --w-color-yellow-a6: hsla(39, 100%, 45.7%, 0.451);
+  --w-color-yellow-a7: hsla(37, 99.7%, 40.1%, 0.53);
+  --w-color-yellow-a8: hsla(35, 99.7%, 37.5%, 0.64);
+  --w-color-yellow-a9: hsla(42, 100%, 50%, 0.761);
+  --w-color-yellow-a10: hsla(42, 100%, 50.1%, 0.899);
+  --w-color-yellow-a11: hsla(25, 99.9%, 23.5%, 0.812);
+  --w-color-yellow-a12: hsla(24, 99.6%, 10.2%, 0.867);
+
+  /* green */
+  --w-color-green-1: hsl(136, 50%, 98.9%);
+  --w-color-green-2: hsl(138, 62.5%, 96.9%);
+  --w-color-green-3: hsl(139, 55.2%, 94.5%);
+  --w-color-green-4: hsl(140, 48.7%, 91%);
+  --w-color-green-5: hsl(141, 43.7%, 86%);
+  --w-color-green-6: hsl(143, 40.3%, 79%);
+  --w-color-green-7: hsl(146, 38.5%, 69%);
+  --w-color-green-8: hsl(151, 40.2%, 54.1%);
+  --w-color-green-9: hsl(151, 55%, 41.5%);
+  --w-color-green-10: hsl(152, 57.5%, 37.6%);
+  --w-color-green-11: hsl(153, 67%, 28.5%);
+  --w-color-green-12: hsl(155, 40%, 16.5%);
+
+  --w-color-green-a1: hsla(140, 94.9%, 38.7%, 0.016);
+  --w-color-green-a2: hsla(138, 99.9%, 38.5%, 0.051);
+  --w-color-green-a3: hsla(139, 97.7%, 36.9%, 0.087);
+  --w-color-green-a4: hsla(139, 98.5%, 32.7%, 0.134);
+  --w-color-green-a5: hsla(141, 100%, 30.4%, 0.2);
+  --w-color-green-a6: hsla(142, 99%, 28.9%, 0.295);
+  --w-color-green-a7: hsla(146, 99.5%, 27.6%, 0.428);
+  --w-color-green-a8: hsla(151, 99.5%, 28.8%, 0.644);
+  --w-color-green-a9: hsla(151, 99.9%, 28%, 0.812);
+  --w-color-green-a10: hsla(152, 99.6%, 25.8%, 0.84);
+  --w-color-green-a11: hsla(153, 99.9%, 21%, 0.906);
+  --w-color-green-a12: hsla(155, 99.9%, 7.4%, 0.902);
+
+  /* blue */
+  --w-color-blue-1: hsl(206, 100%, 99.2%);
+  --w-color-blue-2: hsl(210, 100%, 98%);
+  --w-color-blue-3: hsl(209, 100%, 96.5%);
+  --w-color-blue-4: hsl(210, 98.8%, 94%);
+  --w-color-blue-5: hsl(209, 95%, 90.1%);
+  --w-color-blue-6: hsl(209, 81.2%, 84.5%);
+  --w-color-blue-7: hsl(208, 77.5%, 76.9%);
+  --w-color-blue-8: hsl(206, 81.9%, 65.3%);
+  --w-color-blue-9: hsl(206, 100%, 50%);
+  --w-color-blue-10: hsl(208, 93.5%, 47.4%);
+  --w-color-blue-11: hsl(211, 90%, 42%);
+  --w-color-blue-12: hsl(216, 71%, 23%);
+
+  --w-color-blue-a1: hsla(210, 100%, 51%, 0.016);
+  --w-color-blue-a2: hsla(210, 100%, 51%, 0.04);
+  --w-color-blue-a3: hsla(210, 100%, 50.3%, 0.071);
+  --w-color-blue-a4: hsla(210, 100%, 50.1%, 0.118);
+  --w-color-blue-a5: hsla(209, 99.1%, 49.2%, 0.193);
+  --w-color-blue-a6: hsla(209, 99.5%, 45.3%, 0.283);
+  --w-color-blue-a7: hsla(208, 99.9%, 43.8%, 0.412);
+  --w-color-blue-a8: hsla(206, 99.8%, 45.1%, 0.632);
+  --w-color-blue-a9: hsla(206, 100%, 50%, 1);
+  --w-color-blue-a10: hsla(208, 99.9%, 45.8%, 0.969);
+  --w-color-blue-a11: hsla(211, 100%, 39.4%, 0.957);
+  --w-color-blue-a12: hsla(216, 99.6%, 17.5%, 0.934);
+
+  /* purple */
+  --w-color-purple-1: hsl(243, 65%, 99.5%);
+  --w-color-purple-2: hsl(240, 100%, 99%);
+  --w-color-purple-3: hsl(240, 99.9%, 97.7%);
+  --w-color-purple-4: hsl(240, 93.5%, 95.9%);
+  --w-color-purple-5: hsl(240, 86.5%, 93.4%);
+  --w-color-purple-6: hsl(240, 80.2%, 89.8%);
+  --w-color-purple-7: hsl(239, 75.3%, 84.6%);
+  --w-color-purple-8: hsl(238, 73.9%, 77.5%);
+  --w-color-purple-9: hsl(240, 60%, 59.8%);
+  --w-color-purple-10: hsl(240, 55.7%, 56.7%);
+  --w-color-purple-11: hsl(240, 50%, 52%);
+  --w-color-purple-12: hsl(238, 43%, 26.8%);
+
+  --w-color-purple-a1: hsla(240, 100%, 51%, 0.008);
+  --w-color-purple-a2: hsla(240, 100%, 51%, 0.02);
+  --w-color-purple-a3: hsla(240, 100%, 51%, 0.048);
+  --w-color-purple-a4: hsla(240, 98.5%, 47.9%, 0.079);
+  --w-color-purple-a5: hsla(240, 99.2%, 47%, 0.122);
+  --w-color-purple-a6: hsla(240, 99.2%, 44.9%, 0.185);
+  --w-color-purple-a7: hsla(239, 99.6%, 42.8%, 0.271);
+  --w-color-purple-a8: hsla(238, 99.5%, 42.6%, 0.393);
+  --w-color-purple-a9: hsla(240, 99.6%, 37.6%, 0.644);
+  --w-color-purple-a10: hsla(240, 99.8%, 35.8%, 0.675);
+  --w-color-purple-a11: hsla(240, 99.8%, 33.5%, 0.722);
+  --w-color-purple-a12: hsla(238, 99.2%, 13.8%, 0.848);
+
+  /* pink */
+  --w-color-pink-1: hsl(322, 100%, 99.4%);
+  --w-color-pink-2: hsl(323, 100%, 98.4%);
+  --w-color-pink-3: hsl(323, 86.3%, 96.5%);
+  --w-color-pink-4: hsl(323, 78.7%, 94.2%);
+  --w-color-pink-5: hsl(323, 72.2%, 91.1%);
+  --w-color-pink-6: hsl(323, 66.3%, 86.6%);
+  --w-color-pink-7: hsl(323, 62%, 80.1%);
+  --w-color-pink-8: hsl(323, 60.3%, 72.4%);
+  --w-color-pink-9: hsl(322, 65%, 54.5%);
+  --w-color-pink-10: hsl(322, 62%, 49.6%);
+  --w-color-pink-11: hsl(322, 75%, 44%);
+  --w-color-pink-12: hsl(320, 70%, 23.2%);
+
+  --w-color-pink-a1: hsla(320, 100%, 51%, 0.012);
+  --w-color-pink-a2: hsla(323, 100%, 51%, 0.032);
+  --w-color-pink-a3: hsla(323, 98.9%, 47.3%, 0.067);
+  --w-color-pink-a4: hsla(323, 99.9%, 44.3%, 0.102);
+  --w-color-pink-a5: hsla(324, 99.9%, 42.3%, 0.153);
+  --w-color-pink-a6: hsla(323, 99.5%, 39.6%, 0.224);
+  --w-color-pink-a7: hsla(323, 99.7%, 38.5%, 0.322);
+  --w-color-pink-a8: hsla(323, 99.5%, 37.7%, 0.444);
+  --w-color-pink-a9: hsla(322, 99.7%, 39.3%, 0.75);
+  --w-color-pink-a10: hsla(322, 99.9%, 37.9%, 0.812);
+  --w-color-pink-a11: hsla(322, 99.8%, 37.1%, 0.891);
+  --w-color-pink-a12: hsla(320, 99.6%, 17.6%, 0.93);
+
+  /* grey */
+  --w-color-grey-1: hsl(0, 0%, 99%);
+  --w-color-grey-2: hsl(0, 0%, 97.5%);
+  --w-color-grey-3: hsl(0, 0%, 94.6%);
+  --w-color-grey-4: hsl(0, 0%, 92%);
+  --w-color-grey-5: hsl(0, 0%, 89.5%);
+  --w-color-grey-6: hsl(0, 0%, 86.8%);
+  --w-color-grey-7: hsl(0, 0%, 83%);
+  --w-color-grey-8: hsl(0, 0%, 73.2%);
+  --w-color-grey-9: hsl(0, 0%, 55.2%);
+  --w-color-grey-10: hsl(0, 0%, 50.3%);
+  --w-color-grey-11: hsl(0, 0%, 39.3%);
+  --w-color-grey-12: hsl(0, 0%, 12.5%);
+
+  --w-color-grey-a1: hsla(0, 0%, 0%, 0.012);
+  --w-color-grey-a2: hsla(0, 0%, 0%, 0.024);
+  --w-color-grey-a3: hsla(0, 0%, 0%, 0.055);
+  --w-color-grey-a4: hsla(0, 0%, 0%, 0.078);
+  --w-color-grey-a5: hsla(0, 0%, 0%, 0.106);
+  --w-color-grey-a6: hsla(0, 0%, 0%, 0.133);
+  --w-color-grey-a7: hsla(0, 0%, 0%, 0.169);
+  --w-color-grey-a8: hsla(0, 0%, 0%, 0.267);
+  --w-color-grey-a9: hsla(0, 0%, 0%, 0.447);
+  --w-color-grey-a10: hsla(0, 0%, 0%, 0.498);
+  --w-color-grey-a11: hsla(0, 0%, 0%, 0.608);
+  --w-color-grey-a12: hsla(0, 0%, 0%, 0.875);
+}
+
+.dark {
+  /* red */
+  --w-color-red-1: hsl(353, 23%, 9.8%);
+  --w-color-red-2: hsl(354, 30.2%, 12.4%);
+  --w-color-red-3: hsl(353, 40.8%, 16.4%);
+  --w-color-red-4: hsl(353, 46.3%, 19.2%);
+  --w-color-red-5: hsl(353, 51.2%, 22.1%);
+  --w-color-red-6: hsl(353, 57.3%, 26.2%);
+  --w-color-red-7: hsl(354, 65.7%, 33.2%);
+  --w-color-red-8: hsl(358, 75%, 47.1%);
+  --w-color-red-9: hsl(358, 75%, 59%);
+  --w-color-red-10: hsl(359, 84.8%, 67.6%);
+  --w-color-red-11: hsl(358, 100%, 76%);
+  --w-color-red-12: hsl(350, 100%, 91%);
+
+  --w-color-red-a1: hsla(0, 100%, 49%, 0.031);
+  --w-color-red-a2: hsla(354, 100%, 49.8%, 0.074);
+  --w-color-red-a3: hsla(353, 99.3%, 55.9%, 0.152);
+  --w-color-red-a4: hsla(352, 99.8%, 56.5%, 0.208);
+  --w-color-red-a5: hsla(354, 99.3%, 57.5%, 0.265);
+  --w-color-red-a6: hsla(354, 99.8%, 57.5%, 0.351);
+  --w-color-red-a7: hsla(354, 99.7%, 56.6%, 0.503);
+  --w-color-red-a8: hsla(358, 99.8%, 56.1%, 0.806);
+  --w-color-red-a9: hsla(358, 99.8%, 65.3%, 0.888);
+  --w-color-red-a10: hsla(359, 99.9%, 70.9%, 0.944);
+  --w-color-red-a11: hsla(358, 100%, 76.1%, 1);
+  --w-color-red-a12: hsla(350, 100%, 91%, 1);
+
+  /* orange */
+  --w-color-orange-1: hsl(30, 70%, 7.2%);
+  --w-color-orange-2: hsl(29, 81.4%, 8.4%);
+  --w-color-orange-3: hsl(26, 68.4%, 12%);
+  --w-color-orange-4: hsl(25, 64.6%, 14.9%);
+  --w-color-orange-5: hsl(25, 64.3%, 17.8%);
+  --w-color-orange-6: hsl(25, 65.7%, 21.9%);
+  --w-color-orange-7: hsl(25, 67.7%, 29.4%);
+  --w-color-orange-8: hsl(25, 70.3%, 44.9%);
+  --w-color-orange-9: hsl(24, 94%, 50%);
+  --w-color-orange-10: hsl(24, 100%, 58.5%);
+  --w-color-orange-11: hsl(24, 100%, 70%);
+  --w-color-orange-12: hsl(30, 100%, 88%);
+
+  --w-color-orange-a1: hsla(0, 100%, 49%, 0.031);
+  --w-color-orange-a2: hsla(0, 100%, 50%, 0.065);
+  --w-color-orange-a3: hsla(13, 100%, 49.7%, 0.122);
+  --w-color-orange-a4: hsla(20, 100%, 50%, 0.169);
+  --w-color-orange-a5: hsla(24, 100%, 50%, 0.221);
+  --w-color-orange-a6: hsla(25, 99.8%, 51.4%, 0.299);
+  --w-color-orange-a7: hsla(25, 99.8%, 54.7%, 0.442);
+  --w-color-orange-a8: hsla(25, 99.8%, 57.3%, 0.741);
+  --w-color-orange-a9: hsla(24, 99.9%, 51.4%, 0.966);
+  --w-color-orange-a10: hsla(24, 100%, 58.4%, 1);
+  --w-color-orange-a11: hsla(24, 100%, 70%, 1);
+  --w-color-orange-a12: hsla(30, 100%, 88%, 1);
+
+  /* yellow */
+  --w-color-yellow-1: hsl(36, 100%, 6.1%);
+  --w-color-yellow-2: hsl(36, 80.5%, 8%);
+  --w-color-yellow-3: hsl(35, 63.4%, 11.4%);
+  --w-color-yellow-4: hsl(34, 58.8%, 14.1%);
+  --w-color-yellow-5: hsl(34, 58.1%, 16.7%);
+  --w-color-yellow-6: hsl(35, 58.3%, 20.5%);
+  --w-color-yellow-7: hsl(35, 59%, 27.4%);
+  --w-color-yellow-8: hsl(36, 60.2%, 41.4%);
+  --w-color-yellow-9: hsl(42, 100%, 62%);
+  --w-color-yellow-10: hsl(43, 100%, 64%);
+  --w-color-yellow-11: hsl(43, 100%, 65%);
+  --w-color-yellow-12: hsl(41, 100%, 85%);
+
+  --w-color-yellow-a1: hsla(0, 100%, 49%, 0.031);
+  --w-color-yellow-a2: hsla(6, 100%, 49.4%, 0.057);
+  --w-color-yellow-a3: hsla(24, 100%, 50%, 0.104);
+  --w-color-yellow-a4: hsla(30, 100%, 50%, 0.143);
+  --w-color-yellow-a5: hsla(33, 100%, 49.8%, 0.187);
+  --w-color-yellow-a6: hsla(34, 99.6%, 53.1%, 0.256);
+  --w-color-yellow-a7: hsla(35, 99.8%, 57.3%, 0.377);
+  --w-color-yellow-a8: hsla(36, 99.9%, 60.3%, 0.628);
+  --w-color-yellow-a9: hsla(42, 100%, 62%, 1);
+  --w-color-yellow-a10: hsla(43, 100%, 63.9%, 1);
+  --w-color-yellow-a11: hsla(43, 100%, 65.1%, 1);
+  --w-color-yellow-a12: hsla(41, 100%, 85.1%, 1);
+
+  /* green */
+  --w-color-green-1: hsl(146, 30%, 7.4%);
+  --w-color-green-2: hsl(154, 31.8%, 8.6%);
+  --w-color-green-3: hsl(154, 37.6%, 11.5%);
+  --w-color-green-4: hsl(154, 41%, 13.6%);
+  --w-color-green-5: hsl(154, 43.7%, 15.7%);
+  --w-color-green-6: hsl(154, 46.7%, 18.7%);
+  --w-color-green-7: hsl(153, 50.3%, 24.4%);
+  --w-color-green-8: hsl(151, 52.2%, 36.1%);
+  --w-color-green-9: hsl(151, 55%, 41.5%);
+  --w-color-green-10: hsl(151, 55.2%, 46.7%);
+  --w-color-green-11: hsl(151, 65%, 54%);
+  --w-color-green-12: hsl(144, 70%, 82%);
+
+  --w-color-green-a1: hsla(120, 100%, 43.9%, 0.005);
+  --w-color-green-a2: hsla(120, 100%, 49.3%, 0.022);
+  --w-color-green-a3: hsla(149, 100%, 49.5%, 0.07);
+  --w-color-green-a4: hsla(154, 100%, 49.7%, 0.109);
+  --w-color-green-a5: hsla(153, 98.9%, 53.1%, 0.148);
+  --w-color-green-a6: hsla(155, 99.1%, 55.5%, 0.2);
+  --w-color-green-a7: hsla(152, 99.3%, 59.1%, 0.304);
+  --w-color-green-a8: hsla(151, 99.6%, 62.4%, 0.503);
+  --w-color-green-a9: hsla(151, 99.6%, 62.4%, 0.607);
+  --w-color-green-a10: hsla(151, 100%, 62.9%, 0.697);
+  --w-color-green-a11: hsla(151, 99.9%, 63.5%, 0.823);
+  --w-color-green-a12: hsla(144, 99.6%, 86.6%, 0.94);
+
+  --w-color-blue-1: hsl(212, 35%, 9.2%);
+  --w-color-blue-2: hsl(216, 50%, 11.8%);
+  --w-color-blue-3: hsl(214, 57.6%, 15.6%);
+  --w-color-blue-4: hsl(214, 62.3%, 18.4%);
+  --w-color-blue-5: hsl(213, 66.6%, 21.1%);
+  --w-color-blue-6: hsl(212, 72.6%, 25.2%);
+  --w-color-blue-7: hsl(211, 81.3%, 32.4%);
+  --w-color-blue-8: hsl(211, 85.2%, 47.8%);
+  --w-color-blue-9: hsl(206, 100%, 50%);
+  --w-color-blue-10: hsl(206, 100%, 61.8%);
+  --w-color-blue-11: hsl(205, 100%, 71%);
+  --w-color-blue-12: hsl(205, 100%, 88%);
+
+  --w-color-blue-a1: hsla(240, 100%, 49.5%, 0.035);
+  --w-color-blue-a2: hsla(227, 100%, 50%, 0.091);
+  --w-color-blue-a3: hsla(216, 100%, 50%, 0.169);
+  --w-color-blue-a4: hsla(214, 100%, 49.8%, 0.226);
+  --w-color-blue-a5: hsla(213, 99.8%, 50.5%, 0.286);
+  --w-color-blue-a6: hsla(212, 99.8%, 51.5%, 0.377);
+  --w-color-blue-a7: hsla(211, 99.8%, 51.4%, 0.546);
+  --w-color-blue-a8: hsla(211, 99.9%, 53.3%, 0.875);
+  --w-color-blue-a9: hsla(206, 100%, 50%, 1);
+  --w-color-blue-a10: hsla(206, 100%, 61.8%, 1);
+  --w-color-blue-a11: hsla(205, 100%, 71%, 1);
+  --w-color-blue-a12: hsla(206, 100%, 88%, 1);
+
+  /* purple */
+  --w-color-purple-1: hsl(240, 22%, 10.5%);
+  --w-color-purple-2: hsl(243, 30.4%, 13.5%);
+  --w-color-purple-3: hsl(242, 32.6%, 18.9%);
+  --w-color-purple-4: hsl(241, 33.5%, 22.6%);
+  --w-color-purple-5: hsl(241, 34.2%, 26.1%);
+  --w-color-purple-6: hsl(240, 35%, 31%);
+  --w-color-purple-7: hsl(240, 36%, 39.4%);
+  --w-color-purple-8: hsl(240, 45.2%, 54.9%);
+  --w-color-purple-9: hsl(240, 60%, 59.8%);
+  --w-color-purple-10: hsl(241, 66.4%, 65.7%);
+  --w-color-purple-11: hsl(242, 100%, 81%);
+  --w-color-purple-12: hsl(242, 92%, 93.5%);
+
+  --w-color-purple-a1: hsla(240, 100%, 50%, 0.039);
+  --w-color-purple-a2: hsla(243, 99.8%, 54.7%, 0.091);
+  --w-color-purple-a3: hsla(244, 98.8%, 63.5%, 0.174);
+  --w-color-purple-a4: hsla(242, 99.3%, 66.5%, 0.23);
+  --w-color-purple-a5: hsla(241, 99.4%, 68.5%, 0.282);
+  --w-color-purple-a6: hsla(240, 99.4%, 69.3%, 0.36);
+  --w-color-purple-a7: hsla(240, 99.5%, 70.6%, 0.49);
+  --w-color-purple-a8: hsla(240, 99.7%, 71.9%, 0.728);
+  --w-color-purple-a9: hsla(240, 99.8%, 70.6%, 0.823);
+  --w-color-purple-a10: hsla(241, 99.8%, 73.7%, 0.875);
+  --w-color-purple-a11: hsla(242, 100%, 81%, 1);
+  --w-color-purple-a12: hsla(242, 99.5%, 93.9%, 0.996);
+
+  /* pink */
+  --w-color-pink-1: hsl(318, 25%, 9.6%);
+  --w-color-pink-2: hsl(318, 32.3%, 12.2%);
+  --w-color-pink-3: hsl(318, 37.1%, 15.7%);
+  --w-color-pink-4: hsl(319, 39.8%, 18.1%);
+  --w-color-pink-5: hsl(319, 42.3%, 20.8%);
+  --w-color-pink-6: hsl(319, 45.8%, 24.9%);
+  --w-color-pink-7: hsl(320, 51.2%, 32.2%);
+  --w-color-pink-8: hsl(322, 60%, 46.1%);
+  --w-color-pink-9: hsl(322, 65%, 54.5%);
+  --w-color-pink-10: hsl(324, 71.5%, 63.2%);
+  --w-color-pink-11: hsl(325, 90%, 75%);
+  --w-color-pink-12: hsl(325, 90%, 90.5%);
+
+  --w-color-pink-a1: hsla(331, 100%, 49%, 0.031);
+  --w-color-pink-a2: hsla(319, 100%, 49.8%, 0.074);
+  --w-color-pink-a3: hsla(318, 98.8%, 55.9%, 0.135);
+  --w-color-pink-a4: hsla(319, 99.4%, 59%, 0.178);
+  --w-color-pink-a5: hsla(319, 99.8%, 60.9%, 0.221);
+  --w-color-pink-a6: hsla(319, 99.8%, 61.2%, 0.299);
+  --w-color-pink-a7: hsla(320, 99.9%, 61.9%, 0.433);
+  --w-color-pink-a8: hsla(322, 100%, 61.1%, 0.71);
+  --w-color-pink-a9: hsla(322, 99.8%, 64.2%, 0.823);
+  --w-color-pink-a10: hsla(324, 99.7%, 70.2%, 0.884);
+  --w-color-pink-a11: hsla(325, 99.6%, 76.8%, 0.975);
+  --w-color-pink-a12: hsla(326, 99.3%, 91.2%, 0.992);
+
+  /* grey */
+  --w-color-grey-1: hsl(0, 0%, 9.5%);
+  --w-color-grey-2: hsl(0, 0%, 10.5%);
+  --w-color-grey-3: hsl(0, 0%, 15.8%);
+  --w-color-grey-4: hsl(0, 0%, 18.9%);
+  --w-color-grey-5: hsl(0, 0%, 21.7%);
+  --w-color-grey-6: hsl(0, 0%, 24.7%);
+  --w-color-grey-7: hsl(0, 0%, 29.1%);
+  --w-color-grey-8: hsl(0, 0%, 37.5%);
+  --w-color-grey-9: hsl(0, 0%, 43%);
+  --w-color-grey-10: hsl(0, 0%, 50.7%);
+  --w-color-grey-11: hsl(0, 0%, 69.5%);
+  --w-color-grey-12: hsl(0, 0%, 93.5%);
+
+  --w-color-grey-a1: hsla(0, 0%, 100%, 0);
+  --w-color-grey-a2: hsla(0, 0%, 100%, 0.013);
+  --w-color-grey-a3: hsla(0, 0%, 100%, 0.069);
+  --w-color-grey-a4: hsla(0, 0%, 100%, 0.104);
+  --w-color-grey-a5: hsla(0, 0%, 100%, 0.134);
+  --w-color-grey-a6: hsla(0, 0%, 100%, 0.169);
+  --w-color-grey-a7: hsla(0, 0%, 100%, 0.216);
+  --w-color-grey-a8: hsla(0, 0%, 100%, 0.312);
+  --w-color-grey-a9: hsla(0, 0%, 100%, 0.372);
+  --w-color-grey-a10: hsla(0, 0%, 100%, 0.455);
+  --w-color-grey-a11: hsla(0, 0%, 100%, 0.662);
+  --w-color-grey-a12: hsla(0, 0%, 100%, 0.926);
+}

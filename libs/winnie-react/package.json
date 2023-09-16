@@ -1,0 +1,32 @@
+{
+  "name": "winnie-react",
+  "version": "0.0.1",
+  "description": "primitive set of react components",
+  "scripts": {
+    "dev": "tsc --watch",
+    "clean": "rm -rf node_modules",
+    "tsc": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "exports": {
+    ".": {
+      "default": "./src/components/index.js",
+      "types": "./types/components/index.d.ts"
+    },
+    "./css": "./src/css/index.css"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.21",
+    "react": "18.2.0",
+    "typescript": "^5.0.2"
+  },
+  "peerDependencies": {
+    "react": "18.2.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "winnie-css": "workspace:*"
+  }
+}
