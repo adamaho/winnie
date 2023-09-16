@@ -8,8 +8,8 @@ import { forwardRef } from "react";
  */
 
 /**
- * @typedef {Object} ButtonProps - Button component props
- * @property {ButtonElementAttributes} [attrs] default attributes for HTMLButton
+ * @typedef {Object} ButtonProps props that can be passed to Button 
+ * @property {ButtonElementAttributes} [attributes] default attributes for HTMLButton
  * @property {string} [className] component className
  * @property {"accent" | "grey" | "red" } [color] modifies the color of the button
  * @property {"none" | "small" | "medium" | "large" | "round"} [radius] modifies the border radius of the button
@@ -22,7 +22,7 @@ import { forwardRef } from "react";
  */
 const _Button = (
   {
-    attrs,
+    attributes,
     children,
     className = "",
     color = "accent",
@@ -34,7 +34,7 @@ const _Button = (
 ) => {
   return (
     <button
-      {...attrs}
+      {...attributes}
       className={className}
       ref={ref}
       w-button=""

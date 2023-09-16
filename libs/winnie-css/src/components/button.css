@@ -1,12 +1,16 @@
 [w-button] {
-  background-color: var(--w-button-background-color);
+  align-items: center;
+  background-color: var(--w-button-background-color, var(--w-theme-default-accent-9));
   border: 1px solid;
-  border-color: var(--w-button-border-color);
+  border-color: var(--w-button-border-color, transparent);
   border-radius: var(--w-button-border-radius, 0);
-  color: var(--w-button-color);
+  color: var(--w-button-color, var(--w-theme-default-accent-contrast));
+  display: inline-flex;
   font-family: var(--w-theme-font-family);
   font-size: var(--w-button-font-size);
   height: calc(var(--w-button-height, 32px) * var(--w-scale));
+  gap: var(--w-space-2);
+  justify-content: center;
   padding-inline: var(--w-button-padding-inline);
   text-shadow: 1px 1px 1px var(--w-button-text-shadow-color);
   transition: background var(--w-transition-duration-2) var(--w-transition-function-1);
@@ -16,6 +20,10 @@
   &:focus-visible {
     outline: 2px solid;
     outline-color: var(--w-button-outline-color);
+  }
+
+  & > svg {
+    filter: drop-shadow(1px 1px 1px var(--w-button-text-shadow-color));
   }
 
   /** --------------------------------------------------------------------
@@ -48,6 +56,11 @@
     &[w-button-radius="large"] {
       --w-button-border-radius: var(--w-border-radius-3);
     }
+
+    & > svg {
+      height: var(--w-font-size-2);
+      width: var(--w-font-size-2);
+    }
   }
 
   &[w-button-size="medium"] {
@@ -66,6 +79,11 @@
     &[w-button-radius="large"] {
       --w-button-border-radius: var(--w-border-radius-4);
     }
+
+    & > svg {
+      height: var(--w-font-size-4);
+      width: var(--w-font-size-4);
+    }
   }
 
   &[w-button-size="large"] {
@@ -83,6 +101,11 @@
 
     &[w-button-radius="large"] {
       --w-button-border-radius: var(--w-border-radius-5);
+    }
+
+    & > svg {
+      height: var(--w-font-size-5);
+      width: var(--w-font-size-5);
     }
   }
 

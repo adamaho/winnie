@@ -19,3 +19,7 @@ button {
   text-align: initial;
   -webkit-tap-highlight-color: transparent;
 }
+
+a {
+  text-decoration: none;
+}

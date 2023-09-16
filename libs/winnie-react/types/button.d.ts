@@ -1,13 +1,13 @@
 export type ButtonElementAttributes = import("react").ComponentPropsWithoutRef<"button">;
 export type ButtonElement = import("react").ElementRef<"button">;
 /**
- * - Button component props
+ * props that can be passed to Button
  */
 export type ButtonProps = {
     /**
      * default attributes for HTMLButton
      */
-    attrs?: Omit<import("react").DetailedHTMLProps<import("react").ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> | undefined;
+    attributes?: Omit<import("react").DetailedHTMLProps<import("react").ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> | undefined;
     /**
      * component className
      */
