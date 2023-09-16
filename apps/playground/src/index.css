@@ -14,31 +14,31 @@ body {
 }
 
 :root {
-  --w-theme-accent-1: var(--w-color-purple-1);
-  --w-theme-accent-2: var(--w-color-purple-2);
-  --w-theme-accent-3: var(--w-color-purple-3);
-  --w-theme-accent-4: var(--w-color-purple-4);
-  --w-theme-accent-5: var(--w-color-purple-5);
-  --w-theme-accent-6: var(--w-color-purple-6);
-  --w-theme-accent-7: var(--w-color-purple-7);
-  --w-theme-accent-8: var(--w-color-purple-8);
-  --w-theme-accent-9: var(--w-color-purple-9);
-  --w-theme-accent-10: var(--w-color-purple-10);
-  --w-theme-accent-11: var(--w-color-purple-11);
-  --w-theme-accent-12: var(--w-color-purple-12);
+  --w-theme-accent-1: var(--w-color-green-1);
+  --w-theme-accent-2: var(--w-color-green-2);
+  --w-theme-accent-3: var(--w-color-green-3);
+  --w-theme-accent-4: var(--w-color-green-4);
+  --w-theme-accent-5: var(--w-color-green-5);
+  --w-theme-accent-6: var(--w-color-green-6);
+  --w-theme-accent-7: var(--w-color-green-7);
+  --w-theme-accent-8: var(--w-color-green-8);
+  --w-theme-accent-9: var(--w-color-green-9);
+  --w-theme-accent-10: var(--w-color-green-10);
+  --w-theme-accent-11: var(--w-color-green-11);
+  --w-theme-accent-12: var(--w-color-green-12);
 
-  --w-theme-accent-a1: var(--w-color-purple-a1);
-  --w-theme-accent-a2: var(--w-color-purple-a2);
-  --w-theme-accent-a3: var(--w-color-purple-a3);
-  --w-theme-accent-a4: var(--w-color-purple-a4);
-  --w-theme-accent-a5: var(--w-color-purple-a5);
-  --w-theme-accent-a6: var(--w-color-purple-a6);
-  --w-theme-accent-a7: var(--w-color-purple-a7);
-  --w-theme-accent-a8: var(--w-color-purple-a8);
-  --w-theme-accent-a9: var(--w-color-purple-a9);
-  --w-theme-accent-a10: var(--w-color-purple-a10);
-  --w-theme-accent-a11: var(--w-color-purple-a11);
-  --w-theme-accent-a12: var(--w-color-purple-a12);
+  --w-theme-accent-a1: var(--w-color-green-a1);
+  --w-theme-accent-a2: var(--w-color-green-a2);
+  --w-theme-accent-a3: var(--w-color-green-a3);
+  --w-theme-accent-a4: var(--w-color-green-a4);
+  --w-theme-accent-a5: var(--w-color-green-a5);
+  --w-theme-accent-a6: var(--w-color-green-a6);
+  --w-theme-accent-a7: var(--w-color-green-a7);
+  --w-theme-accent-a8: var(--w-color-green-a8);
+  --w-theme-accent-a9: var(--w-color-green-a9);
+  --w-theme-accent-a10: var(--w-color-green-a10);
+  --w-theme-accent-a11: var(--w-color-green-a11);
+  --w-theme-accent-a12: var(--w-color-green-a12);
 
   --w-theme-accent-contrast: var(--w-color-white);
 }

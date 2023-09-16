@@ -6,7 +6,7 @@
   color: var(--w-button-color);
   font-family: var(--w-theme-font-family);
   font-size: var(--w-button-font-size);
-  height: var(--w-button-height, 32px);
+  height: calc(var(--w-button-height, 32px) * var(--w-scale));
   padding-inline: var(--w-button-padding-inline);
   text-shadow: 1px 1px 1px var(--w-button-text-shadow-color);
   transition: background var(--w-transition-duration-2) var(--w-transition-function-1);
@@ -116,8 +116,37 @@
 
       &:where(:disabled, &[aria-disabled="true"]) {
         --w-button-background-color: var(--w-color-grey-a3);
+        --w-button-color: var(--w-color-grey-8);
+        --w-button-text-shadow-color: transparent;
+        --w-button-box-shadow-highlight: transparent;
+        --w-button-box-shadow-lowlight: transparent;
+
+        cursor: not-allowed;
+      }
+    }
+
+    &[w-button-color="grey"] {
+      --w-button-background-color: var(--w-color-grey-9);
+      --w-button-border-color: transparent;
+      --w-button-box-shadow-highlight: var(--w-color-grey-1);
+      --w-button-box-shadow-lowlight: var(--w-color-grey-a11);
+      --w-button-color: var(--w-color-white);
+      --w-button-outline-color: var(--w-color-grey-7);
+      --w-button-text-shadow-color: var(--w-color-grey-a8);
+
+      &:where(:hover:not(:disabled)) {
+        --w-button-background-color: var(--w-color-grey-10);
+      }
+
+      &:where(:active:not(:disabled)) {
+        --w-button-box-shadow-lowlight: var(--w-color-grey-1);
+        --w-button-box-shadow-highlight: var(--w-color-grey-a11);
+      }
+
+      &:where(:disabled, &[aria-disabled="true"]) {
+        --w-button-background-color: var(--w-color-grey-a3);
         --w-button-color: var(--w-color-grey-9);
-        --w-button-text-shadow-color: var(--w-color-grey-a3);
+        --w-button-text-shadow-color: transparent;
         --w-button-box-shadow-highlight: transparent;
         --w-button-box-shadow-lowlight: transparent;
 
@@ -146,7 +175,7 @@
       &:where(:disabled, &[aria-disabled="true"]) {
         --w-button-background-color: var(--w-color-grey-a3);
         --w-button-color: var(--w-color-grey-9);
-        --w-button-text-shadow-color: var(--w-color-grey-a3);
+        --w-button-text-shadow-color: transparent;
         --w-button-box-shadow-highlight: transparent;
         --w-button-box-shadow-lowlight: transparent;
 
@@ -156,11 +185,12 @@
   }
 
   &[w-button-variant="soft"] {
+    --w-button-border-color: transparent;
+    --w-button-box-shadow-highlight: transparent;
+    --w-button-box-shadow-lowlight: transparent;
+
     &[w-button-color="accent"] {
       --w-button-background-color: var(--w-theme-default-accent-3);
-      --w-button-border-color: transparent;
-      --w-button-box-shadow-highlight: transparent;
-      --w-button-box-shadow-lowlight: transparent;
       --w-button-color: var(--w-theme-default-accent-10);
       --w-button-outline-color: var(--w-theme-default-accent-7);
       --w-button-text-shadow-color: var(--w-theme-default-accent-a2);
@@ -176,7 +206,7 @@
       &:where(:disabled, &[aria-disabled="true"]) {
         --w-button-background-color: var(--w-color-grey-a3);
         --w-button-color: var(--w-color-grey-9);
-        --w-button-text-shadow-color: var(--w-color-grey-a3);
+        --w-button-text-shadow-color: transparent;
         --w-button-box-shadow-highlight: transparent;
         --w-button-box-shadow-lowlight: transparent;
 
@@ -186,9 +216,6 @@
 
     &[w-button-color="red"] {
       --w-button-background-color: var(--w-color-red-3);
-      --w-button-border-color: transparent;
-      --w-button-box-shadow-highlight: transparent;
-      --w-button-box-shadow-lowlight: transparent;
       --w-button-color: var(--w-color-red-10);
       --w-button-outline-color: var(--w-color-red-7);
       --w-button-text-shadow-color: var(--w-color-red-a2);
@@ -204,7 +231,32 @@
       &:where(:disabled, &[aria-disabled="true"]) {
         --w-button-background-color: var(--w-color-grey-a3);
         --w-button-color: var(--w-color-grey-9);
-        --w-button-text-shadow-color: var(--w-color-grey-a3);
+        --w-button-text-shadow-color: transparent;
+        --w-button-box-shadow-highlight: transparent;
+        --w-button-box-shadow-lowlight: transparent;
+
+        cursor: not-allowed;
+      }
+    }
+
+    &[w-button-color="grey"] {
+      --w-button-background-color: var(--w-color-grey-3);
+      --w-button-color: var(--w-color-grey-10);
+      --w-button-outline-color: var(--w-color-grey-7);
+      --w-button-text-shadow-color: var(--w-color-grey-a2);
+
+      &:where(:hover:not(:disabled)) {
+        --w-button-background-color: var(--w-color-grey-4);
+      }
+
+      &:where(:active:not(:disabled)) {
+        --w-button-background-color: var(--w-color-grey-5);
+      }
+
+      &:where(:disabled, &[aria-disabled="true"]) {
+        --w-button-background-color: var(--w-color-grey-a3);
+        --w-button-color: var(--w-color-grey-9);
+        --w-button-text-shadow-color: transparent;
         --w-button-box-shadow-highlight: transparent;
         --w-button-box-shadow-lowlight: transparent;
 
@@ -214,11 +266,12 @@
   }
 
   &[w-button-variant="ghost"] {
+    --w-button-background-color: transparent;
+    --w-button-border-color: transparent;
+    --w-button-box-shadow-highlight: transparent;
+    --w-button-box-shadow-lowlight: transparent;
+
     &[w-button-color="accent"] {
-      --w-button-background-color: transparent;
-      --w-button-border-color: transparent;
-      --w-button-box-shadow-highlight: transparent;
-      --w-button-box-shadow-lowlight: transparent;
       --w-button-color: var(--w-theme-default-accent-10);
       --w-button-outline-color: var(--w-theme-default-accent-7);
       --w-button-text-shadow-color: var(--w-theme-default-accent-a2);
@@ -234,7 +287,7 @@
       &:where(:disabled, &[aria-disabled="true"]) {
         --w-button-background-color: var(--w-color-grey-a3);
         --w-button-color: var(--w-color-grey-9);
-        --w-button-text-shadow-color: var(--w-color-grey-a3);
+        --w-button-text-shadow-color: transparent;
         --w-button-box-shadow-highlight: transparent;
         --w-button-box-shadow-lowlight: transparent;
 
@@ -243,10 +296,6 @@
     }
 
     &[w-button-color="red"] {
-      --w-button-background-color: transparent;
-      --w-button-border-color: transparent;
-      --w-button-box-shadow-highlight: transparent;
-      --w-button-box-shadow-lowlight: transparent;
       --w-button-color: var(--w-color-red-10);
       --w-button-outline-color: var(--w-color-red-7);
       --w-button-text-shadow-color: var(--w-color-red-a2);
@@ -262,7 +311,31 @@
       &:where(:disabled, &[aria-disabled="true"]) {
         --w-button-background-color: var(--w-color-grey-a3);
         --w-button-color: var(--w-color-grey-9);
-        --w-button-text-shadow-color: var(--w-color-grey-a3);
+        --w-button-text-shadow-color: transparent;
+        --w-button-box-shadow-highlight: transparent;
+        --w-button-box-shadow-lowlight: transparent;
+
+        cursor: not-allowed;
+      }
+    }
+
+    &[w-button-color="grey"] {
+      --w-button-color: var(--w-color-grey-10);
+      --w-button-outline-color: var(--w-color-grey-7);
+      --w-button-text-shadow-color: var(--w-color-grey-a2);
+
+      &:where(:hover:not(:disabled)) {
+        --w-button-background-color: var(--w-color-grey-3);
+      }
+
+      &:where(:active:not(:disabled)) {
+        --w-button-background-color: var(--w-color-grey-4);
+      }
+
+      &:where(:disabled, &[aria-disabled="true"]) {
+        --w-button-background-color: var(--w-color-grey-a3);
+        --w-button-color: var(--w-color-grey-9);
+        --w-button-text-shadow-color: transparent;
         --w-button-box-shadow-highlight: transparent;
         --w-button-box-shadow-lowlight: transparent;
 

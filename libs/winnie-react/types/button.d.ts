@@ -15,7 +15,7 @@ export type ButtonProps = {
     /**
      * modifies the color of the button
      */
-    color?: "accent" | "red" | undefined;
+    color?: "accent" | "grey" | "red" | undefined;
     /**
      * modifies the border radius of the button
      */

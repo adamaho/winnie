@@ -11,7 +11,7 @@ import { forwardRef } from "react";
  * @typedef {Object} ButtonProps - Button component props
  * @property {ButtonElementAttributes} [attrs] default attributes for HTMLButton
  * @property {string} [className] component className
- * @property {"accent" | "red" } [color] modifies the color of the button
+ * @property {"accent" | "grey" | "red" } [color] modifies the color of the button
  * @property {"none" | "small" | "medium" | "large" | "round"} [radius] modifies the border radius of the button
  * @property {"small" | "medium" | "large"} [size] modifies the size of the button including text
  * @property {"solid" | "soft" | "ghost"} [variant] changes the overall color appearance of the button

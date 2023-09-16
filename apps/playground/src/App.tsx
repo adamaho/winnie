@@ -6,37 +6,11 @@ function App() {
   return (
     <div className="center">
       <div className="row">
-        <Button size="small" radius="small">
+        <Button color="grey">Button</Button>
+        <Button color="grey" variant="soft">
           Button
         </Button>
-        <Button size="small" radius="medium">
-          Button
-        </Button>
-        <Button size="small" radius="large">
-          Button
-        </Button>
-      </div>
-
-      <div className="row">
-        <Button size="medium" radius="small">
-          Button
-        </Button>
-        <Button size="medium" radius="medium">
-          Button
-        </Button>
-        <Button size="medium" radius="large">
-          Button
-        </Button>
-      </div>
-
-      <div className="row">
-        <Button size="large" radius="small">
-          Button
-        </Button>
-        <Button size="large" radius="medium">
-          Button
-        </Button>
-        <Button size="large" radius="large">
+        <Button color="grey" variant="ghost">
           Button
         </Button>
       </div>
