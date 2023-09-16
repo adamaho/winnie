@@ -15,15 +15,15 @@ export type ButtonProps = {
     /**
      * modifies the color of the button
      */
-    color?: "red" | "accent" | undefined;
+    color?: "accent" | "red" | undefined;
     /**
      * modifies the border radius of the button
      */
-    radius?: "0" | "1" | "2" | "3" | "full" | undefined;
+    radius?: "small" | "none" | "medium" | "large" | "round" | undefined;
     /**
      * modifies the size of the button including text
      */
-    size?: "1" | "2" | "3" | undefined;
+    size?: "small" | "medium" | "large" | undefined;
     /**
      * changes the overall color appearance of the button
      */
