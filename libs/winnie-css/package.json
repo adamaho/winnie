@@ -12,5 +12,8 @@
   },
   "keywords": [],
   "author": "Adam Aho",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "lightningcss": "^1.21.8"
+  }
 }

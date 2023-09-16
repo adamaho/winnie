@@ -1,11 +1,4 @@
-@import "./border-radius.css" layer(base);
-@import "./color.css" layer(base);
-@import "./font-size.css" layer(base);
-@import "./font-weight.css" layer(base);
-@import "./letter-spacing.css" layer(base);
-@import "./line-height.css" layer(base);
 @import "./reset.css" layer(reset);
-@import "./space.css" layer(base);
+@import "./base/index.css" layer(base);
 @import "./theme.css" layer(theme);
-
-@layer reset, base, theme;
+@import "./components/index.css" layer(components);

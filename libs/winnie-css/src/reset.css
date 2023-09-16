@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-[w-button] {
+button {
   appearance: none;
   background-color: transparent;
   border: none;

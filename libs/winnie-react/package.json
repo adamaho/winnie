@@ -12,10 +12,10 @@
   "license": "ISC",
   "exports": {
     ".": {
-      "default": "./src/components/index.js",
-      "types": "./types/components/index.d.ts"
+      "default": "./src/index.js",
+      "types": "./types/index.d.ts"
     },
-    "./css": "./src/css/index.css"
+    "./css": "./src/index.css"
   },
   "devDependencies": {
     "@types/react": "18.2.21",

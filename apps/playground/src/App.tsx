@@ -6,13 +6,8 @@ function App() {
   return (
     <div className="center">
       <div className="row">
-        <Button>Hello World</Button>
-        <Button color="red">Hello World</Button>
-      </div>
-      <div className="row">
-        <Button size="1">Open</Button>
-        <Button size="2">Open</Button>
-        <Button size="3">Open</Button>
+        <Button>Button</Button>
+        <Button color="red">Button</Button>
       </div>
     </div>
   );
