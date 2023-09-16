@@ -14,8 +14,7 @@
     ".": {
       "default": "./src/index.js",
       "types": "./types/index.d.ts"
-    },
-    "./css": "./src/index.css"
+    }
   },
   "devDependencies": {
     "@types/react": "18.2.21",
@@ -26,7 +25,6 @@
     "react": "18.2.0"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.0.2",
-    "winnie-css": "workspace:*"
+    "@radix-ui/react-slot": "^1.0.2"
   }
 }

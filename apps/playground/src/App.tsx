@@ -6,24 +6,37 @@ function App() {
   return (
     <div className="center">
       <div className="row">
-        <Button attrs={{ disabled: true }}>Button</Button>
-        <Button color="red" attrs={{ disabled: true }}>
+        <Button size="small" radius="small">
+          Button
+        </Button>
+        <Button size="small" radius="medium">
+          Button
+        </Button>
+        <Button size="small" radius="large">
           Button
         </Button>
       </div>
+
       <div className="row">
-        <Button variant="soft" attrs={{ disabled: true }}>
+        <Button size="medium" radius="small">
           Button
         </Button>
-        <Button color="red" variant="soft" attrs={{ disabled: true }}>
+        <Button size="medium" radius="medium">
+          Button
+        </Button>
+        <Button size="medium" radius="large">
           Button
         </Button>
       </div>
+
       <div className="row">
-        <Button variant="ghost" attrs={{ disabled: true }}>
+        <Button size="large" radius="small">
           Button
         </Button>
-        <Button color="red" variant="ghost" attrs={{ disabled: true }}>
+        <Button size="large" radius="medium">
+          Button
+        </Button>
+        <Button size="large" radius="large">
           Button
         </Button>
       </div>
