@@ -56,9 +56,18 @@ const _Button = (
 
 /**
  * # Button
- *
  * Trigger an action or event from user interaction.
- *
+ * 
+ * ## Usage
+ * 
+ * ```jsx
+ * <Button>
+ *   Bookmark 
+ * <Button>
+ * ```
+ * 
+ * @see {@link ButtonProps}
+ * @see {@link http://github.com Documentation}
  */
 const Button = forwardRef(_Button);
 
