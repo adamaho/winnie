@@ -57,9 +57,8 @@ const _Button = (
 /**
  * # Button
  *
- * A clickable element
+ * Trigger an action or event from user interaction.
  *
- * Some more stuff to do with the button
  */
 const Button = forwardRef(_Button);
 

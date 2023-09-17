@@ -1,31 +1,31 @@
 :root {
-  --w-theme-default-accent-1: var(--w-theme-accent-1, var(--w-color-yellow-1));
-  --w-theme-default-accent-2: var(--w-theme-accent-2, var(--w-color-yellow-2));
-  --w-theme-default-accent-3: var(--w-theme-accent-3, var(--w-color-yellow-3));
-  --w-theme-default-accent-4: var(--w-theme-accent-4, var(--w-color-yellow-4));
-  --w-theme-default-accent-5: var(--w-theme-accent-5, var(--w-color-yellow-5));
-  --w-theme-default-accent-6: var(--w-theme-accent-6, var(--w-color-yellow-6));
-  --w-theme-default-accent-7: var(--w-theme-accent-7, var(--w-color-yellow-7));
-  --w-theme-default-accent-8: var(--w-theme-accent-8, var(--w-color-yellow-8));
-  --w-theme-default-accent-9: var(--w-theme-accent-9, var(--w-color-yellow-9));
-  --w-theme-default-accent-10: var(--w-theme-accent-10, var(--w-color-yellow-10));
-  --w-theme-default-accent-11: var(--w-theme-accent-11, var(--w-color-yellow-11));
-  --w-theme-default-accent-12: var(--w-theme-accent-12, var(--w-color-yellow-12));
+  --w-theme-default-accent-1: var(--w-theme-accent-1, var(--w-color-purple-1));
+  --w-theme-default-accent-2: var(--w-theme-accent-2, var(--w-color-purple-2));
+  --w-theme-default-accent-3: var(--w-theme-accent-3, var(--w-color-purple-3));
+  --w-theme-default-accent-4: var(--w-theme-accent-4, var(--w-color-purple-4));
+  --w-theme-default-accent-5: var(--w-theme-accent-5, var(--w-color-purple-5));
+  --w-theme-default-accent-6: var(--w-theme-accent-6, var(--w-color-purple-6));
+  --w-theme-default-accent-7: var(--w-theme-accent-7, var(--w-color-purple-7));
+  --w-theme-default-accent-8: var(--w-theme-accent-8, var(--w-color-purple-8));
+  --w-theme-default-accent-9: var(--w-theme-accent-9, var(--w-color-purple-9));
+  --w-theme-default-accent-10: var(--w-theme-accent-10, var(--w-color-purple-10));
+  --w-theme-default-accent-11: var(--w-theme-accent-11, var(--w-color-purple-11));
+  --w-theme-default-accent-12: var(--w-theme-accent-12, var(--w-color-purple-12));
 
-  --w-theme-default-accent-a1: var(--w-theme-accent-a1, var(--w-color-yellow-a1));
-  --w-theme-default-accent-a2: var(--w-theme-accent-a2, var(--w-color-yellow-a2));
-  --w-theme-default-accent-a3: var(--w-theme-accent-a3, var(--w-color-yellow-a3));
-  --w-theme-default-accent-a4: var(--w-theme-accent-a4, var(--w-color-yellow-a4));
-  --w-theme-default-accent-a5: var(--w-theme-accent-a5, var(--w-color-yellow-a5));
-  --w-theme-default-accent-a6: var(--w-theme-accent-a6, var(--w-color-yellow-a6));
-  --w-theme-default-accent-a7: var(--w-theme-accent-a7, var(--w-color-yellow-a7));
-  --w-theme-default-accent-a8: var(--w-theme-accent-a8, var(--w-color-yellow-a8));
-  --w-theme-default-accent-a9: var(--w-theme-accent-a9, var(--w-color-yellow-a9));
-  --w-theme-default-accent-a10: var(--w-theme-accent-a10, var(--w-color-yellow-a10));
-  --w-theme-default-accent-a11: var(--w-theme-accent-a11, var(--w-color-yellow-a11));
-  --w-theme-default-accent-a12: var(--w-theme-accent-a12, var(--w-color-yellow-a12));
+  --w-theme-default-accent-a1: var(--w-theme-accent-a1, var(--w-color-purple-a1));
+  --w-theme-default-accent-a2: var(--w-theme-accent-a2, var(--w-color-purple-a2));
+  --w-theme-default-accent-a3: var(--w-theme-accent-a3, var(--w-color-purple-a3));
+  --w-theme-default-accent-a4: var(--w-theme-accent-a4, var(--w-color-purple-a4));
+  --w-theme-default-accent-a5: var(--w-theme-accent-a5, var(--w-color-purple-a5));
+  --w-theme-default-accent-a6: var(--w-theme-accent-a6, var(--w-color-purple-a6));
+  --w-theme-default-accent-a7: var(--w-theme-accent-a7, var(--w-color-purple-a7));
+  --w-theme-default-accent-a8: var(--w-theme-accent-a8, var(--w-color-purple-a8));
+  --w-theme-default-accent-a9: var(--w-theme-accent-a9, var(--w-color-purple-a9));
+  --w-theme-default-accent-a10: var(--w-theme-accent-a10, var(--w-color-purple-a10));
+  --w-theme-default-accent-a11: var(--w-theme-accent-a11, var(--w-color-purple-a11));
+  --w-theme-default-accent-a12: var(--w-theme-accent-a12, var(--w-color-purple-a12));
 
-  --w-theme-default-accent-contrast: var(--w-theme-accent-contrast, var(--w-color-black));
+  --w-theme-default-accent-contrast: var(--w-theme-accent-contrast, var(--w-color-white));
 
   --w-theme-font-family: "Inter", sans-serif;
 

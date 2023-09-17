@@ -123,8 +123,11 @@
     &:where(:disabled, &[aria-disabled="true"]) {
       --w-button-background-color: var(--w-color-grey-a3);
       --w-button-color: var(--w-color-grey-9);
-
       cursor: not-allowed;
+    }
+
+    &:where(:active:not(:disabled)) {
+      filter: opacity(0.9);
     }
 
     &[w-button-color="accent"] {

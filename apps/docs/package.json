@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "build": "astro build",
-    "dev:docs": "astro dev",
+    "dev": "astro dev",
     "clean": "rm -rf node_modules",
     "start": "astro dev",
     "preview": "astro preview",
