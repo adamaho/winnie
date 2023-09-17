@@ -41,4 +41,6 @@ body {
   --w-theme-accent-a12: var(--w-color-green-a12);
 
   --w-theme-accent-contrast: var(--w-color-white);
+
+  --w-theme-scale: 1.5;
 }

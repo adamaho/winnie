@@ -1,11 +1,11 @@
 :root {
-  --w-line-height-1: calc(16px * var(--w-scale, 1));
-  --w-line-height-2: calc(20px * var(--w-scale, 1));
-  --w-line-height-3: calc(24px * var(--w-scale, 1));
-  --w-line-height-4: calc(26px * var(--w-scale, 1));
-  --w-line-height-5: calc(28px * var(--w-scale, 1));
-  --w-line-height-6: calc(30px * var(--w-scale, 1));
-  --w-line-height-7: calc(36px * var(--w-scale, 1));
-  --w-line-height-8: calc(40px * var(--w-scale, 1));
-  --w-line-height-9: calc(60px * var(--w-scale, 1));
+  --w-line-height-1: calc(16px * var(--w-theme-scale, 1));
+  --w-line-height-2: calc(20px * var(--w-theme-scale, 1));
+  --w-line-height-3: calc(24px * var(--w-theme-scale, 1));
+  --w-line-height-4: calc(26px * var(--w-theme-scale, 1));
+  --w-line-height-5: calc(28px * var(--w-theme-scale, 1));
+  --w-line-height-6: calc(30px * var(--w-theme-scale, 1));
+  --w-line-height-7: calc(36px * var(--w-theme-scale, 1));
+  --w-line-height-8: calc(40px * var(--w-theme-scale, 1));
+  --w-line-height-9: calc(60px * var(--w-theme-scale, 1));
 }

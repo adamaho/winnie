@@ -1,11 +1,11 @@
 :root {
-  --w-space-1: calc(4px * var(--w-scale, 1));
-  --w-space-2: calc(8px * var(--w-scale, 1));
-  --w-space-3: calc(12px * var(--w-scale, 1));
-  --w-space-4: calc(16px * var(--w-scale, 1));
-  --w-space-5: calc(24px * var(--w-scale, 1));
-  --w-space-6: calc(32px * var(--w-scale, 1));
-  --w-space-7: calc(40px * var(--w-scale, 1));
-  --w-space-8: calc(48px * var(--w-scale, 1));
-  --w-space-9: calc(64px * var(--w-scale, 1));
+  --w-space-1: calc(4px * var(--w-theme-scale, 1));
+  --w-space-2: calc(8px * var(--w-theme-scale, 1));
+  --w-space-3: calc(12px * var(--w-theme-scale, 1));
+  --w-space-4: calc(16px * var(--w-theme-scale, 1));
+  --w-space-5: calc(24px * var(--w-theme-scale, 1));
+  --w-space-6: calc(32px * var(--w-theme-scale, 1));
+  --w-space-7: calc(40px * var(--w-theme-scale, 1));
+  --w-space-8: calc(48px * var(--w-theme-scale, 1));
+  --w-space-9: calc(64px * var(--w-theme-scale, 1));
 }
