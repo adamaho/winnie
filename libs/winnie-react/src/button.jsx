@@ -2,6 +2,8 @@
 
 import { forwardRef } from "react";
 
+import { Slot } from "@radix-ui/react-slot";
+
 /**
  * @typedef {import("react").ComponentPropsWithoutRef<"button">} ButtonElementAttributes
  * @typedef {import("react").ElementRef<"button">} ButtonElement
@@ -13,6 +15,7 @@ import { forwardRef } from "react";
  * @property {string} [className] component className
  * @property {"accent" | "grey" | "red" } [color] modifies the color of the button
  * @property {"none" | "small" | "medium" | "large" | "round"} [radius] modifies the border radius of the button
+ * @property {boolean} [slotted] if true, the Button will merge its props onto the immediate child including the HTMLElement   
  * @property {"small" | "medium" | "large"} [size] modifies the size of the button including text
  * @property {"solid" | "soft" | "ghost"} [variant] changes the overall color appearance of the button
  */
@@ -28,12 +31,15 @@ const _Button = (
     color = "accent",
     radius = "medium",
     size = "medium",
+    slotted = false,
     variant = "solid",
   },
   ref,
 ) => {
+
+  const Comp = slotted ? Slot : "button"
   return (
-    <button
+    <Comp
       {...attributes}
       className={className}
       ref={ref}
@@ -44,7 +50,7 @@ const _Button = (
       w-button-variant={variant}
     >
       {children}
-    </button>
+    </Comp>
   );
 };
 

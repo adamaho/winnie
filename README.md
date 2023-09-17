@@ -2,5 +2,4 @@
 
 An personal design system with an alternate approach to managing components and styles.
 
-- icon support
-- asChild support
+- dark mode 

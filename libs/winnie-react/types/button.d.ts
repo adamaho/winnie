@@ -21,6 +21,10 @@ export type ButtonProps = {
      */
     radius?: "small" | "none" | "medium" | "large" | "round" | undefined;
     /**
+     * if true, the Button will merge its props onto the immediate child including the HTMLElement
+     */
+    slotted?: boolean | undefined;
+    /**
      * modifies the size of the button including text
      */
     size?: "small" | "medium" | "large" | undefined;

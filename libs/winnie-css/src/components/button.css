@@ -122,11 +122,8 @@
     &[w-button-color="accent"] {
       --w-button-background-color: var(--w-theme-default-accent-9);
       --w-button-border-color: transparent;
-      --w-button-box-shadow-highlight: var(--w-theme-default-accent-1);
-      --w-button-box-shadow-lowlight: var(--w-theme-default-accent-a11);
       --w-button-color: var(--w-theme-default-accent-contrast);
       --w-button-outline-color: var(--w-theme-default-accent-7);
-      --w-button-text-shadow-color: var(--w-theme-default-accent-a10);
 
       &:where(:hover:not(:disabled)) {
         --w-button-background-color: var(--w-theme-default-accent-10);
