@@ -40,15 +40,23 @@ import {
  * @property {CommandComponentProps["loop"]} [loop] if true, highlighted element will loop when using arrow key navigation
  * @property {CommandComponentProps["onValueChange"]} [onValueChange] event handler that is called when the selected command item changes
  * @property {CommandComponentProps["shouldFilter"]} [shouldFilter] if true, automatic filtering and sorting will be disabled
+ * @property {"small" | "medium"} [size] modifies the overall size of the command including spacing and font sizes
  * @property {CommandComponentProps["value"]} [value] optionally controls the state of the selected command item
  */
 
 /**
  * @type {import("react").ForwardRefRenderFunction<CommandElement, import("react").PropsWithChildren<CommandProps>>}
  */
-const _Command = ({ attributes, className, children, ...rest }, ref) => {
+const _Command = ({ attributes, className, children, size = "medium", ...rest }, ref) => {
 	return (
-		<CmdkCommand {...attributes} {...rest} className={className} ref={ref} w-command="">
+		<CmdkCommand
+			{...attributes}
+			{...rest}
+			className={className}
+			ref={ref}
+			w-command=""
+			w-command-size={size}
+		>
 			{children}
 		</CmdkCommand>
 	);

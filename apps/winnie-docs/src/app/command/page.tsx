@@ -13,7 +13,7 @@ import "./page.css";
 export default function Page() {
 	return (
 		<div className="center">
-			<Command label="Command Menu">
+			<Command label="Command Menu" size="medium">
 				<CommandInput attributes={{ placeholder: "Type a command or search..." }} />
 				<CommandList>
 					<CommandEmpty>No results found</CommandEmpty>

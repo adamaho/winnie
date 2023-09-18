@@ -34,6 +34,10 @@ export type CommandProps = {
      */
     shouldFilter?: CommandComponentProps["shouldFilter"];
     /**
+     * modifies the overall size of the command including spacing and font sizes
+     */
+    size?: "small" | "medium" | undefined;
+    /**
      * optionally controls the state of the selected command item
      */
     value?: CommandComponentProps["value"];
