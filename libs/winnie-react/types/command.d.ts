@@ -173,10 +173,6 @@ export type CommandLoadingProps = {
      * default html attributes for CommandLoading
      */
     attributes?: CommandLoadingElementAttributes | undefined;
-    /**
-     * component className
-     */
-    className?: string | undefined;
 };
 /**
  * # Command

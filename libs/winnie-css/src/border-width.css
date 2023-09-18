@@ -1,0 +1,7 @@
+@layer base {
+	:root {
+		--w-border-width-1: 1px;
+		--w-border-width-2: 2px;
+		--w-border-width-3: 3px;
+	}
+}

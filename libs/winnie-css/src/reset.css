@@ -8,9 +8,15 @@
 	body {
 		font-family: var(--w-theme-font-family);
 		margin: 0;
+
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
-	button {
+	button,
+	[type="button"],
+	[type="reset"],
+	[type="submit"] {
 		appearance: none;
 		background-color: transparent;
 		border: none;
@@ -41,5 +47,16 @@
 
 	p {
 		margin: 0;
+	}
+
+	input {
+		appearance: none;
+		background-color: transparent;
+		border: none;
+		color: inherit;
+		font-family: inherit;
+		margin: 0;
+		outline: none;
+		padding: 0;
 	}
 }

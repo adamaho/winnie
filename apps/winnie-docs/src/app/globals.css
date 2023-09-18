@@ -1,1 +1,5 @@
 @import "winnie-css";
+
+body {
+	background-color: var(--w-color-grey-1);
+}

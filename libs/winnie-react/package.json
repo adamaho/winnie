@@ -1,7 +1,7 @@
 {
   "name": "winnie-react",
   "version": "0.0.1",
-  "description": "primitive set of react components",
+  "description": "A primitive set of react unstyled components",
   "type": "module",
   "exports": {
     ".": {
@@ -11,6 +11,10 @@
     "./button": {
       "import": "./src/button.jsx",
       "types": "./types/button.d.ts"
+    },
+    "./command": {
+      "import": "./src/command.jsx",
+      "types": "./types/command.d.ts"
     }
   },
   "scripts": {

@@ -1,11 +1,10 @@
-import { Button } from "winnie-react/button";
-
-import "./page.css";
+import Link from "next/link";
 
 export default function Page() {
 	return (
-		<div className="center">
-			<Button>Button</Button>
+		<div>
+			<Link href="/button">Button</Link>
+			<Link href="/command">Command</Link>
 		</div>
 	);
 }

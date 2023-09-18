@@ -171,7 +171,7 @@ const _CommandGroup = ({ attributes, children, className, ...rest }, ref) => {
  * -------------------------------------------------------------------------------------*/
 /**
  * @typedef {import("react").ComponentPropsWithoutRef<typeof import("cmdk").CommandItem>} CommandItemComponentProps
- * @typedef {Omit<CommandItemComponentProps, "children" | "disabled" | "onSelect" | "value">}  CommandItemElementAttributes
+ * @typedef {Omit<CommandItemComponentProps, "children" | "disabled" | "onSelect" | "value">} CommandItemElementAttributes
  * @typedef {import("react").ElementRef<typeof import("cmdk").CommandItem>} CommandItemElement
  */
 
@@ -200,7 +200,7 @@ const _CommandItem = ({ attributes, children, className, ...rest }, ref) => {
  * -------------------------------------------------------------------------------------*/
 /**
  * @typedef {import("react").ComponentPropsWithoutRef<typeof import("cmdk").CommandSeparator>} CommandSeparatorComponentProps
- * @typedef {Omit<CommandSeparatorComponentProps, "children">}  CommandSeparatorElementAttributes
+ * @typedef {Omit<CommandSeparatorComponentProps, "children">} CommandSeparatorElementAttributes
  * @typedef {import("react").ElementRef<typeof import("cmdk").CommandSeparator>} CommandSeparatorElement
  */
 
@@ -232,28 +232,21 @@ const _CommandSeparator = ({ attributes, children, className, ...rest }, ref) =>
  * -------------------------------------------------------------------------------------*/
 /**
  * @typedef {import("react").ComponentPropsWithoutRef<typeof import("cmdk").CommandLoading>} CommandLoadingComponentProps
- * @typedef {Omit<CommandLoadingComponentProps, "children">}  CommandLoadingElementAttributes
+ * @typedef {Omit<CommandLoadingComponentProps, "children">} CommandLoadingElementAttributes
  * @typedef {import("react").ElementRef<typeof import("cmdk").CommandLoading>} CommandLoadingElement
  */
 
 /**
  * @typedef {Object} CommandLoadingProps props that can be passed to CommandLoading
  * @property {CommandLoadingElementAttributes} [attributes] default html attributes for CommandLoading
- * @property {string} [className] component className
  */
 
 /**
  * @type {import("react").ForwardRefRenderFunction< CommandLoadingElement, import("react").PropsWithChildren<CommandLoadingProps>>}
  */
-const _CommandLoading = ({ attributes, children, className, ...rest }, ref) => {
+const _CommandLoading = ({ attributes, children, ...rest }, ref) => {
 	return (
-		<CmdkCommandLoading
-			{...attributes}
-			{...rest}
-			className={className}
-			ref={ref}
-			w-command-separator=""
-		>
+		<CmdkCommandLoading {...attributes} {...rest} ref={ref} w-command-loading="">
 			{children}
 		</CmdkCommandLoading>
 	);

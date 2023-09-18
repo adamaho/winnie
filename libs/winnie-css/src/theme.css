@@ -28,6 +28,8 @@
 
 		--w-theme-accent-contrast: var(--w-color-white);
 
+		--w-theme-border-radius: var(--w-border-radius-2);
+
 		--w-theme-scale: 1;
 	}
 }
