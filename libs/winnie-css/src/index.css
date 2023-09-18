@@ -1,4 +1,21 @@
-@import "./reset.css" layer(reset);
-@import "./base/index.css" layer(base);
-@import "./theme.css" layer(theme);
-@import "./components/index.css" layer(components);
+/* base */
+@import "border-radius.css";
+@import "color.css";
+@import "font-size.css";
+@import "font-weight.css";
+@import "letter-spacing.css";
+@import "line-height.css";
+@import "space.css";
+@import "transition.css";
+
+/* reset */
+@import "reset.css";
+
+/* theme */
+@import "theme.css";
+
+/* components */
+@import "button.css";
+
+/* NOTE: must be last import */
+@import "layer.css";

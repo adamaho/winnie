@@ -1,0 +1,12 @@
+@layer base {
+	:root {
+		--letter-spacing-1: 0.0025em;
+		--letter-spacing-2: 0em;
+		--letter-spacing-3: -0.0025em;
+		--letter-spacing-4: -0.005em;
+		--letter-spacing-5: -0.00625em;
+		--letter-spacing-6: -0.0075em;
+		--letter-spacing-7: -0.01em;
+		--letter-spacing-8: -0.025em;
+	}
+}

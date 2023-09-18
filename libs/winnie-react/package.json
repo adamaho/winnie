@@ -2,24 +2,26 @@
   "name": "winnie-react",
   "version": "0.0.1",
   "description": "primitive set of react components",
+  "type": "module",
   "scripts": {
     "dev": "tsc --watch",
     "clean": "rm -rf node_modules",
     "tsc": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "exports": {
     ".": {
-      "default": "./src/index.js",
+      "import": "./src/index.js",
       "types": "./types/index.d.ts"
+    },
+    "./button": {
+      "import": "./src/button.jsx",
+      "types": "./types/button.d.ts"
     }
   },
   "devDependencies": {
     "@types/react": "18.2.21",
     "react": "18.2.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.2.2"
   },
   "peerDependencies": {
     "react": "18.2.0"

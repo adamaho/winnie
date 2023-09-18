@@ -33,6 +33,7 @@ const _Button = (
     size = "medium",
     slotted = false,
     variant = "solid",
+    ...rest
   },
   ref,
 ) => {
@@ -41,6 +42,7 @@ const _Button = (
   return (
     <Comp
       {...attributes}
+      {...rest}
       className={className}
       ref={ref}
       w-button=""
@@ -69,6 +71,4 @@ const _Button = (
  * @see {@link ButtonProps}
  * @see {@link http://github.com Documentation}
  */
-const Button = forwardRef(_Button);
-
-export { Button };
+export const Button = forwardRef(_Button);

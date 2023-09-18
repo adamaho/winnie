@@ -2,18 +2,16 @@
   "name": "winnie-css",
   "version": "0.0.1",
   "description": "high-level css styles and tokens",
-  "exports": {
-    ".": {
-      "default": "./src/index.css"
-    }
-  },
+  "type": "module",
+  "sideEffects": false,
   "scripts": {
-    "clean": "rm -rf node_modules"
+    "clean": "rm -rf node_modules",
+    "build": "lightningcss --targets '>= 0.25%' --bundle --minify ./src/index.css -o ./dist/index.css"
   },
-  "keywords": [],
-  "author": "Adam Aho",
-  "license": "ISC",
+  "exports": {
+    ".": "./src/index.css"
+  },
   "devDependencies": {
-    "lightningcss": "^1.21.8"
+    "lightningcss-cli": "^1.22.0"
   }
 }

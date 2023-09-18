@@ -35,9 +35,18 @@ export type ButtonProps = {
 };
 /**
  * # Button
- *
  * Trigger an action or event from user interaction.
  *
+ * ## Usage
+ *
+ * ```jsx
+ * <Button>
+ *   Bookmark
+ * <Button>
+ * ```
+ *
+ * @see {@link ButtonProps}
+ * @see {@link http://github.com Documentation}
  */
 export const Button: import("react").ForwardRefExoticComponent<ButtonProps & {
     children?: import("react").ReactNode;

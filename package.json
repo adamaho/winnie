@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "turbo dev",
+    "clean": "turbo clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{js,jsx,css}\""
   },
   "keywords": [],
@@ -13,6 +14,6 @@
   "devDependencies": {
     "prettier": "^3.0.3",
     "turbo": "^1.10.14",
-    "typescript": "^5.0.2"
+    "typescript": "^5.2.2"
   }
 }
