@@ -3,11 +3,6 @@
   "version": "0.0.1",
   "description": "primitive set of react components",
   "type": "module",
-  "scripts": {
-    "dev": "tsc --watch",
-    "clean": "rm -rf node_modules",
-    "tsc": "tsc"
-  },
   "exports": {
     ".": {
       "import": "./src/index.js",
@@ -18,6 +13,11 @@
       "types": "./types/button.d.ts"
     }
   },
+  "scripts": {
+    "dev": "tsc --watch",
+    "clean": "rm -rf node_modules",
+    "tsc": "tsc"
+  },
   "devDependencies": {
     "@types/react": "18.2.21",
     "react": "18.2.0",
@@ -27,6 +27,7 @@
     "react": "18.2.0"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.0.2"
+    "@radix-ui/react-slot": "^1.0.2",
+    "cmdk": "^0.2.0"
   }
 }

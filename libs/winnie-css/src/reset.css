@@ -1,45 +1,45 @@
 @layer reset {
-  *,
-  *:after,
-  *::before {
-    box-sizing: border-box;
-  }
+	*,
+	*:after,
+	*::before {
+		box-sizing: border-box;
+	}
 
-  body {
-    font-family: var(--w-theme-font-family);
-    margin: 0;
-  }
+	body {
+		font-family: var(--w-theme-font-family);
+		margin: 0;
+	}
 
-  button {
-    appearance: none;
-    background-color: transparent;
-    border: none;
-    font-size: inherit;
-    font-family: inherit;
-    line-height: inherit;
-    letter-spacing: inherit;
-    outline: none;
-    color: inherit;
-    padding: 0;
-    margin: 0;
-    text-align: initial;
-    -webkit-tap-highlight-color: transparent;
-  }
+	button {
+		appearance: none;
+		background-color: transparent;
+		border: none;
+		font-size: inherit;
+		font-family: inherit;
+		line-height: inherit;
+		letter-spacing: inherit;
+		outline: none;
+		color: inherit;
+		padding: 0;
+		margin: 0;
+		text-align: initial;
+		-webkit-tap-highlight-color: transparent;
+	}
 
-  a {
-    text-decoration: none;
-  }
+	a {
+		text-decoration: none;
+	}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0;
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: 0;
+	}
 
-  p {
-    margin: 0;
-  }
+	p {
+		margin: 0;
+	}
 }
