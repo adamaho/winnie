@@ -27,7 +27,7 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@types/react": "18.2.21",
+    "@types/react": "18.2.22",
     "react": "18.2.0",
     "typescript": "^5.2.2"
   },
