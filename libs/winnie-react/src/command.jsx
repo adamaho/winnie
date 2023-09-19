@@ -104,8 +104,8 @@ const _CommandInput = ({ attributes, className, ...rest }, ref) => {
  */
 
 /**
- * @typedef {Object} CommandListProps props that can be passed toCommandList
- * @property {CommandListElementAttributes} [attributes] default html attributes forCommandList
+ * @typedef {Object} CommandListProps props that can be passed to CommandList
+ * @property {CommandListElementAttributes} [attributes] default html attributes for CommandList
  * @property {string} [className] component className
  */
 

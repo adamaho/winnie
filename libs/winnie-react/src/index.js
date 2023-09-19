@@ -1,3 +1,5 @@
 import { Button } from "./button";
+import { Command } from "./command";
+import { Popover } from "./popover";
 
-export { Button };
+export { Button, Command, Popover };

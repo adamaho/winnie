@@ -70,11 +70,11 @@ export type CommandListComponentProps = import("react").ComponentPropsWithoutRef
 export type CommandListElementAttributes = Omit<CommandListComponentProps, "children">;
 export type CommandListElement = import("react").ElementRef<typeof import("cmdk").CommandList>;
 /**
- * props that can be passed toCommandList
+ * props that can be passed to CommandList
  */
 export type CommandListProps = {
     /**
-     * default html attributes forCommandList
+     * default html attributes for CommandList
      */
     attributes?: CommandListElementAttributes | undefined;
     /**
