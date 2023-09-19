@@ -1,0 +1,87 @@
+@keyframes w-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes w-fade-out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes w-slide-up {
+	from {
+		transform: translateY(4px) scale(0.97);
+	}
+	to {
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes w-slide-down {
+	from {
+		transform: translateY(-4px) scale(0.97);
+	}
+	to {
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes w-slide-left {
+	from {
+		transform: translateX(4px) scale(0.97);
+	}
+	to {
+		transform: translateX(0) scale(1);
+	}
+}
+
+@keyframes w-slide-right {
+	from {
+		transform: translateX(-4px) scale(0.97);
+	}
+	to {
+		transform: translateX(0) scale(1);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	[w-popper-content] {
+		animation-timing-function: var(--w-transition-function-1);
+
+		&:where([data-state="open"]) {
+			animation-duration: var(--w-transition-duration-3);
+
+			&:where([data-side="top"]) {
+				animation-name: w-slide-up, w-fade-in;
+			}
+
+			&:where([data-side="bottom"]) {
+				animation-name: w-slide-down, w-fade-in;
+			}
+
+			&:where([data-side="left"]) {
+				animation-name: w-slide-left, w-fade-in;
+			}
+
+			&:where([data-side="right"]) {
+				animation-name: w-slide-right, w-fade-in;
+			}
+		}
+
+		&:where([data-state="closed"]) {
+			animation-duration: var(--w-transition-duration-2);
+
+			&:where([data-side="top"], [data-side="bottom"], [data-side="left"], [data-side="right"]) {
+				animation-name: w-fade-out;
+			}
+		}
+	}
+}

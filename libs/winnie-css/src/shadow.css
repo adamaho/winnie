@@ -1,73 +1,99 @@
+/* Credits to https://github.com/argyleink/open-props/blob/main/src/props.w-shadows.css */
+
 @layer base {
 	/* prettier-ignore */
-	:is(.light) {
-		--w-shadow-inset:
-			inset 0 0 0 1px var(--w-color-grey-a5),
-			inset 0 1.5px 2px 0 var(--w-color-grey-a5);
-	
-	  --w-shadow-1:
-			0 0 0 1px var(--w-color-grey-a3),
-			0 0 0 0.5px var(--w-color-grey-a3),
-			0 1px 1px 0 var(--w-color-grey-a3),
-			0 2px 1px -1px var(--w-color-grey-a3),
-			0 1px 3px 0 var(--w-color-black-a1);
-	
-	  --w-shadow-2:
-			0 0 0 1px var(--w-color-grey-a3),
-			0 2px 3px -2px var(--w-color-grey-a3),
-			0 3px 12px -4px var(--w-color-grey-a4),
-			0 4px 16px -8px var(--w-color-black-a2);
-	
-	  --w-shadow-3:
-			0 0 0 1px var(--w-color-grey-a3),
-			0 8px 40px var(--w-color-grey-a3),
-			0 12px 32px -16px var(--w-color-grey-a3);
-	
-	  --w-shadow-4:
-			0 0 0 1px var(--w-color-grey-a3),
-			0 12px 60px var(--w-color-grey-a6),
-			0 12px 32px -16px var(--w-color-grey-a5);
-	
-	  --w-shadow-5:
-			0 0 0 1px var(--w-color-grey-a3),
-			0 16px 64px var(--w-color-grey-a7),
-			0 16px 36px -20px var(--w-color-grey-a7);
+	:where(html) {
+		--w-shadow-color: 220 3% 15%;
+		--w-shadow-strength: 1%;
+		--w-shadow-1: 0 1px 2px -1px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 9%));
+		--w-shadow-2: 
+			0 3px 5px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 3%)),
+			0 7px 14px -5px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 5%));
+		--w-shadow-3: 
+			0 -1px 3px 0 hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 2%)),
+			0 1px 2px -5px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 2%)),
+			0 2px 5px -5px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 4%)),
+			0 4px 12px -5px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 5%)),
+			0 12px 15px -5px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 7%));
+		--w-shadow-4: 
+			0 -2px 5px 0 hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 2%)),
+			0 1px 1px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 3%)),
+			0 2px 2px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 3%)),
+			0 5px 5px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 4%)),
+			0 9px 9px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 5%)),
+			0 16px 16px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 6%));
+		--w-shadow-5: 
+			0 -1px 2px 0 hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 2%)),
+			0 2px 1px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 3%)),
+			0 5px 5px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 3%)),
+			0 10px 10px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 4%)),
+			0 20px 20px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 5%)),
+			0 40px 40px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 7%));
+		--w-shadow-6: 
+			0 -1px 2px 0 hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 2%)),
+			0 3px 2px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 3%)),
+			0 7px 5px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 3%)),
+			0 12px 10px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 4%)),
+			0 22px 18px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 5%)),
+			0 41px 33px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 6%)),
+			0 100px 80px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 7%));
+		--w-inner-shadow-0: inset 0 0 0 1px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 9%));
+		--w-inner-shadow-1: inset 0 1px 2px 0 hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 9%));
+		--w-inner-shadow-2: inset 0 1px 4px 0 hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 9%));
+		--w-inner-shadow-3: inset 0 2px 8px 0 hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 9%));
+		--w-inner-shadow-4: inset 0 2px 14px 0 hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 9%));
+
 	}
 
-	/* prettier-ignore */
 	:is(.dark) {
+		--w-shadow-color: 220 40% 2%;
+		--w-shadow-strength: 25%;
+	}
+
+	/* :is(.light) {
+		--w-shadow-inset: inset 0 0 0 1px var(--w-color-grey-a5),
+			inset 0 1.5px 2px 0 var(--w-color-grey-a5);
+
+		--w-shadow-1: 0 1px 1px 0 var(--w-color-grey-a3), 0 2px 1px -1px var(--w-color-grey-a3),
+			0 1px 3px 0 var(--w-color-black-a1);
+
+		--w-shadow-2: 0 2px 3px -2px var(--w-color-grey-a3), 0 3px 12px -4px var(--w-color-grey-a4),
+			0 4px 16px -8px var(--w-color-black-a2);
+
+		--w-shadow-3: 0 8px 40px var(--w-color-grey-a3), 0 12px 32px -16px var(--w-color-grey-a3);
+
+		--w-shadow-4: 0 12px 60px var(--w-color-grey-a6), 0 12px 32px -16px var(--w-color-grey-a5);
+
+		--w-shadow-5: 0 16px 64px var(--w-color-grey-a7), 0 16px 36px -20px var(--w-color-grey-a7);
+	} */
+
+	/* prettier-ignore */
+	/* :is(.dark) {
 		--w-shadow-inset:
 			inset 0 -1px 1px 0 var(--w-color-grey-a3),
-			inset 0 0 0 1px var(--w-color-grey-a3),
 			inset 0 3px 4px 0 var(--w-color-black-a5),
 			inset 0 0 0 1px var(--w-color-grey-a4);
 	
 	  --w-shadow-1:
-			0 0 0 1px var(--w-color-grey-a6),
-			0 0 0 0.5px var(--w-color-black-a3),
 			0 1px 1px 0 var(--w-color-black-a6),
 			0 2px 1px -1px var(--w-color-black-a6),
 			0 1px 3px 0 var(--w-color-black-a8);
 	
 	  --w-shadow-2:
-			0 0 0 1px var(--w-color-grey-a6),
 			0 2px 3px -2px var(--w-color-black-a3),
 			0 3px 8px -2px var(--w-color-black-a6),
 			0 4px 12px -4px var(--w-color-black-a7);
 	
 	  --w-shadow-3:
-			0 0 0 1px var(--w-color-grey-a6),
 			0 8px 40px var(--w-color-black-a3),
 			0 12px 32px -16px var(--w-color-black-a5);
 	
 	  --w-shadow-4:
-			0 0 0 1px var(--w-color-grey-a6),
 			0 12px 40px var(--w-color-black-a5),
 			0 12px 32px -16px var(--w-color-black-a7);
 	
 	  --w-shadow-5:
-			0 0 0 1px var(--w-color-grey-a6),
 			0 16px 64px var(--w-color-black-a8),
 			0 16px 36px -20px var(--w-color-black-a11);
-	}
+	} */
 }

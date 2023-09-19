@@ -5,3 +5,7 @@
 	justify-content: center;
 	padding: 100px;
 }
+
+[w-popover-content] {
+	padding: var(--w-space-2);
+}

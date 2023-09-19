@@ -8,12 +8,9 @@ export default function Page() {
 		<div className="center">
 			<Popover>
 				<PopoverTrigger displayAsChild>
-					<Button>Open</Button>
+					<Button variant="ghost">Open</Button>
 				</PopoverTrigger>
-				<PopoverContent>
-					Hello world
-					<PopoverClose />
-				</PopoverContent>
+				<PopoverContent align="start">TODO: add some sort of example here</PopoverContent>
 			</Popover>
 		</div>
 	);

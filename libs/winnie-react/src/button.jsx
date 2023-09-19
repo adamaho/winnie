@@ -29,7 +29,7 @@ const _Button = (
 		children,
 		className = "",
 		color = "accent",
-		radius = "medium",
+		radius,
 		size = "medium",
 		displayAsChild = false,
 		variant = "solid",

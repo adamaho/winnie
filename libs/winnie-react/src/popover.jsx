@@ -175,6 +175,7 @@ const _PopoverContent = (
 				ref={ref}
 				sideOffset={sideOffset}
 				w-popover-content=""
+				w-popper-content=""
 			>
 				{children}
 			</RadixPopoverContent>

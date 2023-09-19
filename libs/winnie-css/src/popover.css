@@ -4,22 +4,17 @@
 			background-color: var(--w-color-white);
 		}
 	}
+	:where(.dark) {
+		[w-popover-content] {
+			background-color: var(--w-color-grey-2);
+		}
+	}
 
 	[w-popover-content] {
-		&[data-side="top"] {
-		}
-
-		&[data-side="right"] {
-		}
-
-		&[data-side="bottom"] {
-			box-shadow:
-				0 0 0 1px var(--w-color-grey-a3),
-				0px 12px 60px var(--w-color-grey-a6),
-				0px 12px 32px -16px var(--w-color-black-a6);
-		}
-
-		&[data-side="left"] {
-		}
+		box-shadow: var(--w-shadow-3);
+		border: var(--w-border-width-1) solid var(--w-color-grey-a6);
+		border-radius: var(--w-theme-border-radius);
+		color: var(--w-color-grey-11);
+		transform-origin: var(--radix-popover-content-transform-origin);
 	}
 }

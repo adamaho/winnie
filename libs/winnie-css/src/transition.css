@@ -1,11 +1,10 @@
 @layer base {
 	:root {
-		--w-transition-duration-1: 0.1s;
-		--w-transition-duration-2: 0.2s;
-		--w-transition-duration-3: 0.3s;
-		--w-transition-duration-4: 0.5s;
+		--w-transition-duration-1: 100ms;
+		--w-transition-duration-2: 200ms;
+		--w-transition-duration-3: 300ms;
+		--w-transition-duration-4: 500ms;
 
-		--w-transition-function-1: ease;
-		--w-transition-function-2: ease-in-out;
+		--w-transition-function-1: cubic-bezier(0.16, 1, 0.3, 1);
 	}
 }
