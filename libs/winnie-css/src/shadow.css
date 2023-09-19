@@ -1,0 +1,73 @@
+@layer base {
+	/* prettier-ignore */
+	:is(.light) {
+		--w-shadow-inset:
+			inset 0 0 0 1px var(--w-color-grey-a5),
+			inset 0 1.5px 2px 0 var(--w-color-grey-a5);
+	
+	  --w-shadow-1:
+			0 0 0 1px var(--w-color-grey-a3),
+			0 0 0 0.5px var(--w-color-grey-a3),
+			0 1px 1px 0 var(--w-color-grey-a3),
+			0 2px 1px -1px var(--w-color-grey-a3),
+			0 1px 3px 0 var(--w-color-black-a1);
+	
+	  --w-shadow-2:
+			0 0 0 1px var(--w-color-grey-a3),
+			0 2px 3px -2px var(--w-color-grey-a3),
+			0 3px 12px -4px var(--w-color-grey-a4),
+			0 4px 16px -8px var(--w-color-black-a2);
+	
+	  --w-shadow-3:
+			0 0 0 1px var(--w-color-grey-a3),
+			0 8px 40px var(--w-color-grey-a3),
+			0 12px 32px -16px var(--w-color-grey-a3);
+	
+	  --w-shadow-4:
+			0 0 0 1px var(--w-color-grey-a3),
+			0 12px 60px var(--w-color-grey-a6),
+			0 12px 32px -16px var(--w-color-grey-a5);
+	
+	  --w-shadow-5:
+			0 0 0 1px var(--w-color-grey-a3),
+			0 16px 64px var(--w-color-grey-a7),
+			0 16px 36px -20px var(--w-color-grey-a7);
+	}
+
+	/* prettier-ignore */
+	:is(.dark) {
+		--w-shadow-inset:
+			inset 0 -1px 1px 0 var(--w-color-grey-a3),
+			inset 0 0 0 1px var(--w-color-grey-a3),
+			inset 0 3px 4px 0 var(--w-color-black-a5),
+			inset 0 0 0 1px var(--w-color-grey-a4);
+	
+	  --w-shadow-1:
+			0 0 0 1px var(--w-color-grey-a6),
+			0 0 0 0.5px var(--w-color-black-a3),
+			0 1px 1px 0 var(--w-color-black-a6),
+			0 2px 1px -1px var(--w-color-black-a6),
+			0 1px 3px 0 var(--w-color-black-a8);
+	
+	  --w-shadow-2:
+			0 0 0 1px var(--w-color-grey-a6),
+			0 2px 3px -2px var(--w-color-black-a3),
+			0 3px 8px -2px var(--w-color-black-a6),
+			0 4px 12px -4px var(--w-color-black-a7);
+	
+	  --w-shadow-3:
+			0 0 0 1px var(--w-color-grey-a6),
+			0 8px 40px var(--w-color-black-a3),
+			0 12px 32px -16px var(--w-color-black-a5);
+	
+	  --w-shadow-4:
+			0 0 0 1px var(--w-color-grey-a6),
+			0 12px 40px var(--w-color-black-a5),
+			0 12px 32px -16px var(--w-color-black-a7);
+	
+	  --w-shadow-5:
+			0 0 0 1px var(--w-color-grey-a6),
+			0 16px 64px var(--w-color-black-a8),
+			0 16px 36px -20px var(--w-color-black-a11);
+	}
+}

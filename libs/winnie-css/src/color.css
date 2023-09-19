@@ -1,11 +1,36 @@
 @layer base {
 	:root {
 		/* mono */
-		--w-color-black: #000000;
 		--w-color-white: #ffffff;
+		--w-color-white-a1: hsla(0, 0%, 0%, 0);
+		--w-color-white-a2: hsla(0, 0%, 100%, 0.013);
+		--w-color-white-a3: hsla(0, 0%, 100%, 0.069);
+		--w-color-white-a4: hsla(0, 0%, 100%, 0.104);
+		--w-color-white-a5: hsla(0, 0%, 100%, 0.134);
+		--w-color-white-a6: hsla(0, 0%, 100%, 0.169);
+		--w-color-white-a7: hsla(0, 0%, 100%, 0.216);
+		--w-color-white-a8: hsla(0, 0%, 100%, 0.312);
+		--w-color-white-a9: hsla(0, 0%, 100%, 0.372);
+		--w-color-white-a10: hsla(0, 0%, 100%, 0.455);
+		--w-color-white-a11: hsla(0, 0%, 100%, 0.662);
+		--w-color-white-a12: hsla(0, 0%, 100%, 0.926);
+
+		--w-color-black: #000000;
+		--w-color-black-a1: hsla(0, 0%, 0%, 0.012);
+		--w-color-black-a2: hsla(0, 0%, 0%, 0.024);
+		--w-color-black-a3: hsla(0, 0%, 0%, 0.055);
+		--w-color-black-a4: hsla(0, 0%, 0%, 0.078);
+		--w-color-black-a5: hsla(0, 0%, 0%, 0.106);
+		--w-color-black-a6: hsla(0, 0%, 0%, 0.133);
+		--w-color-black-a7: hsla(0, 0%, 0%, 0.169);
+		--w-color-black-a8: hsla(0, 0%, 0%, 0.267);
+		--w-color-black-a9: hsla(0, 0%, 0%, 0.447);
+		--w-color-black-a10: hsla(0, 0%, 0%, 0.498);
+		--w-color-black-a11: hsla(0, 0%, 0%, 0.608);
+		--w-color-black-a12: hsla(0, 0%, 0%, 0.875);
 	}
 
-	.light {
+	:is(.light) {
 		/* red */
 		--w-color-red-1: hsl(359, 100%, 99.4%);
 		--w-color-red-2: hsl(0, 100%, 98.4%);
@@ -223,7 +248,7 @@
 		--w-color-grey-a12: hsla(0, 0%, 0%, 0.875);
 	}
 
-	.dark {
+	:is(.dark) {
 		/* red */
 		--w-color-red-1: hsl(353, 23%, 9.8%);
 		--w-color-red-2: hsl(354, 30.2%, 12.4%);

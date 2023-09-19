@@ -1,11 +1,15 @@
 import Link from "next/link";
 
+import "./page.css";
+
 export default function Page() {
 	return (
-		<div>
-			<Link href="/button">Button</Link>
-			<Link href="/command">Command</Link>
-			<Link href="/popover">Popover</Link>
+		<div className="center">
+			<div className="row">
+				<Link href="/primitives/button">Button</Link>
+				<Link href="/primitives/command">Command</Link>
+				<Link href="/primities/popover">Popover</Link>
+			</div>
 		</div>
 	);
 }

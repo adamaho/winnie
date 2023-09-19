@@ -34,6 +34,7 @@
 
 			[w-command-empty] {
 				font-size: var(--w-command-font-size);
+				color: var(--w-color-grey-11);
 			}
 
 			[w-command-separator] {
@@ -61,7 +62,7 @@
 					padding: var(--w-command-space);
 
 					&[data-selected="true"] {
-						background-color: var(--w-theme-accent-a3);
+						background-color: var(--w-color-grey-a3);
 					}
 
 					& > svg {

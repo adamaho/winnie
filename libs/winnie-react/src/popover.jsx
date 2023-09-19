@@ -161,7 +161,7 @@ const _PopoverAnchor = ({ attributes, children, displayAsChild, ...rest }, ref) 
  * @type {import("react").ForwardRefRenderFunction<PopoverAnchorElement, import("react").PropsWithChildren<PopoverContentProps>>}
  */
 const _PopoverContent = (
-	{ attributes, children, displayAsChild, portalled = true, ...rest },
+	{ attributes, children, displayAsChild, portalled = true, sideOffset = 8, ...rest },
 	ref,
 ) => {
 	const Comp = portalled ? RadixPopoverPortal : Fragment;
@@ -173,6 +173,7 @@ const _PopoverContent = (
 				{...rest}
 				asChild={displayAsChild}
 				ref={ref}
+				sideOffset={sideOffset}
 				w-popover-content=""
 			>
 				{children}
