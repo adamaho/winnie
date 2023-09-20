@@ -5,28 +5,24 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./src/index.js",
-      "types": "./types/index.d.ts"
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
     },
     "./button": {
       "import": "./src/button.tsx",
-      "types": "./types/button.d.ts"
+      "types": "./src/button.tsx"
     },
     "./command": {
       "import": "./src/command.tsx",
-      "types": "./types/command.d.ts"
+      "types": "./src/command.tsx"
     },
     "./popover": {
-      "import": "./src/popover.jsx",
-      "types": "./types/popover.d.ts"
-    },
-    "./text": {
-      "import": "./src/text.jsx",
-      "types": "./types/text.d.ts"
+      "import": "./src/popover.tsx",
+      "types": "./src/popover.tsx"
     }
   },
   "scripts": {
-    "dev": "tsc --watch",
+    "dev": "tsc --noEmit --watch",
     "clean": "rm -rf node_modules",
     "tsc": "tsc"
   },

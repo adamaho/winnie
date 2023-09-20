@@ -16,16 +16,6 @@ export default function Page() {
 			<Button displayAsChild variant="ghost">
 				<Link href="/primitives/popover">Popover</Link>
 			</Button>
-			<Button displayAsChild variant="ghost">
-				<Link href="/primitives/text">Text</Link>
-			</Button>
-
-			<div w-color-accent="red" className="text">
-				red
-				<div w-color-accent="purple" className="text">
-					orange
-				</div>
-			</div>
 		</div>
 	);
 }

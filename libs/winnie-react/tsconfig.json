@@ -9,8 +9,6 @@
       "DOM.Iterable"
     ],
     "skipLibCheck": true,
-    "allowJs": true,
-    "checkJs": true,
     "outDir": "./types",
     "declaration": true,
     "declarationDir": "types",
