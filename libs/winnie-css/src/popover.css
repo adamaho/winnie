@@ -11,8 +11,8 @@
 	}
 
 	[w-popover-content] {
-		box-shadow: var(--w-shadow-3);
-		border: var(--w-border-width-1) solid var(--w-color-grey-a6);
+		box-shadow: var(--w-shadow-2);
+		border: var(--w-border-width-1) solid var(--w-color-grey-a5);
 		border-radius: var(--w-theme-border-radius);
 		color: var(--w-color-grey-11);
 		transform-origin: var(--radix-popover-content-transform-origin);

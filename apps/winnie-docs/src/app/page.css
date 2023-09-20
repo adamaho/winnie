@@ -1,12 +1,5 @@
-.center {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	height: 100vh;
-}
-
 .row {
 	align-items: center;
 	display: flex;
-	gap: 16px;
+	gap: var(--w-space-2);
 }

@@ -7,7 +7,7 @@
 
 		&[w-command-size="small"] {
 			--w-command-font-size: var(--w-font-size-1);
-			--w-command-space: var(--w-space-1);
+			--w-command-space: var(--w-space-2);
 		}
 
 		&[w-command-size="medium"] {

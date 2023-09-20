@@ -8,12 +8,10 @@ import {
 	CommandSeparator,
 } from "winnie-react/command";
 
-import "./page.css";
-
 export default function Page() {
 	return (
-		<div className="center">
-			<Command label="Command Menu" size="medium">
+		<div className="padding-lg">
+			<Command label="Command Menu" size="small">
 				<CommandInput attributes={{ placeholder: "Type a command or search..." }} />
 				<CommandList>
 					<CommandEmpty>No results found</CommandEmpty>
