@@ -9,8 +9,9 @@ An personal design system with an alternate approach to managing components and 
 
 ## TODO
 
-- switch to typescript lol, jsdoc is not it for me
-- Create Text component
-- Add Popover jsdocs
-- Create Heading component
+- Configure prettier import rules
+- Configure eslint
+- Configure stylelint
 - Create Flex component
+- Create Text component
+- Create Heading component

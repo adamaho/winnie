@@ -1,0 +1,32 @@
+/* prettier-ignore */
+.app {
+    --app-header-height: 60px;
+
+	display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        ;
+    grid-template-rows: var(--app-header-height) 1fr;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+	align-items: center;
+	display: flex;
+	grid-area: header;
+	justify-content: space-between;
+	padding-inline: var(--w-space-4);
+}
+
+.nav {
+	align-items: center;
+	display: flex;
+	gap: var(--w-space-2);
+}
+
+.main {
+	display: flex;
+	grid-area: main;
+}
