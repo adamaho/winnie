@@ -1,270 +1,223 @@
-export type CommandComponentProps = import("react").ComponentPropsWithoutRef<typeof import("cmdk").Command>;
-export type CommandElementAttributes = Omit<CommandComponentProps, "children" | "label" | "shouldFilter" | "filter" | "value" | "onValueChange" | "loop">;
-export type CommandElement = import("react").ElementRef<typeof import("cmdk").Command>;
-/**
- * props that can be passed to Command
- */
-export type CommandProps = {
+import { type ComponentPropsWithoutRef } from "react";
+import { Command as CmdkCommand, CommandInput as CmdkCommandInput, CommandList as CmdkCommandList, CommandEmpty as CmdkCommandEmpty, CommandGroup as CmdkCommandGroup, CommandItem as CmdkCommandItem, CommandLoading as CmdkCommandLoading } from "cmdk";
+type CommandComponentProps = ComponentPropsWithoutRef<typeof CmdkCommand>;
+type CommandElementAttributes = Omit<CommandComponentProps, "children" | "label" | "shouldFilter" | "filter" | "value" | "onValueChange" | "loop">;
+type CommandProps = {
     /**
-     * default html attributes for Command
+     * underlying Button html element attributes
+     *
+     * @default undefined
      */
-    attributes?: CommandElementAttributes | undefined;
+    attributes?: CommandElementAttributes;
     /**
      * component className
+     *
+     * @default undefined
      */
-    className?: string | undefined;
+    className?: string;
     /**
-     * customer filter function for that determines with command items match the given query
+     * custom filter function that determines which command items match the given search query
+     *
+     * @default undefined
      */
     filter?: CommandComponentProps["filter"];
     /**
      * accessible label for command. not shown visibly
+     *
+     * @default undefined
      */
     label?: CommandComponentProps["label"];
     /**
      * if true, highlighted element will loop when using arrow key navigation
+     *
+     * @default false
      */
     loop?: CommandComponentProps["loop"];
     /**
-     * event handler that is called when the selected command item changes
+     * event handler that is called when the selected command item has changed
      */
     onValueChange?: CommandComponentProps["onValueChange"];
     /**
-     * if true, automatic filtering and sorting will be disabled
+     * modifes the overall size of command including spacing and font sizes
+     *
+     * @default "medium"
      */
-    shouldFilter?: CommandComponentProps["shouldFilter"];
-    /**
-     * modifies the overall size of the command including spacing and font sizes
-     */
-    size?: "small" | "medium" | undefined;
+    size?: "small" | "medium";
     /**
      * optionally controls the state of the selected command item
+     *
+     * @default undefined
      */
     value?: CommandComponentProps["value"];
 };
-export type CommandInputComponentProps = import("react").ComponentPropsWithoutRef<typeof import("cmdk").CommandInput>;
-export type CommandInputElementAttributes = Omit<CommandInputComponentProps, "value" | "onValueChange">;
-export type CommandInputElement = import("react").ElementRef<typeof import("cmdk").CommandInput>;
-/**
- * props that can be passed to CommandInput
- */
-export type CommandInputProps = {
+declare const Command: import("react").ForwardRefExoticComponent<CommandProps & {
+    children?: import("react").ReactNode;
+} & import("react").RefAttributes<HTMLDivElement>>;
+type CommandInputComponentProps = ComponentPropsWithoutRef<typeof CmdkCommandInput>;
+type CommandInputElementAttributes = Omit<CommandInputComponentProps, "value" | "onValueChange">;
+type CommandInputProps = {
     /**
      * default html attributes for CommandInput
+     *
+     * @default undefined
      */
-    attributes?: CommandInputElementAttributes | undefined;
+    attributes?: CommandInputElementAttributes;
     /**
      * component className
+     *
+     * @default undefined
      */
-    className?: string | undefined;
+    className?: string;
     /**
      * event handler that is called when the input value changes
+     *
+     * @default undefined
      */
     onValueChange?: CommandInputComponentProps["onValueChange"];
     /**
      * optionally controls the value of the input
+     *
+     * @default undefined
      */
     value?: CommandInputComponentProps["value"];
 };
-export type CommandListComponentProps = import("react").ComponentPropsWithoutRef<typeof import("cmdk").CommandList>;
-export type CommandListElementAttributes = Omit<CommandListComponentProps, "children">;
-export type CommandListElement = import("react").ElementRef<typeof import("cmdk").CommandList>;
-/**
- * props that can be passed to CommandList
- */
-export type CommandListProps = {
+declare const CommandInput: import("react").ForwardRefExoticComponent<CommandInputProps & import("react").RefAttributes<HTMLInputElement>>;
+type CommandListComponentProps = ComponentPropsWithoutRef<typeof CmdkCommandList>;
+type CommandListElementAttributes = Omit<CommandListComponentProps, "children">;
+type CommandListProps = {
     /**
      * default html attributes for CommandList
+     *
+     * @default undefined
      */
-    attributes?: CommandListElementAttributes | undefined;
+    attributes?: CommandListElementAttributes;
     /**
      * component className
+     *
+     * @default undefined
      */
-    className?: string | undefined;
+    className?: string;
 };
-export type CommandEmptyComponentProps = import("react").ComponentPropsWithoutRef<typeof import("cmdk").CommandEmpty>;
-export type CommandEmptyElementAttributes = Omit<CommandEmptyComponentProps, "children">;
-export type CommandEmptyElement = import("react").ElementRef<typeof import("cmdk").CommandEmpty>;
-/**
- * props that can be passed CommandEmpty
- */
-export type CommandEmptyProps = {
+declare const CommandList: import("react").ForwardRefExoticComponent<CommandListProps & {
+    children?: import("react").ReactNode;
+} & import("react").RefAttributes<HTMLDivElement>>;
+type CommandEmptyComponentProps = ComponentPropsWithoutRef<typeof CmdkCommandEmpty>;
+type CommandEmptyElementAttributes = Omit<CommandEmptyComponentProps, "children">;
+type CommandEmptyProps = {
     /**
      * default html attributes for CommandEmpty
+     *
+     * @default undefined
      */
-    attributes?: CommandEmptyElementAttributes | undefined;
+    attributes?: CommandEmptyElementAttributes;
     /**
      * component className
+     *
+     * @default undefined
      */
-    className?: string | undefined;
+    className?: string;
 };
-export type CommandGroupComponentProps = import("react").ComponentPropsWithoutRef<typeof import("cmdk").CommandGroup>;
-export type CommandGroupElementAttributes = Omit<CommandGroupComponentProps, "children" | "heading" | "value">;
-export type CommandGroupElement = import("react").ElementRef<typeof import("cmdk").CommandGroup>;
-/**
- * props that can be passed to CommandGroup
- */
-export type CommandGroupProps = {
+declare const CommandEmpty: import("react").ForwardRefExoticComponent<CommandEmptyProps & {
+    children?: import("react").ReactNode;
+} & import("react").RefAttributes<HTMLDivElement>>;
+type CommandGroupComponentProps = ComponentPropsWithoutRef<typeof CmdkCommandGroup>;
+type CommandGroupElementAttributes = Omit<CommandGroupComponentProps, "children" | "heading" | "value">;
+type CommandGroupProps = {
     /**
      * default html attributes for CommandGroup
+     *
+     * @default undefined
      */
-    attributes?: CommandGroupElementAttributes | undefined;
+    attributes?: CommandGroupElementAttributes;
     /**
      * component className
+     *
+     * @default undefined
      */
-    className?: string | undefined;
+    className?: string;
     /**
      * optional heading for the group
+     *
+     * @default undefined
      */
-    heading?: CommandGroupComponentProps["heading"];
+    heading: CommandGroupComponentProps["heading"];
     /**
      * if no heading is provided, define this prop to make the group unique
+     *
+     * @default undefined
      */
-    value?: CommandGroupComponentProps["value"];
+    value: CommandGroupComponentProps["value"];
 };
-export type CommandItemComponentProps = import("react").ComponentPropsWithoutRef<typeof import("cmdk").CommandItem>;
-export type CommandItemElementAttributes = Omit<CommandItemComponentProps, "children" | "disabled" | "onSelect" | "value">;
-export type CommandItemElement = import("react").ElementRef<typeof import("cmdk").CommandItem>;
-/**
- * props that can be passed to CommandItem
- */
-export type CommandItemProps = {
+declare const CommandGroup: import("react").ForwardRefExoticComponent<CommandGroupProps & {
+    children?: import("react").ReactNode;
+} & import("react").RefAttributes<HTMLDivElement>>;
+type CommandItemComponentProps = ComponentPropsWithoutRef<typeof CmdkCommandItem>;
+type CommandItemElementAttributes = Omit<CommandItemComponentProps, "children" | "disabled" | "onSelect" | "value">;
+type CommandItemProps = {
     /**
      * default html attributes for CommandItem
+     *
+     * @default undefined
      */
-    attributes?: CommandItemElementAttributes | undefined;
+    attributes?: CommandItemElementAttributes;
     /**
      * component className
+     *
+     * @default undefined
      */
-    className?: string | undefined;
+    className?: string;
     /**
-     * if true, the item will not be interactible
+     * if true, the item will not be interacible
+     *
+     * @default false
      */
     disabled?: CommandItemComponentProps["disabled"];
     /**
-     * event handler that is called with an item is clicked or selected via keyboard
+     * event handler that is caled when an item is clicked or selected via keyboard
+     *
+     * @default undefined
      */
     onSelect?: CommandItemComponentProps["onSelect"];
     /**
      * a unique value for this item. if not provided, it will be inferred by the `textContent` of the item
+     *
+     * @default undefined
      */
     value?: CommandItemComponentProps["value"];
 };
-export type CommandSeparatorComponentProps = import("react").ComponentPropsWithoutRef<typeof import("cmdk").CommandSeparator>;
-export type CommandSeparatorElementAttributes = Omit<CommandSeparatorComponentProps, "children">;
-export type CommandSeparatorElement = import("react").ElementRef<typeof import("cmdk").CommandSeparator>;
-/**
- * props that can be passed to CommandSeparator
- */
-export type CommandSeparatorProps = {
+declare const CommandItem: import("react").ForwardRefExoticComponent<CommandItemProps & {
+    children?: import("react").ReactNode;
+} & import("react").RefAttributes<HTMLDivElement>>;
+type CommandSeparatorComponentProps = ComponentPropsWithoutRef<typeof CmdkCommandEmpty>;
+type CommandSeparatorElementAttributes = Omit<CommandSeparatorComponentProps, "children">;
+type CommandSeparatorProps = {
     /**
      * default html attributes for CommandSeparator
+     *
+     * @default undefined
      */
-    attributes?: CommandSeparatorElementAttributes | undefined;
+    attributes?: CommandSeparatorElementAttributes;
     /**
      * component className
+     *
+     * @default undefined
      */
-    className?: string | undefined;
+    className?: string;
 };
-export type CommandLoadingComponentProps = import("react").ComponentPropsWithoutRef<typeof import("cmdk").CommandLoading>;
-export type CommandLoadingElementAttributes = Omit<CommandLoadingComponentProps, "children">;
-export type CommandLoadingElement = import("react").ElementRef<typeof import("cmdk").CommandLoading>;
-/**
- * props that can be passed to CommandLoading
- */
-export type CommandLoadingProps = {
+declare const CommandSeparator: import("react").ForwardRefExoticComponent<CommandSeparatorProps & {
+    children?: import("react").ReactNode;
+} & import("react").RefAttributes<HTMLDivElement>>;
+type CommandLoadingComponentProps = ComponentPropsWithoutRef<typeof CmdkCommandLoading>;
+type CommandLoadingElementAttributes = Omit<CommandLoadingComponentProps, "children">;
+type CommandLoadingProps = {
     /**
      * default html attributes for CommandLoading
+     *
+     * @default undefined
      */
-    attributes?: CommandLoadingElementAttributes | undefined;
+    attributes?: CommandLoadingElementAttributes;
 };
-/**
- * # Command
- * Search and navigate a list of items
- *
- * ## Usage
- *
- * ```jsx
- * <Command>
- *  <CommandInput />
- *  <CommandList>
- *    <CommandEmpty />
- *    <CommandGroup heading="letters">
- *      <CommandItem>A</CommandItem>
- *      <CommandItem>B</CommandItem>
- *      <CommandSeparator />
- *      <CommandItem>C</CommandItem>
- *    </CommandGroup>
- *
- *    <CommandItem>Apple</CommandItem>
- *  </CommandList>
- * </Command>
- * ```
- *
- * @see {@link CommandProps}
- * @see {@link http://github.com Documentation}
- */
-export const Command: import("react").ForwardRefExoticComponent<CommandProps & {
+declare const CommandLoading: import("react").ForwardRefExoticComponent<CommandLoadingProps & {
     children?: import("react").ReactNode;
 } & import("react").RefAttributes<HTMLDivElement>>;
-/**
- * # CommandInput
- * An html input that searches the items
- *
- * @see {@link CommandInputProps}
- */
-export const CommandInput: import("react").ForwardRefExoticComponent<CommandInputProps & import("react").RefAttributes<HTMLInputElement>>;
-/**
- * # CommandList
- * A list of items
- *
- * @see {@link CommandListProps}
- */
-export const CommandList: import("react").ForwardRefExoticComponent<CommandListProps & {
-    children?: import("react").ReactNode;
-} & import("react").RefAttributes<HTMLDivElement>>;
-/**
- * # CommandEmpty
- * A component that is rendered when the list is empty or has no items matching the provided search query
- *
- * @see {@link CommandEmptyProps}
- */
-export const CommandEmpty: import("react").ForwardRefExoticComponent<CommandEmptyProps & {
-    children?: import("react").ReactNode;
-} & import("react").RefAttributes<HTMLDivElement>>;
-/**
- * # CommandGroup
- * A collection of items grouped under a heading
- *
- * @see {@link CommandGroupProps}
- */
-export const CommandGroup: import("react").ForwardRefExoticComponent<CommandGroupProps & {
-    children?: import("react").ReactNode;
-} & import("react").RefAttributes<HTMLDivElement>>;
-/**
- * # CommandItem
- * A list item that can be selected using the mouse or keyboard
- *
- * @see {@link CommandItemProps}
- */
-export const CommandItem: import("react").ForwardRefExoticComponent<CommandItemProps & {
-    children?: import("react").ReactNode;
-} & import("react").RefAttributes<HTMLDivElement>>;
-/**
- * # CommandSeparator
- * Visually separates items or groups
- *
- * @see {@link CommandSeparatorProps}
- */
-export const CommandSeparator: import("react").ForwardRefExoticComponent<CommandSeparatorProps & {
-    children?: import("react").ReactNode;
-} & import("react").RefAttributes<HTMLDivElement>>;
-/**
- * # CommandLoading
- * Optionally displayed when items are loading
- *
- * @see {@link CommandLoadingProps}
- */
-export const CommandLoading: import("react").ForwardRefExoticComponent<CommandLoadingProps & {
-    children?: import("react").ReactNode;
-} & import("react").RefAttributes<HTMLDivElement>>;
+export { Command, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator, CommandLoading, };

@@ -1,53 +1,52 @@
-/**
- * # Button
- * Trigger an action or event from user interaction.
- *
- * ## Usage
- *
- * ```jsx
- * <Button>
- *   Bookmark
- * <Button>
- * ```
- *
- * @see {@link ButtonProps}
- * @see {@link http://github.com Documentation}
- */
-export const Button: import("react").ForwardRefExoticComponent<ButtonProps & {
-    children?: import("react").ReactNode;
-} & import("react").RefAttributes<HTMLButtonElement>>;
-export type ButtonElementAttributes = import("react").ComponentPropsWithoutRef<"button">;
-export type ButtonElement = import("react").ElementRef<"button">;
-/**
- * props that can be passed to Button
- */
-export type ButtonProps = {
+import { type ComponentPropsWithoutRef } from "react";
+type ButtonElementAttributes = ComponentPropsWithoutRef<"button">;
+type ButtonProps = {
     /**
-     * default html attributes for Button
+     *
+     * underlying Button html element attributes
+     *
+     * @default undefined
      */
-    attributes?: Omit<import("react").DetailedHTMLProps<import("react").ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> | undefined;
+    attributes?: ButtonElementAttributes;
     /**
-     * component className
+     * className to pass to Button for additional styling
+     *
+     * @default undefined;
      */
-    className?: string | undefined;
+    className?: string;
     /**
-     * modifies the color of the button
+     * modifies the color of the Button
+     *
+     * @default "accent"
      */
-    color?: "accent" | "grey" | "red" | undefined;
-    /**
-     * modifies the border radius of the button
-     */
-    radius?: "small" | "none" | "medium" | "large" | "round" | undefined;
+    color?: "accent" | "red" | "grey";
     /**
      * if true, the Button will merge its props and display the child element
+     *
+     * @default false
      */
-    displayAsChild?: boolean | undefined;
+    displayAsChild?: boolean;
+    /**
+     * modifes the radius of the Button
+     *
+     * @default "medium"
+     */
+    radius?: "none" | "small" | "medium" | "large" | "round";
     /**
      * modifies the size of the button including text
+     *
+     * @default "medium"
      */
-    size?: "small" | "medium" | "large" | undefined;
+    size?: "small" | "medium" | "large";
     /**
-     * changes the overall color appearance of the button
+     * modifies the appearance of the button
+     *
+     * @default "solid"
      */
-    variant?: "solid" | "soft" | "ghost" | undefined;
+    variant?: "solid" | "soft" | "ghost";
 };
+declare const Button: import("react").ForwardRefExoticComponent<ButtonProps & {
+    children?: import("react").ReactNode;
+} & import("react").RefAttributes<HTMLButtonElement>>;
+export { Button };
+export type { ButtonProps };

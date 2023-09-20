@@ -3,19 +3,18 @@
   "compilerOptions": {
     "rootDir": "src",
     "target": "ES2017",
-    "lib": ["ES2017", "DOM", "DOM.Iterable"],
-
+    "lib": [
+      "ES2017",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "skipLibCheck": true,
-
     "allowJs": true,
     "checkJs": true,
-
     "outDir": "./types",
-
     "declaration": true,
     "declarationDir": "types",
     "emitDeclarationOnly": true,
-
     /* Bundler mode */
     "module": "ESNext",
     "moduleResolution": "node",
@@ -23,13 +22,16 @@
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
-
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

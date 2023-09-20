@@ -10,7 +10,7 @@ import {
 
 export default function Page() {
 	return (
-		<div className="padding-lg">
+		<div className="width-50">
 			<Command label="Command Menu" size="small">
 				<CommandInput attributes={{ placeholder: "Type a command or search..." }} />
 				<CommandList>

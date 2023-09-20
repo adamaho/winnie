@@ -21,7 +21,8 @@
 			font-size: var(--w-command-font-size);
 			font-weight: var(--w-font-weight-normal);
 			margin-bottom: var(--w-space-1);
-			padding: var(--w-command-space) calc(var(--w-command-space) + var(--w-space-1));
+			padding: var(--w-command-space)
+				calc(var(--w-command-space) + var(--w-space-1));
 			width: 100%;
 
 			&::placeholder {
@@ -62,7 +63,7 @@
 					padding: var(--w-command-space);
 
 					&[data-selected="true"] {
-						background-color: var(--w-color-grey-a3);
+						background-color: var(--w-accent-a3);
 					}
 
 					& > svg {

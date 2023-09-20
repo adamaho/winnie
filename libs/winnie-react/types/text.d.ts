@@ -31,7 +31,7 @@ export type SharedTextProps = {
     /**
      * modifies the color of the text
      */
-    color?: "accent" | "grey" | "red" | "orange" | "yellow" | "green" | "blue" | "purple" | "pink" | undefined;
+    color?: "accent" | "red" | "grey" | "blue" | "orange" | "yellow" | "green" | "purple" | "pink" | undefined;
     /**
      * modifies the color of the text
      */

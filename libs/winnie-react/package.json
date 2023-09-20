@@ -9,11 +9,11 @@
       "types": "./types/index.d.ts"
     },
     "./button": {
-      "import": "./src/button.jsx",
+      "import": "./src/button.tsx",
       "types": "./types/button.d.ts"
     },
     "./command": {
-      "import": "./src/command.jsx",
+      "import": "./src/command.tsx",
       "types": "./types/command.d.ts"
     },
     "./popover": {
