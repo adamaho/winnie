@@ -57,14 +57,14 @@
 					align-items: center;
 					border-radius: var(--w-theme-border-radius);
 					cursor: default;
-					color: var(--w-color-grey-12);
 					display: flex;
 					font-size: var(--w-command-font-size);
 					gap: var(--w-command-space);
 					padding: var(--w-command-space);
 
 					&[data-selected="true"] {
-						background-color: var(--w-accent-a3);
+						background-color: var(--w-accent-a4);
+						color: var(--w-color-grey-12);
 					}
 
 					& > svg {
