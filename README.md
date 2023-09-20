@@ -9,6 +9,7 @@ An personal design system with an alternate approach to managing components and 
 
 ## TODO
 
+- switch to typescript lol, jsdoc is not it for me
 - Create Text component
 - Add Popover jsdocs
 - Create Heading component

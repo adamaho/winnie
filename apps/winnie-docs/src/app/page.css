@@ -3,3 +3,7 @@
 	display: flex;
 	gap: var(--w-space-2);
 }
+
+.text {
+	background-color: var(--w-color-accent-9);
+}

@@ -19,6 +19,10 @@
     "./popover": {
       "import": "./src/popover.jsx",
       "types": "./types/popover.d.ts"
+    },
+    "./text": {
+      "import": "./src/text.jsx",
+      "types": "./types/text.d.ts"
     }
   },
   "scripts": {

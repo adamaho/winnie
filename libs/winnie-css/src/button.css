@@ -107,8 +107,23 @@
 		}
 
 		&[w-button-variant="solid"] {
+			--w-button-background-color: var(--w-accent-9);
+			--w-button-border-color: transparent;
+			--w-button-color: var(--w-accent-9-contrast);
+			--w-button-outline-color: var(--w-accent-7);
 			border-width: 0px;
 			outline-offset: 2px;
+
+			&:where(:hover:not(:disabled), [data-state="open"]) {
+				--w-button-background-color: var(--w-accent-10);
+			}
+
+			&:where(:disabled, &[aria-disabled="true"]) {
+				--w-button-background-color: var(--w-color-grey-a3);
+				--w-button-color: var(--w-color-grey-9);
+
+				cursor: not-allowed;
+			}
 
 			&:where(:disabled, &[aria-disabled="true"]) {
 				--w-button-background-color: var(--w-color-grey-a3);
@@ -119,187 +134,47 @@
 			&:where(:active:not(:disabled)) {
 				filter: opacity(0.95);
 			}
-
-			&[w-button-color="accent"] {
-				--w-button-background-color: var(--w-theme-accent-9);
-				--w-button-border-color: transparent;
-				--w-button-color: var(--w-theme-accent-contrast);
-				--w-button-outline-color: var(--w-theme-accent-7);
-
-				&:where(:hover:not(:disabled), [data-state="open"]) {
-					--w-button-background-color: var(--w-theme-accent-10);
-				}
-
-				&:where(:disabled, &[aria-disabled="true"]) {
-					--w-button-background-color: var(--w-color-grey-a3);
-					--w-button-color: var(--w-color-grey-9);
-
-					cursor: not-allowed;
-				}
-			}
-
-			&[w-button-color="grey"] {
-				--w-button-background-color: var(--w-color-grey-9);
-				--w-button-border-color: transparent;
-				--w-button-color: var(--w-color-white);
-				--w-button-outline-color: var(--w-color-grey-7);
-
-				&:where(:hover:not(:disabled), [data-state="open"]) {
-					--w-button-background-color: var(--w-color-grey-10);
-				}
-
-				&:where(:disabled, &[aria-disabled="true"]) {
-					--w-button-background-color: var(--w-color-grey-a3);
-					--w-button-color: var(--w-color-grey-9);
-					cursor: not-allowed;
-				}
-			}
-
-			&[w-button-color="red"] {
-				--w-button-background-color: var(--w-color-red-9);
-				--w-button-border-color: transparent;
-				--w-button-color: var(--w-color-white);
-				--w-button-outline-color: var(--w-color-red-7);
-
-				&:where(:hover:not(:disabled), [data-state="open"]) {
-					--w-button-background-color: var(--w-color-red-10);
-				}
-
-				&:where(:disabled, &[aria-disabled="true"]) {
-					--w-button-background-color: var(--w-color-grey-a3);
-					--w-button-color: var(--w-color-grey-9);
-
-					cursor: not-allowed;
-				}
-			}
 		}
 
 		&[w-button-variant="soft"] {
+			--w-button-background-color: var(--w-accent-3);
 			--w-button-border-color: transparent;
+			--w-button-color: var(--w-accent-11);
+			--w-button-outline-color: var(--w-accent-7);
 
-			&[w-button-color="accent"] {
-				--w-button-background-color: var(--w-theme-accent-3);
-				--w-button-color: var(--w-theme-accent-11);
-				--w-button-outline-color: var(--w-theme-accent-7);
-
-				&:where(:hover:not(:disabled)) {
-					--w-button-background-color: var(--w-theme-accent-4);
-				}
-
-				&:where(:active:not(:disabled), [data-state="open"]) {
-					--w-button-background-color: var(--w-theme-accent-5);
-				}
-
-				&:where(:disabled, &[aria-disabled="true"]) {
-					--w-button-background-color: var(--w-color-grey-a3);
-					--w-button-color: var(--w-color-grey-9);
-					cursor: not-allowed;
-				}
+			&:where(:hover:not(:disabled)) {
+				--w-button-background-color: var(--w-accent-4);
 			}
 
-			&[w-button-color="red"] {
-				--w-button-background-color: var(--w-color-red-3);
-				--w-button-color: var(--w-color-red-11);
-				--w-button-outline-color: var(--w-color-red-7);
-				--w-button-text-shadow-color: var(--w-color-red-a2);
-
-				&:where(:hover:not(:disabled)) {
-					--w-button-background-color: var(--w-color-red-4);
-				}
-
-				&:where(:active:not(:disabled), [data-state="open"]) {
-					--w-button-background-color: var(--w-color-red-5);
-				}
-
-				&:where(:disabled, &[aria-disabled="true"]) {
-					--w-button-background-color: var(--w-color-grey-a3);
-					--w-button-color: var(--w-color-grey-9);
-					cursor: not-allowed;
-				}
+			&:where(:active:not(:disabled), [data-state="open"]) {
+				--w-button-background-color: var(--w-accent-5);
 			}
 
-			&[w-button-color="grey"] {
-				--w-button-background-color: var(--w-color-grey-3);
-				--w-button-color: var(--w-color-grey-11);
-				--w-button-outline-color: var(--w-color-grey-7);
-
-				&:where(:hover:not(:disabled)) {
-					--w-button-background-color: var(--w-color-grey-4);
-				}
-
-				&:where(:active:not(:disabled), [data-state="open"]) {
-					--w-button-background-color: var(--w-color-grey-5);
-				}
-
-				&:where(:disabled, &[aria-disabled="true"]) {
-					--w-button-background-color: var(--w-color-grey-a2);
-					--w-button-color: var(--w-color-grey-9);
-
-					cursor: not-allowed;
-				}
+			&:where(:disabled, &[aria-disabled="true"]) {
+				--w-button-background-color: var(--w-color-grey-a3);
+				--w-button-color: var(--w-color-grey-9);
+				cursor: not-allowed;
 			}
 		}
 
 		&[w-button-variant="ghost"] {
 			--w-button-background-color: transparent;
 			--w-button-border-color: transparent;
+			--w-button-color: var(--w-accent-11);
+			--w-button-outline-color: var(--w-accent-7);
 
-			&[w-button-color="accent"] {
-				--w-button-color: var(--w-theme-accent-11);
-				--w-button-outline-color: var(--w-theme-accent-7);
-
-				&:where(:hover:not(:disabled)) {
-					--w-button-background-color: var(--w-theme-accent-3);
-				}
-
-				&:where(:active:not(:disabled), [data-state="open"]) {
-					--w-button-background-color: var(--w-theme-accent-4);
-				}
-
-				&:where(:disabled, &[aria-disabled="true"]) {
-					--w-button-background-color: var(--w-color-grey-a3);
-					--w-button-color: var(--w-color-grey-9);
-					cursor: not-allowed;
-				}
+			&:where(:hover:not(:disabled)) {
+				--w-button-background-color: var(--w-accent-3);
 			}
 
-			&[w-button-color="red"] {
-				--w-button-color: var(--w-color-red-11);
-				--w-button-outline-color: var(--w-color-red-7);
-
-				&:where(:hover:not(:disabled)) {
-					--w-button-background-color: var(--w-color-red-3);
-				}
-
-				&:where(:active:not(:disabled), [data-state="open"]) {
-					--w-button-background-color: var(--w-color-red-4);
-				}
-
-				&:where(:disabled, &[aria-disabled="true"]) {
-					--w-button-background-color: var(--w-color-grey-a3);
-					--w-button-color: var(--w-color-grey-9);
-					cursor: not-allowed;
-				}
+			&:where(:active:not(:disabled), [data-state="open"]) {
+				--w-button-background-color: var(--w-accent-4);
 			}
 
-			&[w-button-color="grey"] {
-				--w-button-color: var(--w-color-grey-11);
-				--w-button-outline-color: var(--w-color-grey-7);
-				--w-button-text-shadow-color: var(--w-color-grey-a2);
-
-				&:where(:hover:not(:disabled)) {
-					--w-button-background-color: var(--w-color-grey-3);
-				}
-
-				&:where(:active:not(:disabled), [data-state="open"]) {
-					--w-button-background-color: var(--w-color-grey-4);
-				}
-
-				&:where(:disabled, &[aria-disabled="true"]) {
-					--w-button-background-color: var(--w-color-grey-a3);
-					--w-button-color: var(--w-color-grey-9);
-					cursor: not-allowed;
-				}
+			&:where(:disabled, &[aria-disabled="true"]) {
+				--w-button-background-color: var(--w-color-grey-a3);
+				--w-button-color: var(--w-color-grey-9);
+				cursor: not-allowed;
 			}
 		}
 	}
