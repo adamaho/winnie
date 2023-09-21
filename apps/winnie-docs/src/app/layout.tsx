@@ -6,9 +6,8 @@ import { Button } from "winnie-react/button";
 
 import { ThemeConfigurator } from "./theme-configurator";
 
-import styles from "./layout.module.css";
-
 import "./globals.css";
+import "./layout.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,9 +24,9 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="light">
 			<body className={inter.className}>
-				<div className={styles.app} w-accent-color="purple">
-					<header className={styles.header}>
-						<nav className={styles.nav}>
+				<div className="app" w-accent-color="purple">
+					<header className="header">
+						<nav className="nav">
 							<Button displayAsChild color="grey" variant="ghost">
 								<Link href="/primitives/button">Button</Link>
 							</Button>
@@ -37,10 +36,13 @@ export default function RootLayout({
 							<Button displayAsChild color="grey" variant="ghost">
 								<Link href="/primitives/popover">Popover</Link>
 							</Button>
+							<Button displayAsChild color="grey" variant="ghost">
+								<Link href="/primitives/text">Text</Link>
+							</Button>
 						</nav>
 						<ThemeConfigurator />
 					</header>
-					<main className={styles.main}>{children}</main>
+					<main className="main">{children}</main>
 				</div>
 			</body>
 		</html>
