@@ -106,6 +106,8 @@ const PopoverTrigger = forwardRef<
 	);
 });
 
+PopoverTrigger.displayName = "PopoverTrigger";
+
 /* -------------------------------------------------------------------------------------
  * PopoverAnchor
  * -------------------------------------------------------------------------------------*/
@@ -150,6 +152,8 @@ const PopoverAnchor = forwardRef<
 		</RadixPopoverAnchor>
 	);
 });
+
+PopoverAnchor.displayName = "PopoverAnchor";
 
 /* -------------------------------------------------------------------------------------
  * PopoverContent
@@ -352,6 +356,8 @@ const PopoverContent = forwardRef<
 	},
 );
 
+PopoverContent.displayName = "PopoverContent";
+
 /* -------------------------------------------------------------------------------------
  * PopoverArrow
  * -------------------------------------------------------------------------------------*/
@@ -416,6 +422,8 @@ const PopoverArrow = forwardRef<
 	);
 });
 
+PopoverArrow.displayName = "PopoverArrow";
+
 /* -------------------------------------------------------------------------------------
  * PopoverClose
  * -------------------------------------------------------------------------------------*/
@@ -467,6 +475,8 @@ const PopoverClose = forwardRef<
 		</RadixPopoverClose>
 	);
 });
+
+PopoverClose.displayName = "PopoverClose";
 
 export {
 	Popover,

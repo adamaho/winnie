@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@types/react": "18.2.22",
+    "eslint-config-winnie": "workspace:*",
     "react": "18.2.0",
     "typescript": "^5.2.2"
   },

@@ -103,5 +103,7 @@ const Heading = forwardRef<HeadingElement, PropsWithChildren<HeadingProps>>(
 	},
 );
 
+Heading.displayName = "Heading";
+
 export { Heading };
 export type { HeadingProps };

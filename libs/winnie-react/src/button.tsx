@@ -98,5 +98,7 @@ const Button = forwardRef<ButtonElement, PropsWithChildren<ButtonProps>>(
 	},
 );
 
+Button.displayName = "Button";
+
 export { Button };
 export type { ButtonProps };

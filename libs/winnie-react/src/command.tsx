@@ -107,6 +107,8 @@ const Command = forwardRef<CommandElement, PropsWithChildren<CommandProps>>(
 	},
 );
 
+Command.displayName = "Command";
+
 /* -------------------------------------------------------------------------------------
  * CommandInput
  * -------------------------------------------------------------------------------------*/
@@ -163,6 +165,8 @@ const CommandInput = forwardRef<CommandInputElement, CommandInputProps>(
 	},
 );
 
+CommandInput.displayName = "CommandInput";
+
 /* -------------------------------------------------------------------------------------
  * CommandList
  * -------------------------------------------------------------------------------------*/
@@ -204,6 +208,8 @@ const CommandList = forwardRef<
 		</CmdkCommandList>
 	);
 });
+
+CommandList.displayName = "CommandList";
 
 /* -------------------------------------------------------------------------------------
  * CommandEmpty
@@ -249,6 +255,8 @@ const CommandEmpty = forwardRef<
 		</CmdkCommandEmpty>
 	);
 });
+
+CommandEmpty.displayName = "CommandEmpty";
 
 /* -------------------------------------------------------------------------------------
  * CommandGroup
@@ -308,6 +316,8 @@ const CommandGroup = forwardRef<
 		</CmdkCommandGroup>
 	);
 });
+
+CommandGroup.displayName = "CommandGroup";
 
 /* -------------------------------------------------------------------------------------
  * CommandItem
@@ -375,6 +385,8 @@ const CommandItem = forwardRef<
 	);
 });
 
+CommandItem.displayName = "CommandItem";
+
 /* -------------------------------------------------------------------------------------
  * CommandSeparator
  * -------------------------------------------------------------------------------------*/
@@ -420,6 +432,8 @@ const CommandSeparator = forwardRef<
 	);
 });
 
+CommandSeparator.displayName = "CommandSeparator";
+
 /* -------------------------------------------------------------------------------------
  * CommandLoading
  * -------------------------------------------------------------------------------------*/
@@ -456,6 +470,8 @@ const CommandLoading = forwardRef<
 		</CmdkCommandLoading>
 	);
 });
+
+CommandLoading.displayName = "CommandLoading";
 
 export {
 	Command,

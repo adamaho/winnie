@@ -143,5 +143,7 @@ const Text = forwardRef<TextElement, PropsWithChildren<TextProps>>(
 	},
 );
 
+Text.displayName = "Text";
+
 export { Text };
 export type { TextProps };

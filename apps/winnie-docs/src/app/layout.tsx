@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 
-import { Command } from "winnie-react";
 import { Button } from "winnie-react/button";
 
 import { ThemeConfigurator } from "./theme-configurator";
