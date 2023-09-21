@@ -3,8 +3,12 @@
     "printWidth": 80,
     "importOrder": [
         "^(react/(.*)$)|^(react$)",
+        "",
         "^(next/(.*)$)|^(next$)",
+        "",
         "<THIRD_PARTY_MODULES>",
+        "",
+        "^(winnie-react/(.*)$)|^(winnie-react$)",
         "",
         "^[./]",
         "^(?!.*[.]css$)[./].*$", ".css$"
