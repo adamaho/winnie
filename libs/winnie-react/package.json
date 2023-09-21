@@ -32,6 +32,7 @@
   "scripts": {
     "dev": "tsc --noEmit --watch",
     "clean": "rm -rf node_modules",
+    "lint":  "eslint \"src/**/*.{ts,tsx}\"",
     "tsc": "tsc"
   },
   "devDependencies": {

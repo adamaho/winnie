@@ -9,7 +9,6 @@ An personal design system with an alternate approach to managing components and 
 
 ## TODO
 
-- Configure prettier import rules
-- Configure eslint
+- fix eslint rule
 - Configure stylelint
 - Create Flex component
