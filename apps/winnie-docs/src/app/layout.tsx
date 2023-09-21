@@ -34,6 +34,9 @@ export default function RootLayout({
 								<Link href="/primitives/command">Command</Link>
 							</Button>
 							<Button displayAsChild color="grey" variant="ghost">
+								<Link href="/primitives/heading">Heading</Link>
+							</Button>
+							<Button displayAsChild color="grey" variant="ghost">
 								<Link href="/primitives/popover">Popover</Link>
 							</Button>
 							<Button displayAsChild color="grey" variant="ghost">

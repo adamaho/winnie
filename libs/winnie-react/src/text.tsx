@@ -15,7 +15,7 @@ type TextSpanProps = {
 	 *
 	 * @default "span"
 	 */
-	as?: "span";
+	displayAs?: "span";
 
 	/**
 	 * rendered html attributes
@@ -33,7 +33,7 @@ type TextPProps = {
 	 *
 	 * @default "span"
 	 */
-	as?: "p";
+	displayAs?: "p";
 
 	/**
 	 * rendered html attributes
@@ -51,7 +51,7 @@ type TextDivProps = {
 	 *
 	 * @default "span"
 	 */
-	as?: "div";
+	displayAs?: "div";
 
 	/**
 	 * rendered html attributes
@@ -114,7 +114,7 @@ const Text = forwardRef<TextElement, PropsWithChildren<TextProps>>(
 	(
 		{
 			align = "left",
-			as: Comp = "span",
+			displayAs: Comp = "span",
 			attributes,
 			children,
 			color = "grey",

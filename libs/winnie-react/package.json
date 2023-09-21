@@ -16,6 +16,10 @@
       "import": "./src/command.tsx",
       "types": "./src/command.tsx"
     },
+    "./heading": {
+      "import": "./src/heading.tsx",
+      "types": "./src/heading.tsx"
+    },
     "./popover": {
       "import": "./src/popover.tsx",
       "types": "./src/popover.tsx"
