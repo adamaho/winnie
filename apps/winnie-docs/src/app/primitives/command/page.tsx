@@ -1,10 +1,10 @@
 import {
 	Command,
-	CommandInput,
 	CommandEmpty,
 	CommandGroup,
-	CommandList,
+	CommandInput,
 	CommandItem,
+	CommandList,
 	CommandSeparator,
 } from "winnie-react/command";
 

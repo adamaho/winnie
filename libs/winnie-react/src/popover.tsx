@@ -7,15 +7,14 @@ import {
 	type ElementRef,
 	type PropsWithChildren,
 } from "react";
-
 import {
 	Popover as RadixPopover,
-	PopoverTrigger as RadixPopoverTrigger,
 	PopoverAnchor as RadixPopoverAnchor,
-	PopoverPortal as RadixPopoverPortal,
-	PopoverContent as RadixPopoverContent,
 	PopoverArrow as RadixPopoverArrow,
 	PopoverClose as RadixPopoverClose,
+	PopoverContent as RadixPopoverContent,
+	PopoverPortal as RadixPopoverPortal,
+	PopoverTrigger as RadixPopoverTrigger,
 } from "@radix-ui/react-popover";
 
 /* -------------------------------------------------------------------------------------

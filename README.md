@@ -13,5 +13,3 @@ An personal design system with an alternate approach to managing components and 
 - Configure eslint
 - Configure stylelint
 - Create Flex component
-- Create Text component
-- Create Heading component

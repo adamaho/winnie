@@ -1,12 +1,11 @@
 "use client";
 
 import {
+	forwardRef,
 	type ComponentPropsWithoutRef,
 	type ElementRef,
 	type PropsWithChildren,
-	forwardRef,
 } from "react";
-
 import { Slot } from "@radix-ui/react-slot";
 
 type ButtonElementAttributes = ComponentPropsWithoutRef<"button">;

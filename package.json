@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "turbo dev",
     "clean": "turbo clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{js,jsx,css}\""
+    "format": "prettier --write \"**/*.{ts,tsx,css}\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "prettier": "^3.0.3",
     "turbo": "^1.10.14",
     "typescript": "^5.2.2"

@@ -1,21 +1,20 @@
 "use client";
 
 import {
+	forwardRef,
 	type ComponentPropsWithoutRef,
 	type ElementRef,
 	type PropsWithChildren,
-	forwardRef,
 } from "react";
-
 import {
 	Command as CmdkCommand,
-	CommandInput as CmdkCommandInput,
-	CommandList as CmdkCommandList,
 	CommandEmpty as CmdkCommandEmpty,
 	CommandGroup as CmdkCommandGroup,
+	CommandInput as CmdkCommandInput,
 	CommandItem as CmdkCommandItem,
-	CommandSeparator as CmdkCommandSeparator,
+	CommandList as CmdkCommandList,
 	CommandLoading as CmdkCommandLoading,
+	CommandSeparator as CmdkCommandSeparator,
 } from "cmdk";
 
 /* -------------------------------------------------------------------------------------

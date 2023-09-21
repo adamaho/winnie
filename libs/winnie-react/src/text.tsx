@@ -4,7 +4,6 @@ import {
 	type ElementRef,
 	type PropsWithChildren,
 } from "react";
-
 import { Slot } from "@radix-ui/react-slot";
 
 type TextSpanComponentProps = ComponentPropsWithoutRef<"span">;

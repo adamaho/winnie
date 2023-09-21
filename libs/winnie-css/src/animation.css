@@ -79,7 +79,12 @@
 		&:where([data-state="closed"]) {
 			animation-duration: var(--w-transition-duration-2);
 
-			&:where([data-side="top"], [data-side="bottom"], [data-side="left"], [data-side="right"]) {
+			&:where(
+					[data-side="top"],
+					[data-side="bottom"],
+					[data-side="left"],
+					[data-side="right"]
+				) {
 				animation-name: w-fade-out;
 			}
 		}

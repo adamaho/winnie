@@ -1,5 +1,5 @@
 import { Button } from "winnie-react/button";
-import { Popover, PopoverTrigger, PopoverContent } from "winnie-react/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
 
 export function ThemeConfigurator() {
 	return (
