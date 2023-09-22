@@ -23,5 +23,8 @@
 @import "command.css";
 @import "popover.css";
 
+/* utilities */
+@import "utilities.css";
+
 /* NOTE: must be last import */
 @import "layer.css";

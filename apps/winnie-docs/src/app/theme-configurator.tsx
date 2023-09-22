@@ -1,5 +1,8 @@
+import { Text } from "winnie-react";
 import { Button } from "winnie-react/button";
 import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
+
+import "./theme-configurator.css";
 
 export function ThemeConfigurator() {
 	return (
@@ -24,7 +27,60 @@ export function ThemeConfigurator() {
 					Customize
 				</Button>
 			</PopoverTrigger>
-			<PopoverContent align="end">Hello world</PopoverContent>
+			<PopoverContent
+				align="end"
+				w-display="flex"
+				w-flex-direction="column"
+				w-gap="5"
+				w-p="4"
+			>
+				<div w-display="flex" w-flex-direction="column" w-gap="1">
+					<Text contrast="high" size="2" weight="medium">
+						Customize Theme
+					</Text>
+					<Text size="1">Modify the look and feel of your components</Text>
+				</div>
+				<div w-display="flex" w-flex-direction="column" w-gap="1">
+					<Text contrast="high" size="1" weight="medium">
+						Accent Color
+					</Text>
+					<div className="tc-grid">
+						{[1, 2, 3, 4, 5, 6, 7, 8].map((i) => {
+							return <div className="tc-grid-item" key={i} />;
+						})}
+					</div>
+				</div>
+				<div w-display="flex" w-flex-direction="column" w-gap="1">
+					<Text contrast="high" size="1" weight="medium">
+						Appearance
+					</Text>
+					<div className="tc-grid">
+						{[1, 2, 3, 4].map((i) => {
+							return <div className="tc-grid-item" key={i} />;
+						})}
+					</div>
+				</div>
+				<div w-display="flex" w-flex-direction="column" w-gap="1">
+					<Text contrast="high" size="1" weight="medium">
+						Corner Radius
+					</Text>
+					<div className="tc-grid">
+						{[1, 2, 3, 4, 5].map((i) => {
+							return <div className="tc-grid-item" key={i} />;
+						})}
+					</div>
+				</div>
+				<div w-display="flex" w-flex-direction="column" w-gap="1">
+					<Text contrast="high" size="1" weight="medium">
+						Scale
+					</Text>
+					<div className="tc-grid">
+						{[1, 2, 3, 4, 5].map((i) => {
+							return <div className="tc-grid-item" key={i} />;
+						})}
+					</div>
+				</div>
+			</PopoverContent>
 		</Popover>
 	);
 }

@@ -23,8 +23,8 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className="light">
-			<body className={inter.className}>
-				<div className="app" w-accent-color="purple">
+			<body className={inter.className} w-accent-color="purple">
+				<div className="app">
 					<header className="header">
 						<nav className="nav">
 							<Button displayAsChild color="grey" variant="ghost">
