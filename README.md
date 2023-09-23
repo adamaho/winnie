@@ -10,5 +10,5 @@ An personal design system with an alternate approach to managing components and 
 ## TODO
 
 - Configure stylelint
-- Create Flex component
+- Create Flex component but it needs to be responsive
 - Create utilities for margin and padding

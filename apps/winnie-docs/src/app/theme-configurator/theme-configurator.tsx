@@ -6,6 +6,8 @@ import { ChooseAccentColor } from "./choose-accent-color";
 
 import "./theme-configurator.css";
 
+import { ChooseAppearance } from "./choose-appearance";
+
 /* -------------------------------------------------------------------------------------
  * AccentColor
  * -------------------------------------------------------------------------------------*/
@@ -47,16 +49,7 @@ export function ThemeConfigurator() {
 					<Text size="1">Modify the look and feel of your application</Text>
 				</div>
 				<ChooseAccentColor />
-				<div w-display="flex" w-flex-direction="column" w-gap="1">
-					<Text contrast="high" size="1" weight="medium">
-						Appearance
-					</Text>
-					<div className="tc-grid">
-						{[1, 2, 3, 4].map((i) => {
-							return <div className="tc-grid-item" key={i} />;
-						})}
-					</div>
-				</div>
+				<ChooseAppearance />
 				<div w-display="flex" w-flex-direction="column" w-gap="1">
 					<Text contrast="high" size="1" weight="medium">
 						Corner Radius

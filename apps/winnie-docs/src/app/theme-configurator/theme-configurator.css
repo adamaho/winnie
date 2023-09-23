@@ -1,16 +1,15 @@
 .tc-content {
 	min-width: max-content;
 
-	.tc-grid {
-		display: grid;
-		gap: var(--w-space-2);
-		grid-template-columns: repeat(4, 1fr);
-		grid-template-rows: auto;
-	}
+	.tc-chiclet {
+		--w-tc-padding: var(--w-space-1);
 
-	.tc-grid-item {
-		background-color: var(--w-accent-5);
-		height: 20px;
-		width: 100%;
+		background-color: var(--w-color-grey-a2);
+		border: var(--w-border-width-1) solid var(--w-color-grey-a4);
+		border-radius: var(--w-border-radius-2);
+		height: 34px;
+		padding: var(--w-tc-padding);
+		padding-right: var(--w-space-2);
+		text-transform: capitalize;
 	}
 }

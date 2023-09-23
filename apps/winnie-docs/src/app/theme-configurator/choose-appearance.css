@@ -1,0 +1,27 @@
+.ca-grid {
+	display: grid;
+	gap: var(--w-space-2);
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+
+	.ca-grid-item {
+		align-items: center;
+		display: flex;
+		gap: var(--w-space-2);
+		justify-content: center;
+
+		&:has(> input[data-checked="true"]) {
+			outline: var(--w-border-width-2) solid var(--w-accent-9);
+			border-color: transparent;
+		}
+
+		& > input {
+			width: 0;
+		}
+
+		& > svg {
+			height: 18px;
+			width: 18px;
+		}
+	}
+}

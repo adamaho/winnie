@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { Text } from "winnie-react/text";
 
@@ -13,11 +13,6 @@ export function ChooseAccentColor() {
 		const body = document.querySelector("body");
 		return body?.getAttribute(ACCENT_COLOR_ATTR) || "purple";
 	});
-
-	useEffect(() => {
-		const body = document.querySelector("body");
-		body?.setAttribute(ACCENT_COLOR_ATTR, color);
-	}, [color]);
 
 	return (
 		<div w-display="flex" w-flex-direction="column" w-gap="2">
@@ -38,7 +33,7 @@ export function ChooseAccentColor() {
 					return (
 						<label
 							htmlFor={c}
-							className="cas-grid-item"
+							className="tc-chiclet cas-grid-item"
 							key={c}
 							w-accent-color={c}
 							w-align-items="center"
@@ -53,7 +48,14 @@ export function ChooseAccentColor() {
 								id={c}
 								name="accent-color"
 								value={c}
-								onChange={(e) => setColor(e.target.value)}
+								onChange={(e) =>
+									setColor(() => {
+										const body = document.querySelector("body");
+										const value = e.target.value;
+										body?.setAttribute(ACCENT_COLOR_ATTR, value);
+										return value;
+									})
+								}
 							/>
 							<Text size="1" className="cas-grid-item-text">
 								{c}

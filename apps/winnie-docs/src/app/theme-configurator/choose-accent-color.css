@@ -3,29 +3,23 @@
 	gap: var(--w-space-2);
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: auto;
-}
 
-.cas-grid-item {
-	--w-cas-grid-item-padding: var(--w-space-1);
-	background-color: var(--w-color-grey-1);
-	border: var(--w-border-width-1) solid var(--w-color-grey-a4);
-	border-radius: var(--w-border-radius-2);
-	padding: var(--w-cas-grid-item-padding);
-	padding-right: var(--w-space-2);
-	text-transform: capitalize;
+	.cas-grid-item {
+		padding: var(--w-tc-padding);
 
-	&:has(> input[data-checked="true"]) {
-		outline: var(--w-border-width-2) solid var(--w-accent-9);
-		border-color: transparent;
-	}
+		&:has(> input[data-checked="true"]) {
+			outline: var(--w-border-width-2) solid var(--w-accent-9);
+			border-color: transparent;
+		}
 
-	.cas-grid-item-input {
-		background-color: var(--w-accent-9);
-		border-radius: max(
-			calc(var(--w-border-radius-2) - var(--w-cas-grid-item-padding)),
-			2px
-		);
-		height: 24px;
-		width: 24px;
+		.cas-grid-item-input {
+			background-color: var(--w-accent-9);
+			border-radius: max(
+				calc(var(--w-border-radius-2) - var(--w-tc-padding)),
+				2px
+			);
+			height: 24px;
+			width: 24px;
+		}
 	}
 }
