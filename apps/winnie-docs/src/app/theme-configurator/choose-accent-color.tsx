@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 import { Text } from "winnie-react/text";
 
+import "./choose-accent-color.css";
+
 const ACCENT_COLOR_ATTR = "w-accent-color";
 
 export function ChooseAccentColor() {
@@ -18,11 +20,11 @@ export function ChooseAccentColor() {
 	}, [color]);
 
 	return (
-		<div w-display="flex" w-flex-direction="column" w-gap="1">
+		<div w-display="flex" w-flex-direction="column" w-gap="2">
 			<Text contrast="high" size="1" weight="medium">
 				Accent Color
 			</Text>
-			<div className="tc-grid">
+			<div className="cas-grid">
 				{[
 					"red",
 					"orange",
@@ -34,16 +36,28 @@ export function ChooseAccentColor() {
 					"grey",
 				].map((c) => {
 					return (
-						<label htmlFor={c} className="tc-grid-item" key={c}>
-							<Text size="1">{c}</Text>
+						<label
+							htmlFor={c}
+							className="cas-grid-item"
+							key={c}
+							w-accent-color={c}
+							w-align-items="center"
+							w-display="flex"
+							w-flex-direction="row"
+							w-gap="2"
+						>
 							<input
 								type="radio"
+								data-checked={c === color}
+								className="cas-grid-item-input"
 								id={c}
 								name="accent-color"
 								value={c}
-								checked={c === color}
 								onChange={(e) => setColor(e.target.value)}
 							/>
+							<Text size="1" className="cas-grid-item-text">
+								{c}
+							</Text>
 						</label>
 					);
 				})}

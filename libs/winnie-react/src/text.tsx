@@ -72,6 +72,13 @@ type SharedTextProps = {
 	align?: "left" | "center" | "right";
 
 	/**
+	 * component className
+	 *
+	 * @default undefined
+	 */
+	className?: string;
+
+	/**
 	 * modifies the color of the text
 	 *
 	 * @default "grey"
@@ -117,6 +124,7 @@ const Text = forwardRef<TextElement, PropsWithChildren<TextProps>>(
 			displayAs: Comp = "span",
 			attributes,
 			children,
+			className,
 			color = "grey",
 			contrast = "medium",
 			size = "2",
@@ -135,6 +143,7 @@ const Text = forwardRef<TextElement, PropsWithChildren<TextProps>>(
 				w-text-size={size}
 				w-text-weight={weight}
 				w-accent-color={color}
+				className={className}
 				ref={ref}
 			>
 				<Comp>{children}</Comp>

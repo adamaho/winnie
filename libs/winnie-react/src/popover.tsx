@@ -216,6 +216,13 @@ type PopoverContentProps = {
 	arrowPadding?: PopoverContentComponentProps["arrowPadding"];
 
 	/**
+	 * component className
+	 *
+	 * @default undefined
+	 */
+	className?: string;
+
+	/**
 	 * element used as the collision boundary. By default this is the viewport
 	 *
 	 * @default undefined

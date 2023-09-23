@@ -34,6 +34,7 @@ export function ThemeConfigurator() {
 			</PopoverTrigger>
 			<PopoverContent
 				align="end"
+				className="tc-content"
 				w-display="flex"
 				w-flex-direction="column"
 				w-gap="5"

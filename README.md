@@ -9,6 +9,6 @@ An personal design system with an alternate approach to managing components and 
 
 ## TODO
 
-- fix eslint rule
 - Configure stylelint
 - Create Flex component
+- Create utilities for margin and padding
