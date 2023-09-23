@@ -13,13 +13,13 @@
 		}
 
 		.cas-grid-item-input {
+			aspect-ratio: 1;
 			background-color: var(--w-accent-9);
 			border-radius: max(
 				calc(var(--w-border-radius-2) - var(--w-tc-padding)),
 				2px
 			);
-			height: 24px;
-			width: 24px;
+			height: 100%;
 		}
 	}
 }

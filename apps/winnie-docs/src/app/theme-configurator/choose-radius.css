@@ -1,0 +1,18 @@
+.cr-grid {
+	display: grid;
+	gap: var(--w-space-2);
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: auto;
+
+	.cr-grid-item {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		> input {
+			height: 0;
+			width: 0;
+		}
+	}
+}

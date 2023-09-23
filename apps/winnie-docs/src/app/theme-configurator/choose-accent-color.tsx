@@ -7,11 +7,22 @@ import { Text } from "winnie-react/text";
 import "./choose-accent-color.css";
 
 const ACCENT_COLOR_ATTR = "w-accent-color";
+const colors = [
+	"red",
+	"orange",
+	"yellow",
+	"green",
+	"blue",
+	"purple",
+	"pink",
+	"grey",
+] as const;
+type Color = (typeof colors)[number];
 
 export function ChooseAccentColor() {
-	const [color, setColor] = useState(() => {
+	const [color, setColor] = useState<Color>(() => {
 		const body = document.querySelector("body");
-		return body?.getAttribute(ACCENT_COLOR_ATTR) || "purple";
+		return (body?.getAttribute(ACCENT_COLOR_ATTR) as Color) || "purple";
 	});
 
 	return (
@@ -20,16 +31,7 @@ export function ChooseAccentColor() {
 				Accent Color
 			</Text>
 			<div className="cas-grid">
-				{[
-					"red",
-					"orange",
-					"yellow",
-					"green",
-					"blue",
-					"purple",
-					"pink",
-					"grey",
-				].map((c) => {
+				{colors.map((c) => {
 					return (
 						<label
 							htmlFor={c}
@@ -51,7 +53,7 @@ export function ChooseAccentColor() {
 								onChange={(e) =>
 									setColor(() => {
 										const body = document.querySelector("body");
-										const value = e.target.value;
+										const value = e.target.value as Color;
 										body?.setAttribute(ACCENT_COLOR_ATTR, value);
 										return value;
 									})

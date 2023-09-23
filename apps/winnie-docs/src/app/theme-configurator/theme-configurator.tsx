@@ -3,10 +3,10 @@ import { Button } from "winnie-react/button";
 import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
 
 import { ChooseAccentColor } from "./choose-accent-color";
+import { ChooseAppearance } from "./choose-appearance";
+import { ChooseRadius } from "./choose-radius";
 
 import "./theme-configurator.css";
-
-import { ChooseAppearance } from "./choose-appearance";
 
 /* -------------------------------------------------------------------------------------
  * AccentColor
@@ -50,16 +50,7 @@ export function ThemeConfigurator() {
 				</div>
 				<ChooseAccentColor />
 				<ChooseAppearance />
-				<div w-display="flex" w-flex-direction="column" w-gap="1">
-					<Text contrast="high" size="1" weight="medium">
-						Corner Radius
-					</Text>
-					<div className="tc-grid">
-						{[1, 2, 3, 4, 5].map((i) => {
-							return <div className="tc-grid-item" key={i} />;
-						})}
-					</div>
-				</div>
+				<ChooseRadius />
 				<div w-display="flex" w-flex-direction="column" w-gap="1">
 					<Text contrast="high" size="1" weight="medium">
 						Scale

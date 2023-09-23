@@ -70,7 +70,6 @@ export function ChooseAppearance() {
 							<input
 								type="radio"
 								data-checked={appearance === a}
-								className="ca-grid-item"
 								id={a}
 								name="appearance"
 								value={a}

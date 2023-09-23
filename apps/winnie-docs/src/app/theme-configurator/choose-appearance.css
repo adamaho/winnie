@@ -7,7 +7,7 @@
 	.ca-grid-item {
 		align-items: center;
 		display: flex;
-		gap: var(--w-space-2);
+		gap: var(--w-space-1);
 		justify-content: center;
 
 		&:has(> input[data-checked="true"]) {
@@ -20,8 +20,8 @@
 		}
 
 		& > svg {
-			height: 18px;
-			width: 18px;
+			aspect-ratio: 1;
+			height: 100%;
 		}
 	}
 }
