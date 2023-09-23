@@ -2,8 +2,13 @@ import { Text } from "winnie-react";
 import { Button } from "winnie-react/button";
 import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
 
+import { ChooseAccentColor } from "./choose-accent-color";
+
 import "./theme-configurator.css";
 
+/* -------------------------------------------------------------------------------------
+ * AccentColor
+ * -------------------------------------------------------------------------------------*/
 export function ThemeConfigurator() {
 	return (
 		<Popover>
@@ -38,18 +43,9 @@ export function ThemeConfigurator() {
 					<Text contrast="high" size="2" weight="medium">
 						Customize Theme
 					</Text>
-					<Text size="1">Modify the look and feel of your components</Text>
+					<Text size="1">Modify the look and feel of your application</Text>
 				</div>
-				<div w-display="flex" w-flex-direction="column" w-gap="1">
-					<Text contrast="high" size="1" weight="medium">
-						Accent Color
-					</Text>
-					<div className="tc-grid">
-						{[1, 2, 3, 4, 5, 6, 7, 8].map((i) => {
-							return <div className="tc-grid-item" key={i} />;
-						})}
-					</div>
-				</div>
+				<ChooseAccentColor />
 				<div w-display="flex" w-flex-direction="column" w-gap="1">
 					<Text contrast="high" size="1" weight="medium">
 						Appearance
