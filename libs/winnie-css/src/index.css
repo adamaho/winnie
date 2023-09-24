@@ -7,6 +7,7 @@
 @import "font-weight.css";
 @import "letter-spacing.css";
 @import "line-height.css";
+@import "scale.css";
 @import "shadow.css";
 @import "space.css";
 @import "transition.css";
@@ -14,9 +15,6 @@
 
 /* reset */
 @import "reset.css";
-
-/* theme */
-@import "theme.css";
 
 /* components */
 @import "button.css";

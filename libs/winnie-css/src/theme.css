@@ -1,7 +1,0 @@
-@layer theme {
-	:root {
-		--w-theme-border-radius: var(--w-border-radius-2);
-
-		--w-theme-scale: 1;
-	}
-}

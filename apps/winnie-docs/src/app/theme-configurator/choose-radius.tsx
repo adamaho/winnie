@@ -43,7 +43,7 @@ export function ChooseRadius() {
 									})
 								}
 							/>
-							<div data-border-radius={r} />
+							<div data-border-radius={r} className="cr-grid-item-preview" />
 							<Text size="1">{r}</Text>
 						</label>
 					);

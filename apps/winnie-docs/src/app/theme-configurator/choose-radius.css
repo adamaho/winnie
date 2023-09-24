@@ -4,15 +4,50 @@
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: auto;
 
-	.cr-grid-item {
+	.cr-grid-item:has(> div.cr-grid-item-preview) {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
+		gap: var(--w-space-2);
+		height: auto;
 		justify-content: center;
+		padding-right: var(--w-space-1);
 
 		> input {
 			height: 0;
 			width: 0;
+		}
+
+		.cr-grid-item-preview {
+			aspect-ratio: 1;
+			background-color: var(--w-accent-4);
+			border: var(--w-border-width-1) solid var(--w-accent-7);
+			height: 30px;
+
+			&[data-border-radius="none"] {
+				border-radius: 0;
+			}
+
+			&[data-border-radius="small"] {
+				border-radius: var(--w-border-radius-2);
+			}
+
+			&[data-border-radius="medium"] {
+				border-radius: var(--w-border-radius-3);
+			}
+
+			&[data-border-radius="large"] {
+				border-radius: var(--w-border-radius-4);
+			}
+
+			&[data-border-radius="round"] {
+				border-radius: 9999px;
+			}
+		}
+
+		&:has(> input[data-checked="true"]) {
+			outline: var(--w-border-width-2) solid var(--w-accent-9);
+			border-color: transparent;
 		}
 	}
 }

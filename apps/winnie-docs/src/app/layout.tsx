@@ -23,7 +23,12 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className="light">
-			<body className={inter.className} w-accent-color="purple">
+			<body
+				className={inter.className}
+				w-accent-color="purple"
+				w-border-radius="small"
+				w-scale="1"
+			>
 				<div className="app">
 					<header className="header">
 						<nav className="nav">

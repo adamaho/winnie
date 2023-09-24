@@ -4,12 +4,12 @@
 		background-color: var(--w-button-background-color);
 		border: 1px solid;
 		border-color: var(--w-button-border-color);
-		border-radius: var(--w-button-border-radius, var(--w-theme-border-radius));
+		border-radius: var(--w-border-radius-2);
 		color: var(--w-button-color);
 		display: inline-flex;
 		font-family: inherit;
 		font-size: var(--w-button-font-size);
-		height: calc(var(--w-button-height) * var(--w-theme-scale));
+		height: calc(var(--w-button-height) * var(--w-scale));
 		gap: var(--w-space-2);
 		justify-content: center;
 		padding-inline: var(--w-button-padding-inline);
