@@ -1,5 +1,5 @@
 @layer base {
-	:root {
+	:where([w-theme]) {
 		--w-font-size-1: calc(12px * var(--w-scale, 1));
 		--w-font-size-2: calc(14px * var(--w-scale, 1));
 		--w-font-size-3: calc(16px * var(--w-scale, 1));

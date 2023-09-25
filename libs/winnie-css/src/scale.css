@@ -1,23 +1,31 @@
+:where(html) {
+	:where([w-scale="90"]) {
+		--w-scale: var(--w-scale-90);
+	}
+
+	:where([w-scale="95"]) {
+		--w-scale: var(--w-scale-95);
+	}
+
+	:where([w-scale="100"]) {
+		--w-scale: var(--w-scale-100);
+	}
+
+	:where([w-scale="105"]) {
+		--w-scale: var(--w-scale-105);
+	}
+
+	:where([w-scale="110"]) {
+		--w-scale: var(--w-scale-110);
+	}
+}
+
 @layer base {
-	:where(html) {
-		:where([w-scale="0.90"]) {
-			--w-scale: 0.9;
-		}
-
-		:where([w-scale="0.95"]) {
-			--w-scale: 0.95;
-		}
-
-		:where([w-scale="1"]) {
-			--w-scale: 1;
-		}
-
-		:where([w-scale="1.05"]) {
-			--w-scale: 1.05;
-		}
-
-		:where([w-scale="1.1"]) {
-			--w-scale: 1.1;
-		}
+	:where([w-theme]) {
+		--w-scale-90: 0.9;
+		--w-scale-95: 0.95;
+		--w-scale-100: 1;
+		--w-scale-105: 1.05;
+		--w-scale-110: 1.1;
 	}
 }

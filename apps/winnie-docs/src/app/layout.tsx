@@ -25,9 +25,10 @@ export default function RootLayout({
 		<html lang="en" className="light">
 			<body
 				className={inter.className}
+				w-theme=""
 				w-accent-color="purple"
-				w-border-radius="small"
-				w-scale="1"
+				w-radius-scale="small"
+				w-scale="110"
 			>
 				<div className="app">
 					<header className="header">

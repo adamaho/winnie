@@ -72,7 +72,7 @@ const Button = forwardRef<ButtonElement, PropsWithChildren<ButtonProps>>(
 			children,
 			color,
 			displayAsChild,
-			radius,
+			radius = "medium",
 			size = "medium",
 			variant = "solid",
 			...rest
@@ -88,7 +88,7 @@ const Button = forwardRef<ButtonElement, PropsWithChildren<ButtonProps>>(
 				ref={ref}
 				w-button=""
 				w-accent-color={color === "accent" ? "" : color}
-				w-border-radius={radius}
+				w-button-radius={radius}
 				w-button-size={size}
 				w-button-variant={variant}
 			>

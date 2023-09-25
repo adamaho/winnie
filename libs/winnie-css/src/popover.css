@@ -13,7 +13,7 @@
 	[w-popover-content] {
 		box-shadow: var(--w-shadow-2);
 		border: var(--w-border-width-1) solid var(--w-color-grey-a5);
-		border-radius: var(--w-theme-border-radius);
+		border-radius: var(--w-border-radius-2);
 		color: var(--w-color-grey-11);
 		transform-origin: var(--radix-popover-content-transform-origin);
 	}

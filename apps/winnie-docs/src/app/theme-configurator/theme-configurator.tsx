@@ -36,6 +36,8 @@ export function ThemeConfigurator() {
 			</PopoverTrigger>
 			<PopoverContent
 				align="end"
+				w-theme=""
+				w-radius-scale="medium"
 				className="tc-content"
 				w-display="flex"
 				w-flex-direction="column"

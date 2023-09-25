@@ -1,5 +1,5 @@
 @layer base {
-	:root {
+	:where([w-theme]) {
 		--w-space-1: calc(4px * var(--w-scale, 1));
 		--w-space-2: calc(8px * var(--w-scale, 1));
 		--w-space-3: calc(12px * var(--w-scale, 1));

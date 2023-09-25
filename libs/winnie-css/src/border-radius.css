@@ -1,25 +1,27 @@
-@layer base {
-	:where([w-border-radius="none"]) {
+:where(html) {
+	:where([w-radius-scale="none"]) {
 		--w-radius-scale: 0;
 	}
 
-	:where([w-border-radius="small"]) {
+	:where([w-radius-scale="small"]) {
 		--w-radius-scale: 0.5;
 	}
 
-	:where([w-border-radius="medium"]) {
+	:where([w-radius-scale="medium"]) {
 		--w-radius-scale: 1;
 	}
 
-	:where([w-border-radius="large"]) {
+	:where([w-radius-scale="large"]) {
 		--w-radius-scale: 2;
 	}
 
-	:where([w-border-radius="round"]) {
+	:where([w-radius-scale="round"]) {
 		--w-radius-scale: 9999;
 	}
+}
 
-	:where(html) {
+@layer base {
+	:where([w-theme]) {
 		--w-border-radius-1: calc(
 			3px * var(--w-scale, 1) * var(--w-radius-scale, 1)
 		);

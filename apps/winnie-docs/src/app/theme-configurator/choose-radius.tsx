@@ -6,7 +6,7 @@ import { Text } from "winnie-react/text";
 
 import "./choose-radius.css";
 
-const RADIUS_ATTR = "w-border-radius";
+const RADIUS_ATTR = "w-radius-scale";
 
 const radii = ["none", "small", "medium", "large", "round"] as const;
 type Radius = (typeof radii)[number];

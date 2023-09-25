@@ -1,5 +1,5 @@
 @layer base {
-	:root {
+	:where([w-theme]) {
 		--w-line-height-1: calc(16px * var(--w-scale, 1));
 		--w-line-height-2: calc(20px * var(--w-scale, 1));
 		--w-line-height-3: calc(24px * var(--w-scale, 1));

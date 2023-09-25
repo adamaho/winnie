@@ -4,7 +4,7 @@
 		background-color: var(--w-button-background-color);
 		border: 1px solid;
 		border-color: var(--w-button-border-color);
-		border-radius: var(--w-border-radius-2);
+		border-radius: var(--w-button-border-radius);
 		color: var(--w-button-color);
 		display: inline-flex;
 		font-family: inherit;
