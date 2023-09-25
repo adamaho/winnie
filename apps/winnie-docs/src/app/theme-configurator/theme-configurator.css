@@ -7,7 +7,7 @@
 		background-color: var(--w-color-grey-a2);
 		border: var(--w-border-width-1) solid var(--w-color-grey-a4);
 		border-radius: var(--w-border-radius-2);
-		height: 24px;
+		height: 30px;
 		padding: var(--w-tc-padding);
 		padding-right: var(--w-space-2);
 		text-transform: capitalize;

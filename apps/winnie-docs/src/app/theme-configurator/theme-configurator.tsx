@@ -5,6 +5,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
 import { ChooseAccentColor } from "./choose-accent-color";
 import { ChooseAppearance } from "./choose-appearance";
 import { ChooseRadius } from "./choose-radius";
+import { ChooseScale } from "./choose-scale";
 
 import "./theme-configurator.css";
 
@@ -36,9 +37,10 @@ export function ThemeConfigurator() {
 			</PopoverTrigger>
 			<PopoverContent
 				align="end"
+				className="tc-content"
 				w-theme=""
 				w-radius-scale="medium"
-				className="tc-content"
+				w-scale="100"
 				w-display="flex"
 				w-flex-direction="column"
 				w-gap="5"
@@ -53,16 +55,7 @@ export function ThemeConfigurator() {
 				<ChooseAccentColor />
 				<ChooseAppearance />
 				<ChooseRadius />
-				<div w-display="flex" w-flex-direction="column" w-gap="1">
-					<Text contrast="high" size="1" weight="medium">
-						Scale
-					</Text>
-					<div className="tc-grid">
-						{[1, 2, 3, 4, 5].map((i) => {
-							return <div className="tc-grid-item" key={i} />;
-						})}
-					</div>
-				</div>
+				<ChooseScale />
 			</PopoverContent>
 		</Popover>
 	);

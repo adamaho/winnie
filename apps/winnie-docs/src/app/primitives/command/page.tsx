@@ -10,7 +10,7 @@ import {
 
 export default function Page() {
 	return (
-		<div className="width-50">
+		<div>
 			<Command label="Command Menu" size="medium">
 				<CommandInput
 					attributes={{ placeholder: "Type a command or search..." }}
@@ -31,7 +31,7 @@ export default function Page() {
 									clipRule="evenodd"
 								></path>
 							</svg>
-							<span>Calendar</span>
+							Calendar
 						</CommandItem>
 						<CommandItem value="search emoji">
 							<svg
@@ -46,7 +46,7 @@ export default function Page() {
 									clipRule="evenodd"
 								></path>
 							</svg>
-							<span>Search Emoji</span>
+							Search Emoji
 						</CommandItem>
 						<CommandItem value="launch">
 							<svg
@@ -63,7 +63,7 @@ export default function Page() {
 									clipRule="evenodd"
 								></path>
 							</svg>
-							<span>Launch</span>
+							Launch
 						</CommandItem>
 					</CommandGroup>
 					<CommandSeparator />
@@ -83,7 +83,7 @@ export default function Page() {
 									clipRule="evenodd"
 								></path>
 							</svg>
-							<span>Profile</span>
+							Profile
 						</CommandItem>
 						<CommandItem value="mail">
 							<svg
@@ -100,7 +100,7 @@ export default function Page() {
 									clipRule="evenodd"
 								></path>
 							</svg>
-							<span>Mail</span>
+							Mail
 						</CommandItem>
 						<CommandItem value="settings">
 							<svg
@@ -117,7 +117,7 @@ export default function Page() {
 									clipRule="evenodd"
 								></path>
 							</svg>
-							<span>Settings</span>
+							Settings
 						</CommandItem>
 					</CommandGroup>
 				</CommandList>

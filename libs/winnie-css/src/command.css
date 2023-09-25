@@ -55,7 +55,8 @@
 
 				[w-command-item] {
 					align-items: center;
-					border-radius: var(--w-theme-border-radius);
+					border-radius: var(--w-border-radius-2);
+					color: var(--w-color-grey-11);
 					cursor: default;
 					display: flex;
 					font-size: var(--w-command-font-size);
