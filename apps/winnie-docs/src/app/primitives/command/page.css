@@ -1,0 +1,23 @@
+.command-demo {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+}
+
+.command-demo-container {
+	background-color: var(--w-color-grey-2);
+	border: var(--w-border-width-1) solid var(--w-color-grey-6);
+	border-radius: var(--w-border-radius-4);
+	box-shadow: var(--w-shadow-3);
+	max-width: 500px;
+	width: 100%;
+
+	.command-demo-empty {
+		display: flex;
+		justify-content: center;
+		padding: var(--w-space-2);
+		width: 100%;
+	}
+}

@@ -22,13 +22,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className="light">
+		<html lang="en">
 			<body
-				className={inter.className}
+				className={`${inter.className} dark`}
 				w-theme=""
 				w-accent-color="purple"
-				w-radius-scale="small"
-				w-scale="110"
+				w-radius-scale="medium"
+				w-scale="100"
 			>
 				<div className="app">
 					<header className="header">
