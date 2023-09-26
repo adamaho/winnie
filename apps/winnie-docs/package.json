@@ -5,8 +5,12 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "next lint && pnpm lint:css",
+    "lint": "pnpm lint:ts && pnpm lint:css",
+    "lint:fix": "pnpm lint:ts:fix && pnpm lint:css:fix",
+    "lint:ts": "next lint && pnpm lint:css",
+    "lint:ts:fix": "next lint && pnpm lint:css --fix",
     "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:css:fix": "stylelint \"src/**/*.css\" --fix",
     "start": "next start"
   },
   "devDependencies": {

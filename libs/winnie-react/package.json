@@ -33,6 +33,7 @@
     "dev": "tsc --noEmit --watch",
     "clean": "rm -rf node_modules",
     "lint":  "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:fix":  "eslint \"src/**/*.{ts,tsx}\" --fix",
     "tsc": "tsc"
   },
   "devDependencies": {

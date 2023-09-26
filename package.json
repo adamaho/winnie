@@ -7,6 +7,7 @@
     "dev": "turbo dev",
     "clean": "turbo clean && rm -rf node_modules",
     "lint": "turbo lint --continue",
+    "lint:fix": "turbo lint:fix --continue",
     "format": "prettier --write \"**/*.{ts,tsx,css}\""
   },
   "keywords": [],

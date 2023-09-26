@@ -6,7 +6,8 @@
   "sideEffects": false,
   "scripts": {
     "clean": "rm -rf node_modules",
-    "lint": "stylelint \"src/**/*.css\""
+    "lint": "stylelint \"src/**/*.css\"",
+    "lint:fix": "stylelint \"src/**/*.css\" --fix"
   },
   "exports": {
     ".": "./src/index.css"
