@@ -9,7 +9,7 @@
 .command-demo-container {
 	background-color: var(--w-color-grey-2);
 	border: var(--w-border-width-1) solid var(--w-color-grey-6);
-	border-radius: min(var(--w-border-radius-4), 20px);
+	border-radius: min(var(--w-border-radius-2), 20px);
 	box-shadow: var(--w-shadow-3);
 	max-width: 500px;
 	width: 100%;

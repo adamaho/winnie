@@ -4,15 +4,15 @@
 	}
 
 	:where([w-radius-scale="small"]) {
-		--w-radius-scale: 0.5;
+		--w-radius-scale: 0.75;
 	}
 
 	:where([w-radius-scale="medium"]) {
-		--w-radius-scale: 1;
+		--w-radius-scale: 1.2;
 	}
 
 	:where([w-radius-scale="large"]) {
-		--w-radius-scale: 2;
+		--w-radius-scale: 1.8;
 	}
 
 	:where([w-radius-scale="round"]) {
