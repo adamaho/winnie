@@ -6,12 +6,13 @@
   "sideEffects": false,
   "scripts": {
     "clean": "rm -rf node_modules",
-    "build": "lightningcss --targets '>= 0.25%' --bundle --minify ./src/index.css -o ./dist/index.css"
+    "lint": "stylelint \"src/**/*.css\""
   },
   "exports": {
     ".": "./src/index.css"
   },
   "devDependencies": {
-    "lightningcss-cli": "^1.22.0"
+    "stylelint": "^15.10.3",
+    "stylelint-config-winnie": "workspace:*"
   }
 }

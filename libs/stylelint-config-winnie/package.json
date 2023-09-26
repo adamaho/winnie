@@ -1,0 +1,18 @@
+{
+  "name": "stylelint-config-winnie",
+  "version": "0.0.1",
+  "description": "shared styleling config for css projects",
+  "exports": {
+    ".": "./css.js"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules"
+  },
+  "keywords": [],
+  "author": "Adam Aho",
+  "license": "ISC",
+  "dependencies": {
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-winnie",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "shared eslint config for typescript projects",
   "exports": {
     "./react": "./react.js", 
     "./next": "./next.js" 

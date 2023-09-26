@@ -2,7 +2,7 @@
 	:root {
 		/* mono */
 		--w-color-white: #ffffff;
-		--w-color-white-a1: hsla(0, 0%, 0%, 0);
+		--w-color-white-a1: hsla(0 0% 0% 0);
 		--w-color-white-a2: hsla(0, 0%, 100%, 0.013);
 		--w-color-white-a3: hsla(0, 0%, 100%, 0.069);
 		--w-color-white-a4: hsla(0, 0%, 100%, 0.104);
