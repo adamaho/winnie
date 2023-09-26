@@ -4,6 +4,7 @@
 			background-color: var(--w-color-white);
 		}
 	}
+
 	:where(.dark) {
 		[w-popover-content] {
 			background-color: var(--w-color-grey-2);

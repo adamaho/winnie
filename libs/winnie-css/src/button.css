@@ -20,13 +20,13 @@
 		white-space: nowrap;
 		will-change: transform;
 
+		&:where(:active, [data-state="open"]) {
+			--w-button-scale: 0.97;
+		}
+
 		&:focus-visible {
 			outline: 2px solid;
 			outline-color: var(--w-button-outline-color);
-		}
-
-		&:where(:active, [data-state="open"]) {
-			--w-button-scale: 0.97;
 		}
 
 		&[w-button-radius="none"] {
@@ -111,7 +111,8 @@
 			--w-button-border-color: transparent;
 			--w-button-color: var(--w-accent-9-contrast);
 			--w-button-outline-color: var(--w-accent-7);
-			border-width: 0px;
+
+			border-width: 0;
 			outline-offset: 2px;
 
 			&:where(:hover:not(:disabled), [data-state="open"]) {
@@ -122,12 +123,6 @@
 				--w-button-background-color: var(--w-color-grey-a3);
 				--w-button-color: var(--w-color-grey-9);
 
-				cursor: not-allowed;
-			}
-
-			&:where(:disabled, &[aria-disabled="true"]) {
-				--w-button-background-color: var(--w-color-grey-a3);
-				--w-button-color: var(--w-color-grey-9);
 				cursor: not-allowed;
 			}
 
@@ -153,6 +148,7 @@
 			&:where(:disabled, &[aria-disabled="true"]) {
 				--w-button-background-color: var(--w-color-grey-a3);
 				--w-button-color: var(--w-color-grey-9);
+
 				cursor: not-allowed;
 			}
 		}
@@ -174,6 +170,7 @@
 			&:where(:disabled, &[aria-disabled="true"]) {
 				--w-button-background-color: var(--w-color-grey-a3);
 				--w-button-color: var(--w-color-grey-9);
+
 				cursor: not-allowed;
 			}
 		}
