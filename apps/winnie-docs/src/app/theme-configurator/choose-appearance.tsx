@@ -44,11 +44,11 @@ const appearanceIcons = {
 
 export function ChooseAppearance() {
 	const [appearance, setAppearance] = useState(() => {
-		const html = document.querySelector("html");
+		const body = document.querySelector("body");
 
 		let appearance = "light";
 		for (const a of appearances ?? []) {
-			if (html?.classList.contains(a)) {
+			if (body?.classList.contains(a)) {
 				appearance = a;
 				break;
 			}
@@ -75,9 +75,9 @@ export function ChooseAppearance() {
 								value={a}
 								onChange={(e) =>
 									setAppearance((prev) => {
-										const html = document.querySelector("html");
-										html?.classList.remove(prev);
-										html?.classList.add(e.target.value);
+										const body = document.querySelector("body");
+										body?.classList.remove(prev);
+										body?.classList.add(e.target.value);
 										return e.target.value;
 									})
 								}
