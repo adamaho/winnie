@@ -37,16 +37,12 @@ export function ThemeConfigurator() {
 			</PopoverTrigger>
 			<PopoverContent
 				align="end"
-				className="tc-content"
+				className="tc-content flex flex-column p-4 gap-5"
 				w-theme=""
 				w-radius-scale="medium"
 				w-scale="100"
-				w-display="flex"
-				w-flex-direction="column"
-				w-gap="5"
-				w-p="4"
 			>
-				<div w-display="flex" w-flex-direction="column" w-gap="1">
+				<div className="flex flex-column gap-1">
 					<Text contrast="high" size="2" weight="medium">
 						Customize Theme
 					</Text>

@@ -26,7 +26,7 @@ export function ChooseAccentColor() {
 	});
 
 	return (
-		<div w-display="flex" w-flex-direction="column" w-gap="2">
+		<div className="flex flex-column gap-2">
 			<Text contrast="high" size="1" weight="medium">
 				Accent Color
 			</Text>
@@ -35,13 +35,9 @@ export function ChooseAccentColor() {
 					return (
 						<label
 							htmlFor={c}
-							className="tc-chiclet cas-grid-item"
+							className="flex flex-row items-center gap-2 tc-chiclet cas-grid-item"
 							key={c}
 							w-accent-color={c}
-							w-align-items="center"
-							w-display="flex"
-							w-flex-direction="row"
-							w-gap="2"
 						>
 							<input
 								type="radio"

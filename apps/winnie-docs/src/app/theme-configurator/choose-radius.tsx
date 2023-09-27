@@ -19,7 +19,7 @@ export function ChooseRadius() {
 	});
 
 	return (
-		<div w-display="flex" w-flex-direction="column" w-gap="2">
+		<div className="flex flex-column gap-2">
 			<Text contrast="high" size="1" weight="medium">
 				Corner Radius
 			</Text>
