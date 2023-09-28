@@ -64,8 +64,8 @@
 					padding: var(--w-command-space);
 
 					&[data-selected="true"] {
-						background-color: var(--w-accent-a4);
-						color: var(--w-color-grey-12);
+						background-color: var(--w-accent-9);
+						color: var(--w-accent-9-contrast);
 					}
 
 					& > svg {

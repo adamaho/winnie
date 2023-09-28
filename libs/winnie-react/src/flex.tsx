@@ -26,7 +26,14 @@ type FlexProps = {
 	 *
 	 * @default undefined
 	 */
-	attributes?: FlexElementAttributes;
+	attributes?: Omit<FlexElementAttributes, "className">;
+
+	/**
+	 * component className
+	 *
+	 * @default undefined;
+	 */
+	className?: string;
 
 	/**
 	 * stacking direction of the flex items

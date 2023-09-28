@@ -1,11 +1,12 @@
 import { Button } from "winnie-react/button";
+import { Flex } from "winnie-react/flex";
 
 export default function Page() {
 	return (
-		<div className="flex items-center gap-3 h-full w-full justify-center">
+		<Flex align="center" className="h-full w-full" justify="center" gap="4">
 			<Button>Button</Button>
 			<Button variant="soft">Button</Button>
 			<Button variant="ghost">Button</Button>
-		</div>
+		</Flex>
 	);
 }

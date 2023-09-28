@@ -1,9 +1,10 @@
 import { Button } from "winnie-react/button";
+import { Flex } from "winnie-react/flex";
 import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
 
 export default function Page() {
 	return (
-		<div className="flex items-center justify-center w-full h-full">
+		<Flex align="center" className="h-full w-full" justify="center" gap="4">
 			<Popover>
 				<PopoverTrigger displayAsChild>
 					<Button variant="ghost">Open</Button>
@@ -12,6 +13,6 @@ export default function Page() {
 					TODO: add some sort of example here
 				</PopoverContent>
 			</Popover>
-		</div>
+		</Flex>
 	);
 }

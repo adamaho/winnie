@@ -1,8 +1,15 @@
+import { Flex } from "winnie-react/flex";
 import { Text } from "winnie-react/text";
 
 export default function Page() {
 	return (
-		<div className="flex flex-column items-center justify-center w-full h-full">
+		<Flex
+			align="center"
+			className="h-full w-full"
+			direction="column"
+			justify="center"
+			gap="4"
+		>
 			<Text weight="light">The quick brown fox jumps over the lazy dog</Text>
 			<Text weight="normal" align="center">
 				The quick brown fox jumps over the lazy dog
@@ -14,6 +21,6 @@ export default function Page() {
 			<Text weight="extra-bold">
 				The quick brown fox jumps over the lazy dog
 			</Text>
-		</div>
+		</Flex>
 	);
 }

@@ -7,12 +7,13 @@ import {
 	CommandList,
 	CommandSeparator,
 } from "winnie-react/command";
+import { Flex } from "winnie-react/flex";
 
 import "./page.css";
 
 export default function Page() {
 	return (
-		<div className="command-demo">
+		<Flex align="center" className="h-full w-full" justify="center" gap="4">
 			<div className="command-demo-container">
 				<Command label="Command Menu" size="medium">
 					<CommandInput
@@ -128,6 +129,6 @@ export default function Page() {
 					</CommandList>
 				</Command>
 			</div>
-		</div>
+		</Flex>
 	);
 }
