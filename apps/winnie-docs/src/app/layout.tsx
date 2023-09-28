@@ -32,20 +32,20 @@ export default function RootLayout({
 			>
 				<div className="app">
 					<header className="header">
-						<nav className="nav">
-							<Button displayAsChild color="grey" variant="ghost">
+						<nav className="nav" w-accent-color="grey">
+							<Button displayAsChild variant="ghost">
 								<Link href="/primitives/button">Button</Link>
 							</Button>
-							<Button displayAsChild color="grey" variant="ghost">
+							<Button displayAsChild variant="ghost">
 								<Link href="/primitives/command">Command</Link>
 							</Button>
-							<Button displayAsChild color="grey" variant="ghost">
+							<Button displayAsChild variant="ghost">
 								<Link href="/primitives/heading">Heading</Link>
 							</Button>
-							<Button displayAsChild color="grey" variant="ghost">
+							<Button displayAsChild variant="ghost">
 								<Link href="/primitives/popover">Popover</Link>
 							</Button>
-							<Button displayAsChild color="grey" variant="ghost">
+							<Button displayAsChild variant="ghost">
 								<Link href="/primitives/text">Text</Link>
 							</Button>
 						</nav>

@@ -1,11 +1,8 @@
 import { Heading } from "winnie-react/heading";
 
-import "./page.css";
-
 export default function Page() {
 	return (
-		<div className="stack">
-			<Heading>The Quick Brown Fox</Heading>
+		<div className="flex flex-column items-center justify-center w-full h-full">
 			<Heading>The Quick Brown Fox</Heading>
 		</div>
 	);

@@ -1,10 +1,8 @@
 import { Text } from "winnie-react/text";
 
-import "./page.css";
-
 export default function Page() {
 	return (
-		<div className="stack">
+		<div className="flex flex-column items-center justify-center w-full h-full">
 			<Text weight="light">The quick brown fox jumps over the lazy dog</Text>
 			<Text weight="normal" align="center">
 				The quick brown fox jumps over the lazy dog
