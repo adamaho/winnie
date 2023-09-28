@@ -1,0 +1,12 @@
+.flex-demo {
+	aspect-ratio: 16 / 9;
+	height: 300px;
+}
+
+.flex-demo-item {
+	aspect-ratio: 1;
+	border: var(--w-border-width-1) solid var(--w-accent-9);
+	border-radius: var(--w-border-radius-2);
+	background-color: var(--w-accent-a6);
+	height: 60px;
+}

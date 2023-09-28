@@ -1,21 +1,19 @@
 import { Flex } from "winnie-react/flex";
 
+import "./page.css";
+
 export default function Page() {
 	return (
 		<Flex align="center" justify="center" className="w-full h-full">
 			<Flex
 				align="center"
-				direction="column"
 				justify="center"
 				gap="4"
-				attributes={{
-					style: { height: 300, width: 500, background: "lightpink" },
-				}}
+				className="flex-demo background-polka"
 			>
-				<div style={{ height: 40, width: 40, background: "red" }} />
-				<div style={{ height: 40, width: 40, background: "orange" }} />
-				<div style={{ height: 40, width: 40, background: "yellow" }} />
-				<div style={{ height: 40, width: 40, background: "green" }} />
+				{[1, 2, 3, 4, 5].map((i) => {
+					return <div key={i} className="flex-demo-item" />;
+				})}
 			</Flex>
 		</Flex>
 	);

@@ -31,3 +31,15 @@
 	display: flex;
 	grid-area: main;
 }
+
+.background-polka {
+	opacity: 0.8;
+	background-image: radial-gradient(
+		var(--w-color-grey-7) 1px,
+		var(--w-color-grey-a1) 1px
+	);
+	background-size: 19px 19px;
+	border: var(--w-border-width-1) solid var(--w-color-grey-5);
+	border-radius: var(--w-border-radius-2);
+	padding: var(--w-space-6);
+}

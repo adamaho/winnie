@@ -40,6 +40,9 @@ export default function RootLayout({
 								<Link href="/primitives/command">Command</Link>
 							</Button>
 							<Button displayAsChild variant="ghost">
+								<Link href="/primitives/flex">Flex</Link>
+							</Button>
+							<Button displayAsChild variant="ghost">
 								<Link href="/primitives/heading">Heading</Link>
 							</Button>
 							<Button displayAsChild variant="ghost">
