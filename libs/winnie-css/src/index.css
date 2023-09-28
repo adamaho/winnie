@@ -5,6 +5,7 @@
 @import "color.css";
 @import "font-size.css";
 @import "font-weight.css";
+@import "gap.css";
 @import "letter-spacing.css";
 @import "line-height.css";
 @import "scale.css";
@@ -19,6 +20,7 @@
 /* components */
 @import "button.css";
 @import "command.css";
+@import "flex.css";
 @import "popover.css";
 
 /* utilities */

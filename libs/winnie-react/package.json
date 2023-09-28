@@ -16,6 +16,10 @@
       "import": "./src/command.tsx",
       "types": "./src/command.tsx"
     },
+    "./flex": {
+      "import": "./src/flex.tsx",
+      "types": "./src/flex.tsx"
+    },
     "./heading": {
       "import": "./src/heading.tsx",
       "types": "./src/heading.tsx"

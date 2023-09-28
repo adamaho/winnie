@@ -1,0 +1,41 @@
+@layer base {
+	[w-gap="0"] {
+		gap: 0;
+	}
+
+	[w-gap="1"] {
+		gap: var(--w-space-1);
+	}
+
+	[w-gap="2"] {
+		gap: var(--w-space-2);
+	}
+
+	[w-gap="3"] {
+		gap: var(--w-space-3);
+	}
+
+	[w-gap="4"] {
+		gap: var(--w-space-4);
+	}
+
+	[w-gap="5"] {
+		gap: var(--w-space-5);
+	}
+
+	[w-gap="6"] {
+		gap: var(--w-space-6);
+	}
+
+	[w-gap="7"] {
+		gap: var(--w-space-7);
+	}
+
+	[w-gap="8"] {
+		gap: var(--w-space-8);
+	}
+
+	[w-gap="9"] {
+		gap: var(--w-space-9);
+	}
+}

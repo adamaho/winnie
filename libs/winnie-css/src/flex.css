@@ -1,0 +1,111 @@
+@layer components {
+	[w-flex] {
+		align-items: var(--w-flex-align);
+		display: var(--w-flex-display, flex);
+		flex-flow: var(--w-flex-direction, row) var(--w-flex-wrap, nowrap);
+		justify-content: var(--w-flex-justify);
+
+		/************************************************
+    	* align 
+    	*************************************************/
+
+		&[w-flex-align="start"] {
+			--w-flex-align: flex-start;
+		}
+
+		&[w-flex-align="center"] {
+			--w-flex-align: center;
+		}
+
+		&[w-flex-align="end"] {
+			--w-flex-align: flex-end;
+		}
+
+		&[w-flex-align="baseline"] {
+			--w-flex-align: baseline;
+		}
+
+		&[w-flex-align="stretch"] {
+			--w-flex-align: stretch;
+		}
+
+		/************************************************
+    	* display 
+    	*************************************************/
+
+		&[w-flex-display="flex"] {
+			--w-flex-display: flex;
+		}
+
+		&[w-flex-display="inline-flex"] {
+			--w-flex-display: inline-flex;
+		}
+
+		&[w-flex-display="none"] {
+			--w-flex-display: none;
+		}
+
+		/************************************************
+    	* flex-direction 
+    	*************************************************/
+
+		&[w-flex-direction="row"] {
+			--w-flex-direction: row;
+		}
+
+		&[w-flex-direction="row-reverse"] {
+			--w-flex-direction: row-reverse;
+		}
+
+		&[w-flex-direction="column"] {
+			--w-flex-direction: column;
+		}
+
+		&[w-flex-direction="column-reverse"] {
+			--w-flex-direction: column-reverse;
+		}
+
+		/************************************************
+    	* justify-content 
+    	*************************************************/
+
+		&[w-flex-justify="start"] {
+			--w-flex-justify: flex-start;
+		}
+
+		&[w-flex-justify="center"] {
+			--w-flex-justify: center;
+		}
+
+		&[w-flex-justify="end"] {
+			--w-flex-justify: flex-end;
+		}
+
+		&[w-flex-justify="between"] {
+			--w-flex-justify: space-between;
+		}
+
+		&[w-flex-justify="around"] {
+			--w-flex-justify: space-around;
+		}
+
+		&[w-flex-justify="evenly"] {
+			--w-flex-justify: space-evenly;
+		}
+
+		/************************************************
+    	* wrap 
+    	*************************************************/
+		&[w-flex-wrap="wrap"] {
+			--w-flex-wrap: wrap;
+		}
+
+		&[w-flex-wrap="nowrap"] {
+			--w-flex-wrap: nowrap;
+		}
+
+		&[w-flex-wrap="wrap-reverse"] {
+			--w-flex-wrap: wrap-reverse;
+		}
+	}
+}
