@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { Flex } from "winnie-react/flex";
 import { Text } from "winnie-react/text";
 
 import "./choose-scale.css";
@@ -19,7 +20,7 @@ export function ChooseScale() {
 	});
 
 	return (
-		<div className="flex flex-column gap-2">
+		<Flex>
 			<Text contrast="high" size="1" weight="medium">
 				Scale
 			</Text>
@@ -48,6 +49,6 @@ export function ChooseScale() {
 					);
 				})}
 			</div>
-		</div>
+		</Flex>
 	);
 }

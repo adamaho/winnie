@@ -2,7 +2,7 @@ import { Flex } from "winnie-react/flex";
 
 export default function Page() {
 	return (
-		<div className="flex flex-column items-center justify-center w-full h-full">
+		<Flex align="center" justify="center" className="w-full h-full">
 			<Flex
 				align="center"
 				direction="column"
@@ -17,6 +17,6 @@ export default function Page() {
 				<div style={{ height: 40, width: 40, background: "yellow" }} />
 				<div style={{ height: 40, width: 40, background: "green" }} />
 			</Flex>
-		</div>
+		</Flex>
 	);
 }

@@ -1,5 +1,6 @@
 import { Text } from "winnie-react";
 import { Button } from "winnie-react/button";
+import { Flex } from "winnie-react/flex";
 import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
 
 import { ChooseAccentColor } from "./choose-accent-color";
@@ -37,21 +38,24 @@ export function ThemeConfigurator() {
 			</PopoverTrigger>
 			<PopoverContent
 				align="end"
-				className="tc-content flex flex-column p-4 gap-5"
+				className="tc-content p-4"
+				displayAsChild
 				w-theme=""
 				w-radius-scale="medium"
 				w-scale="100"
 			>
-				<div className="flex flex-column gap-1">
-					<Text contrast="high" size="2" weight="medium">
-						Customize Theme
-					</Text>
-					<Text size="1">Modify the look and feel of your application</Text>
-				</div>
-				<ChooseAccentColor />
-				<ChooseAppearance />
-				<ChooseRadius />
-				<ChooseScale />
+				<Flex direction="column" gap="5">
+					<Flex direction="column" gap="1">
+						<Text contrast="high" size="2" weight="medium">
+							Customize Theme
+						</Text>
+						<Text size="1">Modify the look and feel of your application</Text>
+					</Flex>
+					<ChooseAccentColor />
+					<ChooseAppearance />
+					<ChooseRadius />
+					<ChooseScale />
+				</Flex>
 			</PopoverContent>
 		</Popover>
 	);

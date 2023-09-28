@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { Flex } from "winnie-react/flex";
 import { Text } from "winnie-react/text";
 
 import "./choose-accent-color.css";
@@ -26,42 +27,45 @@ export function ChooseAccentColor() {
 	});
 
 	return (
-		<div className="flex flex-column gap-2">
+		<Flex direction="column" gap="2">
 			<Text contrast="high" size="1" weight="medium">
 				Accent Color
 			</Text>
 			<div className="cas-grid">
 				{colors.map((c) => {
 					return (
-						<label
-							htmlFor={c}
-							className="flex flex-row items-center gap-2 tc-chiclet cas-grid-item"
+						<Flex
+							displayAsChild
+							align="center"
+							gap="2"
 							key={c}
 							w-accent-color={c}
 						>
-							<input
-								type="radio"
-								data-checked={c === color}
-								className="cas-grid-item-input"
-								id={c}
-								name="accent-color"
-								value={c}
-								onChange={(e) =>
-									setColor(() => {
-										const body = document.querySelector("body");
-										const value = e.target.value as Color;
-										body?.setAttribute(ACCENT_COLOR_ATTR, value);
-										return value;
-									})
-								}
-							/>
-							<Text size="1" className="cas-grid-item-text">
-								{c}
-							</Text>
-						</label>
+							<label htmlFor={c} className="tc-chiclet cas-grid-item">
+								<input
+									type="radio"
+									data-checked={c === color}
+									className="cas-grid-item-input"
+									id={c}
+									name="accent-color"
+									value={c}
+									onChange={(e) =>
+										setColor(() => {
+											const body = document.querySelector("body");
+											const value = e.target.value as Color;
+											body?.setAttribute(ACCENT_COLOR_ATTR, value);
+											return value;
+										})
+									}
+								/>
+								<Text size="1" className="cas-grid-item-text">
+									{c}
+								</Text>
+							</label>
+						</Flex>
 					);
 				})}
 			</div>
-		</div>
+		</Flex>
 	);
 }

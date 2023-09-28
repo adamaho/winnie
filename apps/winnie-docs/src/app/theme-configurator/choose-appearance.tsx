@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { Flex } from "winnie-react/flex";
 import { Text } from "winnie-react/text";
 
 import "./choose-appearance.css";
@@ -58,7 +59,7 @@ export function ChooseAppearance() {
 	});
 
 	return (
-		<div className="flex flex-column gap-2">
+		<Flex direction="column" gap="2">
 			<Text contrast="high" size="1" weight="medium">
 				Appearance
 			</Text>
@@ -87,6 +88,6 @@ export function ChooseAppearance() {
 					);
 				})}
 			</div>
-		</div>
+		</Flex>
 	);
 }

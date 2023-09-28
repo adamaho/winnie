@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { Flex } from "winnie-react/flex";
 import { Text } from "winnie-react/text";
 
 import "./choose-radius.css";
@@ -19,7 +20,7 @@ export function ChooseRadius() {
 	});
 
 	return (
-		<div className="flex flex-column gap-2">
+		<Flex direction="column" gap="2">
 			<Text contrast="high" size="1" weight="medium">
 				Corner Radius
 			</Text>
@@ -49,6 +50,6 @@ export function ChooseRadius() {
 					);
 				})}
 			</div>
-		</div>
+		</Flex>
 	);
 }
