@@ -25,6 +25,24 @@ type TextSpanProps = {
 	attributes?: TextSpanElementAttributes;
 };
 
+type TextLabelComponentProps = ComponentPropsWithoutRef<"label">;
+type TextLabelElementAttributes = Omit<TextLabelComponentProps, "children">;
+type TextLabelProps = {
+	/**
+	 * changes the rendered html element
+	 *
+	 * @default "span"
+	 */
+	displayAs?: "label";
+
+	/**
+	 * rendered html attributes
+	 *
+	 * @default undefined
+	 */
+	attributes?: TextLabelElementAttributes;
+};
+
 type TextPComponentProps = ComponentPropsWithoutRef<"p">;
 type TextPElementAttributes = Omit<TextPComponentProps, "children">;
 type TextPProps = {
@@ -115,7 +133,8 @@ type SharedTextProps = {
 	weight?: "light" | "normal" | "medium" | "bold" | "extra-bold";
 };
 
-type TextProps = SharedTextProps & (TextSpanProps | TextPProps | TextDivProps);
+type TextProps = SharedTextProps &
+	(TextSpanProps | TextPProps | TextDivProps | TextLabelProps);
 
 const Text = forwardRef<TextElement, PropsWithChildren<TextProps>>(
 	(

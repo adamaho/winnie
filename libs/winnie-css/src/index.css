@@ -19,6 +19,7 @@
 
 /* components */
 @import "button.css";
+@import "checkbox.css";
 @import "command.css";
 @import "flex.css";
 @import "popover.css";

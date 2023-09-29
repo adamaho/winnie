@@ -37,6 +37,9 @@ export default function RootLayout({
 								<Link href="/primitives/button">Button</Link>
 							</Button>
 							<Button displayAsChild variant="ghost">
+								<Link href="/primitives/checkbox">Checkbox</Link>
+							</Button>
+							<Button displayAsChild variant="ghost">
 								<Link href="/primitives/command">Command</Link>
 							</Button>
 							<Button displayAsChild variant="ghost">
