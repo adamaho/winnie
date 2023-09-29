@@ -3,7 +3,7 @@
 		align-items: center;
 		background-color: var(--w-checkbox-background-color, var(--w-color-grey-2));
 		border: var(--w-border-width-1) solid
-			var(--w-checkbox-border-color, var(--w-color-grey-6));
+			var(--w-checkbox-border-color, var(--w-color-grey-7));
 		border-radius: min(var(--w-border-radius-2), var(--w-border-radius-max));
 		box-sizing: border-box;
 		display: inline-flex;
@@ -15,6 +15,10 @@
 		transition-duration: var(--w-transition-duration-2);
 		transform: scale(var(--w-checkbox-scale, 1));
 		width: var(--w-checkbox-size);
+
+		&:where(:hover) {
+			--w-checkbox-border-color: var(--w-color-grey-8);
+		}
 
 		&:where(:active) {
 			--w-checkbox-scale: 0.97;
@@ -35,15 +39,15 @@
 
 		&[w-checkbox-size="medium"] {
 			--w-border-radius-max: 5px;
-			--w-checkbox-size: 17px;
-			--w-checkbox-indicator-size: 12px;
+			--w-checkbox-size: var(--w-space-4);
+			--w-checkbox-indicator-size: var(--w-space-3);
 			--w-checkbox-indicator-center-margin: 0px;
 		}
 
 		&[w-checkbox-size="small"] {
-			--w-checkbox-size: 14px;
-			--w-checkbox-indicator-size: 12px;
 			--w-border-radius-max: 3px;
+			--w-checkbox-size: var(--w-space-3);
+			--w-checkbox-indicator-size: var(--w-space-2);
 			--w-checkbox-indicator-center-margin: 0px;
 		}
 

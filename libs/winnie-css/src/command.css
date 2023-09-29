@@ -12,7 +12,7 @@
 
 		&[w-command-size="medium"] {
 			--w-command-font-size: var(--w-font-size-2);
-			--w-command-space: var(--w-space-2);
+			--w-command-space: var(--w-space-3);
 		}
 
 		[w-command-input] {
@@ -64,7 +64,7 @@
 				cursor: default;
 				display: flex;
 				font-size: var(--w-command-font-size);
-				gap: calc(var(--w-command-space) * 1.5);
+				gap: calc(var(--w-command-space) * 1.1);
 				padding: var(--w-command-space);
 
 				&[data-selected="true"] {

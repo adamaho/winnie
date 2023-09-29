@@ -31,7 +31,6 @@ function Avatar(props: AvatarProps) {
 			justify="center"
 			w-theme=""
 			w-radius-scale="round"
-			w-scale="90"
 			w-accent-color={colors[getRandomColorIndex()]}
 			className="avatar"
 		>
@@ -48,7 +47,7 @@ export default function Page() {
 		<Flex align="center" className="h-full w-full" justify="center" gap="4">
 			<Flex align="center" justify="center" className="background-polka">
 				<div className="multiselect-list-demo-container">
-					<MultiSelectList>
+					<MultiSelectList size="medium">
 						<MultiSelectListInput attributes={{ placeholder: "Assignee" }} />
 						<MultiSelectListContent>
 							{[

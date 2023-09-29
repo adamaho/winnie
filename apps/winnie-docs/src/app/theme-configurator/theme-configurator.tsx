@@ -37,7 +37,7 @@ export function ThemeConfigurator() {
 				</Button>
 			</PopoverTrigger>
 			<PopoverContent
-				align="end"
+				align="start"
 				className="tc-content p-4"
 				displayAsChild
 				w-theme=""
