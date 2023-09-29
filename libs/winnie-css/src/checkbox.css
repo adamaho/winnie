@@ -1,18 +1,20 @@
 @layer components {
 	[w-checkbox] {
 		align-items: center;
-		aspect-ratio: 1;
 		background-color: var(--w-checkbox-background-color, var(--w-color-grey-2));
 		border: var(--w-border-width-1) solid
 			var(--w-checkbox-border-color, var(--w-color-grey-6));
 		border-radius: min(var(--w-border-radius-2), var(--w-border-radius-max));
-		display: flex;
+		box-sizing: border-box;
+		display: inline-flex;
 		justify-content: center;
-		height: var(--w-checkbox-height);
+		height: var(--w-checkbox-size);
+		position: relative;
 		transition-property: transform;
 		transition-timing-function: var(--w-transition-function-1);
 		transition-duration: var(--w-transition-duration-2);
 		transform: scale(var(--w-checkbox-scale, 1));
+		width: var(--w-checkbox-size);
 
 		&:where(:active) {
 			--w-checkbox-scale: 0.97;
@@ -33,14 +35,14 @@
 
 		&[w-checkbox-size="medium"] {
 			--w-border-radius-max: 5px;
-			--w-checkbox-height: 17px;
-			--w-checkbox-indicator-height: 13px;
-			--w-checkbox-indicator-center-margin: -1px;
+			--w-checkbox-size: 17px;
+			--w-checkbox-indicator-size: 12px;
+			--w-checkbox-indicator-center-margin: 0px;
 		}
 
 		&[w-checkbox-size="small"] {
-			--w-checkbox-height: 14px;
-			--w-checkbox-indicator-height: 12px;
+			--w-checkbox-size: 14px;
+			--w-checkbox-indicator-size: 12px;
 			--w-border-radius-max: 3px;
 			--w-checkbox-indicator-center-margin: 0px;
 		}
@@ -51,11 +53,12 @@
 		}
 
 		[w-checkbox-indicator] {
-			aspect-ratio: 1;
 			color: var(--w-checkbox-indicator-color, var(--w-accent-9-contrast));
-			height: var(--w-checkbox-indicator-height);
+			height: var(--w-checkbox-indicator-size);
 			margin-bottom: var(--w-checkbox-indicator-center-margin);
 			stroke-width: 3;
+			transform: rotate(-8deg);
+			width: var(--w-checkbox-indicator-size);
 		}
 	}
 }

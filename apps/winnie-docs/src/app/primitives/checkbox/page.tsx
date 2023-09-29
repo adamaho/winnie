@@ -8,10 +8,10 @@ export default function Page() {
 			<Flex
 				align="center"
 				justify="center"
-				gap="3"
+				gap="2"
 				className="background-polka"
 			>
-				<Checkbox attributes={{ id: "terms" }} disabled />
+				<Checkbox attributes={{ id: "terms" }} />
 				<Text displayAs="label" attributes={{ htmlFor: "terms" }}>
 					This is some text
 				</Text>

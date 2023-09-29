@@ -108,7 +108,7 @@ const Checkbox = forwardRef<CheckboxElement, CheckboxProps>(
 				w-checkbox=""
 				w-checkbox-size={size}
 			>
-				<RadixCheckboxIndicator>
+				<RadixCheckboxIndicator asChild>
 					<Check w-checkbox-indicator="" />
 				</RadixCheckboxIndicator>
 			</RadixCheckbox>

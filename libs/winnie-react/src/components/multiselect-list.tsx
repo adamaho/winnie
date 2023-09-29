@@ -12,6 +12,7 @@ import { createContext } from "@radix-ui/react-context";
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 
 import { commandScore } from "../utils";
+import { Checkbox } from "./checkbox";
 import {
 	Command,
 	CommandEmpty,
@@ -153,10 +154,7 @@ const MultiSelectListItem = forwardRef<
 >(({ children, value, onSelect, ...rest }, ref) => {
 	return (
 		<CommandItem {...rest} value={value} onSelect={onSelect} ref={ref}>
-			<input
-				type="checkbox"
-				style={{ height: 16, width: 16, background: "blue" }}
-			/>
+			<Checkbox />
 			{children}
 		</CommandItem>
 	);
