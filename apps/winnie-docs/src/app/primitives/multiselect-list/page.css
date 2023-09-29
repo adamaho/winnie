@@ -12,3 +12,14 @@
 		width: 100%;
 	}
 }
+
+.avatar {
+	aspect-ratio: 1;
+	border-radius: var(--w-border-radius-1);
+	background-color: var(--w-accent-9);
+	color: var(--w-accent-9-contrast);
+	height: var(--w-space-5);
+	padding: var(--w-space-1);
+	font-size: var(--w-font-size-1);
+	text-transform: uppercase;
+}

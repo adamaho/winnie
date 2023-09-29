@@ -8,3 +8,5 @@ An personal design system with an alternate approach to managing components and 
 - OpenProps - css variables 
 
 ## TODO
+
+- make checkbox respect scaling

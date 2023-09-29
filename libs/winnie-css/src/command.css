@@ -64,7 +64,7 @@
 				cursor: default;
 				display: flex;
 				font-size: var(--w-command-font-size);
-				gap: var(--w-command-space);
+				gap: calc(var(--w-command-space) * 1.5);
 				padding: var(--w-command-space);
 
 				&[data-selected="true"] {

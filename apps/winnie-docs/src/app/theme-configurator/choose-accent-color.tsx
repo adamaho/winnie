@@ -2,23 +2,14 @@
 
 import { useState } from "react";
 
+import { colors, type Color } from "~/constants";
+
 import { Flex } from "winnie-react/flex";
 import { Text } from "winnie-react/text";
 
 import "./choose-accent-color.css";
 
 const ACCENT_COLOR_ATTR = "w-accent-color";
-const colors = [
-	"red",
-	"orange",
-	"yellow",
-	"green",
-	"blue",
-	"purple",
-	"pink",
-	"grey",
-] as const;
-type Color = (typeof colors)[number];
 
 export function ChooseAccentColor() {
 	const [color, setColor] = useState<Color>(() => {
