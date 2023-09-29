@@ -20,7 +20,7 @@ export function ChooseScale() {
 	});
 
 	return (
-		<Flex>
+		<Flex direction="column" gap="1">
 			<Text contrast="high" size="1" weight="medium">
 				Scale
 			</Text>

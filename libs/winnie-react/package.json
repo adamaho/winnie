@@ -24,6 +24,10 @@
       "import": "./src/components/heading.tsx",
       "types": "./src/components/heading.tsx"
     },
+    "./multiselect-list": {
+      "import": "./src/components/multiselect-list.tsx",
+      "types": "./src/components/multiselect-list.tsx"
+    },
     "./popover": {
       "import": "./src/components/popover.tsx",
       "types": "./src/components/popover.tsx"

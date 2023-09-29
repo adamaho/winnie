@@ -12,11 +12,13 @@
 		height: calc(var(--w-button-height) * var(--w-scale));
 		gap: var(--w-space-2);
 		justify-content: center;
+		line-height: 1;
 		padding-inline: var(--w-button-padding-inline);
 		transition-property: transform;
 		transition-timing-function: var(--w-transition-function-1);
 		transition-duration: var(--w-transition-duration-2);
 		transform: scale(var(--w-button-scale, 1));
+		user-select: none;
 		white-space: nowrap;
 		will-change: transform;
 

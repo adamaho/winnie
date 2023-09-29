@@ -1,8 +1,9 @@
+"use client";
+
 import {
 	Dispatch,
 	forwardRef,
 	SetStateAction,
-	type ComponentPropsWithoutRef,
 	type ElementRef,
 	type PropsWithChildren,
 } from "react";
@@ -10,7 +11,21 @@ import {
 import { createContext } from "@radix-ui/react-context";
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 
-import { Command, CommandInput, type CommandInputProps } from "./command";
+import { commandScore } from "../utils";
+import {
+	Command,
+	CommandEmpty,
+	CommandGroup,
+	CommandInput,
+	CommandItem,
+	CommandList,
+	type CommandEmptyProps,
+	type CommandGroupProps,
+	type CommandInputProps,
+	type CommandItemProps,
+	type CommandListProps,
+	type CommandProps,
+} from "./command";
 
 const MULTISELECT_LIST_CONTEXT = "MultiSelectList";
 
@@ -31,7 +46,7 @@ const [MultiSelectListProvider] = createContext<MultiSelectListContextProps>(
 /* -------------------------------------------------------------------------------------
  *MultiSelectList
  * -------------------------------------------------------------------------------------*/
-type MultiSelectListComponentProps = ComponentPropsWithoutRef<typeof Command>;
+type MultiSelectListComponentProps = CommandProps;
 
 type MultiSelectListElement = ElementRef<typeof Command>;
 type MultiSelectListProps = Omit<
@@ -75,7 +90,17 @@ const MultiSelectList = forwardRef<
 
 	return (
 		<MultiSelectListProvider value={_value} setValue={_setValue}>
-			<Command {...rest} ref={ref}>
+			<Command
+				{...rest}
+				ref={ref}
+				filter={(value, search) => {
+					if (value.includes("checked")) {
+						return 1;
+					}
+
+					return commandScore(value, search);
+				}}
+			>
 				{children}
 			</Command>
 		</MultiSelectListProvider>
@@ -92,5 +117,67 @@ type MultiSelectListInputProps = CommandInputProps;
 const MultiSelectListInput = CommandInput;
 MultiSelectListInput.displayName = "MultiSelectListInput";
 
-export { MultiSelectList, MultiSelectListInput };
-export type { MultiSelectListProps, MultiSelectListInputProps };
+/* -------------------------------------------------------------------------------------
+ * MultiSelectListContent
+ * -------------------------------------------------------------------------------------*/
+type MultiSelectListContentProps = CommandListProps;
+
+const MultiSelectListContent = CommandList;
+MultiSelectListContent.displayName = "MultiSelectListContent";
+
+/* -------------------------------------------------------------------------------------
+ * MultiSelectListEmpty
+ * -------------------------------------------------------------------------------------*/
+type MultiSelectListEmptyProps = CommandEmptyProps;
+
+const MultiSelectListEmpty = CommandEmpty;
+MultiSelectListEmpty.displayName = "MultiSelectListEmpty";
+
+/* -------------------------------------------------------------------------------------
+ * MultiSelectListGroup
+ * -------------------------------------------------------------------------------------*/
+type MultiSelectListGroupProps = CommandGroupProps;
+
+const MultiSelectListGroup = CommandGroup;
+MultiSelectListGroup.displayName = "MultiSelectListGroup";
+
+/* -------------------------------------------------------------------------------------
+ * MultiSelectListItem
+ * -------------------------------------------------------------------------------------*/
+type MultiSelectListItemProps = CommandItemProps;
+type MultiSelectListItemElement = ElementRef<typeof CommandItem>;
+
+const MultiSelectListItem = forwardRef<
+	MultiSelectListItemElement,
+	PropsWithChildren<MultiSelectListItemProps>
+>(({ children, value, onSelect, ...rest }, ref) => {
+	return (
+		<CommandItem {...rest} value={value} onSelect={onSelect} ref={ref}>
+			<input
+				type="checkbox"
+				style={{ height: 16, width: 16, background: "blue" }}
+			/>
+			{children}
+		</CommandItem>
+	);
+});
+
+MultiSelectListItem.displayName = "MultiSelectListItem";
+
+export {
+	MultiSelectList,
+	MultiSelectListInput,
+	MultiSelectListContent,
+	MultiSelectListEmpty,
+	MultiSelectListGroup,
+	MultiSelectListItem,
+};
+
+export type {
+	MultiSelectListProps,
+	MultiSelectListInputProps,
+	MultiSelectListContentProps,
+	MultiSelectListEmptyProps,
+	MultiSelectListGroupProps,
+	MultiSelectListItemProps,
+};
