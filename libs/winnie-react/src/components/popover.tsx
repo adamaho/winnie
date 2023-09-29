@@ -493,3 +493,12 @@ export {
 	PopoverArrow,
 	PopoverClose,
 };
+
+export type {
+	PopoverProps,
+	PopoverTriggerProps,
+	PopoverAnchorProps,
+	PopoverContentProps,
+	PopoverArrowProps,
+	PopoverCloseProps,
+};

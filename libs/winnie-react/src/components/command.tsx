@@ -76,6 +76,13 @@ type CommandProps = {
 	onValueChange?: CommandComponentProps["onValueChange"];
 
 	/**
+	 * if true, filtering of items on search will be managed by command
+	 *
+	 * @default true
+	 */
+	shouldFilter?: CommandComponentProps["shouldFilter"];
+
+	/**
 	 * modifes the overall size of command including spacing and font sizes
 	 *
 	 * @default "medium"
@@ -482,4 +489,15 @@ export {
 	CommandItem,
 	CommandSeparator,
 	CommandLoading,
+};
+
+export type {
+	CommandProps,
+	CommandInputProps,
+	CommandListProps,
+	CommandEmptyProps,
+	CommandGroupProps,
+	CommandItemProps,
+	CommandSeparatorProps,
+	CommandLoadingProps,
 };

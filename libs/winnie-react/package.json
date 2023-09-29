@@ -9,35 +9,35 @@
       "types": "./src/index.ts"
     },
     "./button": {
-      "import": "./src/button.tsx",
-      "types": "./src/button.tsx"
+      "import": "./src/components/button.tsx",
+      "types": "./src/components/button.tsx"
     },
     "./command": {
-      "import": "./src/command.tsx",
-      "types": "./src/command.tsx"
+      "import": "./src/components/command.tsx",
+      "types": "./src/components/command.tsx"
     },
     "./flex": {
-      "import": "./src/flex.tsx",
-      "types": "./src/flex.tsx"
+      "import": "./src/components/flex.tsx",
+      "types": "./src/components/flex.tsx"
     },
     "./heading": {
-      "import": "./src/heading.tsx",
-      "types": "./src/heading.tsx"
+      "import": "./src/components/heading.tsx",
+      "types": "./src/components/heading.tsx"
     },
     "./popover": {
-      "import": "./src/popover.tsx",
-      "types": "./src/popover.tsx"
+      "import": "./src/components/popover.tsx",
+      "types": "./src/components/popover.tsx"
     },
     "./text": {
-      "import": "./src/text.tsx",
-      "types": "./src/text.tsx"
+      "import": "./src/components/text.tsx",
+      "types": "./src/components/text.tsx"
     }
   },
   "scripts": {
     "dev": "tsc --noEmit --watch",
     "clean": "rm -rf node_modules",
-    "lint":  "eslint \"src/**/*.{ts,tsx}\"",
-    "lint:fix":  "eslint \"src/**/*.{ts,tsx}\" --fix",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "tsc": "tsc"
   },
   "devDependencies": {
@@ -50,8 +50,10 @@
     "react": "18.2.0"
   },
   "dependencies": {
+    "@radix-ui/react-context": "^1.0.1",
     "@radix-ui/react-popover": "^1.0.6",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-use-controllable-state": "^1.0.1",
     "cmdk": "^0.2.0"
   }
 }

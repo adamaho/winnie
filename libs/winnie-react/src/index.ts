@@ -1,8 +1,6 @@
-import { Button } from "./button";
-import { Command } from "./command";
-import { Flex } from "./flex";
-import { Heading } from "./heading";
-import { Popover } from "./popover";
-import { Text } from "./text";
-
-export { Button, Command, Flex, Heading, Popover, Text };
+export * from "./components/button";
+export * from "./components/command";
+export * from "./components/flex";
+export * from "./components/heading";
+export * from "./components/popover";
+export * from "./components/text";

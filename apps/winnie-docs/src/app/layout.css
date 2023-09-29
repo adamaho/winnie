@@ -40,6 +40,6 @@
 	);
 	background-size: 19px 19px;
 	border: var(--w-border-width-1) solid var(--w-color-grey-5);
-	border-radius: var(--w-border-radius-2);
+	border-radius: min(var(--w-border-radius-2), 20px);
 	padding: var(--w-space-6);
 }

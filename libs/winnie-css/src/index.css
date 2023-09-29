@@ -1,18 +1,18 @@
 /* base */
-@import "animation.css";
-@import "border-radius.css";
-@import "border-width.css";
-@import "color.css";
-@import "font-size.css";
-@import "font-weight.css";
-@import "gap.css";
-@import "letter-spacing.css";
-@import "line-height.css";
-@import "scale.css";
-@import "shadow.css";
-@import "space.css";
-@import "transition.css";
-@import "typography.css";
+@import "base/animation.css";
+@import "base/border-radius.css";
+@import "base/border-width.css";
+@import "base/color.css";
+@import "base/font-size.css";
+@import "base/font-weight.css";
+@import "base/gap.css";
+@import "base/letter-spacing.css";
+@import "base/line-height.css";
+@import "base/scale.css";
+@import "base/shadow.css";
+@import "base/space.css";
+@import "base/transition.css";
+@import "base/typography.css";
 
 /* reset */
 @import "reset.css";
