@@ -2,7 +2,7 @@
 
 @layer base {
 	/* prettier-ignore */
-	:where(html) {
+	:where([w-theme]) {
 		--w-shadow-1: 0 1px 2px -1px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 9%));
 		--w-shadow-2: 
 			0 3px 5px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 3%)),
@@ -50,6 +50,6 @@
 }
 
 :is(.dark) {
-	--w-shadow-color: 358deg 75% 47.1%;
-	--w-shadow-strength: 50%;
+	--w-shadow-color: 220 40% 2%;
+	--w-shadow-strength: 25%;
 }
