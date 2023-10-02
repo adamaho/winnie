@@ -145,7 +145,15 @@ MultiSelectListGroup.displayName = "MultiSelectListGroup";
 /* -------------------------------------------------------------------------------------
  * MultiSelectListItem
  * -------------------------------------------------------------------------------------*/
-type MultiSelectListItemProps = CommandItemProps;
+
+type MultiSelectListItemProps = CommandItemProps & {
+	/**
+	 * event handler that is called when the checkbox is selected
+	 *
+	 * @default undefined
+	 */
+	onCheckboxSelect?: (value: string, checked: boolean) => void;
+};
 type MultiSelectListItemElement = ElementRef<typeof CommandItem>;
 
 const MultiSelectListItem = forwardRef<

@@ -47,7 +47,7 @@ export default function Page() {
 		<Flex align="center" className="h-full w-full" justify="center" gap="4">
 			<Flex align="center" justify="center" className="background-polka">
 				<div className="multiselect-list-demo-container">
-					<MultiSelectList size="medium">
+					<MultiSelectList size="small">
 						<MultiSelectListInput attributes={{ placeholder: "Assignee" }} />
 						<MultiSelectListContent>
 							{[

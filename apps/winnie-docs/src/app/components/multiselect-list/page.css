@@ -14,7 +14,7 @@
 
 	[w-command] {
 		&[w-command-size="medium"] {
-			--avatar-height: 22px;
+			--avatar-height: 20px;
 			--avatar-font-size: calc(var(--w-font-size-1) * 0.9);
 		}
 

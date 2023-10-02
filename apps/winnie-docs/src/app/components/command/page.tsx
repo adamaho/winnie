@@ -16,7 +16,7 @@ export default function Page() {
 		<Flex align="center" className="h-full w-full" justify="center" gap="4">
 			<Flex align="center" justify="center" className="background-polka">
 				<div className="command-demo-container">
-					<Command label="Command Menu" size="medium">
+					<Command label="Command Menu" size="small">
 						<CommandInput
 							attributes={{ placeholder: "Type a command or search..." }}
 						/>

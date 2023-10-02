@@ -3,8 +3,6 @@
 @layer base {
 	/* prettier-ignore */
 	:where(html) {
-		--w-shadow-color: 220 3% 15%;
-		--w-shadow-strength: 1%;
 		--w-shadow-1: 0 1px 2px -1px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 9%));
 		--w-shadow-2: 
 			0 3px 5px -2px hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 3%)),
@@ -44,9 +42,14 @@
 		--w-inner-shadow-4: inset 0 2px 14px 0 hsl(var(--w-shadow-color) / calc(var(--w-shadow-strength) + 9%));
 
 	}
+}
 
-	:is(.dark) {
-		--w-shadow-color: 220 40% 2%;
-		--w-shadow-strength: 25%;
-	}
+:is(.light) {
+	--w-shadow-color: 220 3% 15%;
+	--w-shadow-strength: 1%;
+}
+
+:is(.dark) {
+	--w-shadow-color: 358deg 75% 47.1%;
+	--w-shadow-strength: 50%;
 }

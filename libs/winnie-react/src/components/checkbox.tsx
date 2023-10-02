@@ -69,6 +69,11 @@ type CheckboxProps = {
 	displayAsChild?: boolean;
 
 	/**
+	 * event handler that is called when the checkbox state is changed
+	 */
+	onCheckedChange?: CheckboxComponentProps["onCheckedChange"];
+
+	/**
 	 * the underlying name of the element
 	 *
 	 * @default undefined
