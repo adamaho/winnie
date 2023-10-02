@@ -12,21 +12,21 @@ import { Avatar } from "./avatar";
 
 export function Demo() {
 	return (
-		<MultiSelectList size="small" onValueChange={(v) => console.log(v)}>
+		<MultiSelectList size="small">
 			<MultiSelectListInput attributes={{ placeholder: "Assignee" }} />
 			<MultiSelectListContent>
 				<MultiSelectListEmpty>No Assignees found</MultiSelectListEmpty>
 				{[
-					"George Springer",
-					"Bo Bichette",
-					"Valdimir Guererro Jr.",
-					"Brandon Belt",
-					"Dalton Varsho",
+					["George Springer", "purple"],
+					["Bo Bichette", "yellow"],
+					["Valdimir Guererro Jr.", "green"],
+					["Brandon Belt", "blue"],
+					["Dalton Varsho", "pink"],
 				].map((n) => {
 					return (
-						<MultiSelectListItem value={n.toLocaleLowerCase()} key={n}>
-							<Avatar name={n} />
-							{n}
+						<MultiSelectListItem value={n[0].toLocaleLowerCase()} key={n[0]}>
+							<Avatar name={n[0]} color={n[1]} />
+							{n[0]}
 						</MultiSelectListItem>
 					);
 				})}

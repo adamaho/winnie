@@ -12,7 +12,6 @@ import {
 import { createContext } from "@radix-ui/react-context";
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 
-import { commandScore } from "../utils";
 import { Checkbox } from "./checkbox";
 import {
 	Command,
@@ -99,27 +98,9 @@ const MultiSelectList = forwardRef<
 		onChange: onValueChange,
 	});
 
-	/**
-	 * handles filtering and sorting the list based on the checked items
-	 */
-	const handleFilter = useCallback(
-		(value: string, search: string) => {
-			if (search === "") {
-				if ((_value ?? []).includes(value)) {
-					return 1;
-				}
-
-				return 0;
-			}
-
-			return commandScore(value, search);
-		},
-		[_value],
-	);
-
 	return (
 		<MultiSelectListProvider value={_value} setValue={_setValue}>
-			<Command {...rest} ref={ref} filter={handleFilter}>
+			<Command {...rest} ref={ref}>
 				{children}
 			</Command>
 		</MultiSelectListProvider>
@@ -189,6 +170,9 @@ const MultiSelectListItem = forwardRef<
 		MULTISELECT_LIST_CONTEXT,
 	);
 
+	/**
+	 * determines if the item is selected
+	 */
 	const checked = contextValue?.includes(value);
 
 	/**
