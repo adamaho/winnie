@@ -20,6 +20,10 @@
       "import": "./src/components/command.tsx",
       "types": "./src/components/command.tsx"
     },
+    "./command-multi": {
+      "import": "./src/components/command-multi.tsx",
+      "types": "./src/components/command-multi.tsx"
+    },
     "./flex": {
       "import": "./src/components/flex.tsx",
       "types": "./src/components/flex.tsx"

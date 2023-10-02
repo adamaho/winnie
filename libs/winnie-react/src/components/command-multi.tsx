@@ -31,7 +31,7 @@ import {
 /* -------------------------------------------------------------------------------------
  * constants
  * -------------------------------------------------------------------------------------*/
-const MULTISELECT_LIST_CONTEXT = "MultiSelectList";
+const COMMAND_MULTI = "MultiSelectList";
 
 /* -------------------------------------------------------------------------------------
  * utilities
@@ -43,24 +43,24 @@ function parseItemValue(value: string): [string, boolean] {
 }
 
 /* -------------------------------------------------------------------------------------
- * MultiSelectListContext
+ * CommandMultiContext
  * -------------------------------------------------------------------------------------*/
-type MultiSelectListContextProps = {
+type CommandMultiContextProps = {
 	setValue: Dispatch<SetStateAction<string[] | undefined>>;
 	value?: string[];
 };
 
-const [MultiSelectListProvider, useMultiSelectListContext] =
-	createContext<MultiSelectListContextProps>(MULTISELECT_LIST_CONTEXT);
+const [CommandMultiProvider, useCommandMultiContext] =
+	createContext<CommandMultiContextProps>(COMMAND_MULTI);
 
 /* -------------------------------------------------------------------------------------
- *MultiSelectList
+ * CommandMulti
  * -------------------------------------------------------------------------------------*/
-type MultiSelectListComponentProps = CommandProps;
+type CommandMultiComponentProps = CommandProps;
 
-type MultiSelectListElement = ElementRef<typeof Command>;
-type MultiSelectListProps = Omit<
-	MultiSelectListComponentProps,
+type CommandMultiElement = ElementRef<typeof Command>;
+type CommandMultiProps = Omit<
+	CommandMultiComponentProps,
 	"value" | "onValueChange"
 > & {
 	/**
@@ -85,9 +85,9 @@ type MultiSelectListProps = Omit<
 	value?: string[];
 };
 
-const MultiSelectList = forwardRef<
-	MultiSelectListElement,
-	PropsWithChildren<MultiSelectListProps>
+const CommandMulti = forwardRef<
+	CommandMultiElement,
+	PropsWithChildren<CommandMultiProps>
 >(({ children, defaultValue, onValueChange, value, ...rest }, ref) => {
 	/**
 	 * tracks the controllable value
@@ -99,53 +99,53 @@ const MultiSelectList = forwardRef<
 	});
 
 	return (
-		<MultiSelectListProvider value={_value} setValue={_setValue}>
+		<CommandMultiProvider value={_value} setValue={_setValue}>
 			<Command {...rest} ref={ref}>
 				{children}
 			</Command>
-		</MultiSelectListProvider>
+		</CommandMultiProvider>
 	);
 });
 
-MultiSelectList.displayName = "MultiSelectList";
+CommandMulti.displayName = "CommandMulti";
 
 /* -------------------------------------------------------------------------------------
- * MultiSelectListInput
+ * CommandMultiInput
  * -------------------------------------------------------------------------------------*/
-type MultiSelectListInputProps = CommandInputProps;
+type CommandMultiInputProps = CommandInputProps;
 
-const MultiSelectListInput = CommandInput;
-MultiSelectListInput.displayName = "MultiSelectListInput";
+const CommandMultiInput = CommandInput;
+CommandMultiInput.displayName = "CommandMultiInput";
 
 /* -------------------------------------------------------------------------------------
- * MultiSelectListContent
+ * CommandMultiContent
  * -------------------------------------------------------------------------------------*/
-type MultiSelectListContentProps = CommandListProps;
+type CommandMultiContentProps = CommandListProps;
 
-const MultiSelectListContent = CommandList;
-MultiSelectListContent.displayName = "MultiSelectListContent";
+const CommandMultiContent = CommandList;
+CommandMultiContent.displayName = "CommandMultiContent";
 
 /* -------------------------------------------------------------------------------------
- * MultiSelectListEmpty
+ * CommandMultiEmpty
  * -------------------------------------------------------------------------------------*/
-type MultiSelectListEmptyProps = CommandEmptyProps;
+type CommandMultiEmptyProps = CommandEmptyProps;
 
-const MultiSelectListEmpty = CommandEmpty;
-MultiSelectListEmpty.displayName = "MultiSelectListEmpty";
+const CommandMultiEmpty = CommandEmpty;
+CommandMultiEmpty.displayName = "CommandMultiEmpty";
 
 /* -------------------------------------------------------------------------------------
- * MultiSelectListGroup
+ * CommandMultiGroup
  * -------------------------------------------------------------------------------------*/
-type MultiSelectListGroupProps = CommandGroupProps;
+type CommandMultiGroupProps = CommandGroupProps;
 
-const MultiSelectListGroup = CommandGroup;
-MultiSelectListGroup.displayName = "MultiSelectListGroup";
+const CommandMultiGroup = CommandGroup;
+CommandMultiGroup.displayName = "CommandMultiGroup";
 
 /* -------------------------------------------------------------------------------------
- * MultiSelectListItem
+ * CommandMultiItem
  * -------------------------------------------------------------------------------------*/
-type MultiSelectListItemElement = ElementRef<typeof CommandItem>;
-type MultiSelectListItemProps = Omit<CommandItemProps, "value"> & {
+type CommandMultiItemElement = ElementRef<typeof CommandItem>;
+type CommandMultiItemProps = Omit<CommandItemProps, "value"> & {
 	/**
 	 * event handler that is called when the checkbox is selected
 	 *
@@ -159,16 +159,15 @@ type MultiSelectListItemProps = Omit<CommandItemProps, "value"> & {
 	value: string;
 };
 
-const MultiSelectListItem = forwardRef<
-	MultiSelectListItemElement,
-	PropsWithChildren<MultiSelectListItemProps>
+const CommandMultiItem = forwardRef<
+	CommandMultiItemElement,
+	PropsWithChildren<CommandMultiItemProps>
 >(({ children, value, onCheckedChange, onSelect, ...rest }, ref) => {
 	/**
 	 * subscribe to multiselect-list context
 	 */
-	const { value: contextValue, setValue } = useMultiSelectListContext(
-		MULTISELECT_LIST_CONTEXT,
-	);
+	const { value: contextValue, setValue } =
+		useCommandMultiContext(COMMAND_MULTI);
 
 	/**
 	 * determines if the item is selected
@@ -249,22 +248,22 @@ const MultiSelectListItem = forwardRef<
 	);
 });
 
-MultiSelectListItem.displayName = "MultiSelectListItem";
+CommandMultiItem.displayName = "CommandMultiItem";
 
 export {
-	MultiSelectList,
-	MultiSelectListInput,
-	MultiSelectListContent,
-	MultiSelectListEmpty,
-	MultiSelectListGroup,
-	MultiSelectListItem,
+	CommandMulti,
+	CommandMultiInput,
+	CommandMultiContent,
+	CommandMultiEmpty,
+	CommandMultiGroup,
+	CommandMultiItem,
 };
 
 export type {
-	MultiSelectListProps,
-	MultiSelectListInputProps,
-	MultiSelectListContentProps,
-	MultiSelectListEmptyProps,
-	MultiSelectListGroupProps,
-	MultiSelectListItemProps,
+	CommandMultiProps,
+	CommandMultiInputProps,
+	CommandMultiContentProps,
+	CommandMultiEmptyProps,
+	CommandMultiGroupProps,
+	CommandMultiItemProps,
 };
