@@ -3,9 +3,10 @@
 import {
 	Dispatch,
 	forwardRef,
-	SetStateAction,
+	useCallback,
 	type ElementRef,
 	type PropsWithChildren,
+	type SetStateAction,
 } from "react";
 
 import { createContext } from "@radix-ui/react-context";
@@ -28,21 +29,30 @@ import {
 	type CommandProps,
 } from "./command";
 
+/* -------------------------------------------------------------------------------------
+ * constants
+ * -------------------------------------------------------------------------------------*/
 const MULTISELECT_LIST_CONTEXT = "MultiSelectList";
+
+/* -------------------------------------------------------------------------------------
+ * utilities
+ * -------------------------------------------------------------------------------------*/
+function parseItemValue(value: string): [string, boolean] {
+	const regex = new RegExp(/__checked/);
+	const splitValue = value.split(regex);
+	return [splitValue[0], splitValue?.[1] === "__checked"];
+}
 
 /* -------------------------------------------------------------------------------------
  * MultiSelectListContext
  * -------------------------------------------------------------------------------------*/
 type MultiSelectListContextProps = {
-	open?: boolean;
-	setOpen?: Dispatch<SetStateAction<boolean | undefined>>;
-	setValue?: Dispatch<SetStateAction<string[] | undefined>>;
+	setValue: Dispatch<SetStateAction<string[] | undefined>>;
 	value?: string[];
 };
 
-const [MultiSelectListProvider] = createContext<MultiSelectListContextProps>(
-	MULTISELECT_LIST_CONTEXT,
-);
+const [MultiSelectListProvider, useMultiSelectListContext] =
+	createContext<MultiSelectListContextProps>(MULTISELECT_LIST_CONTEXT);
 
 /* -------------------------------------------------------------------------------------
  *MultiSelectList
@@ -89,19 +99,27 @@ const MultiSelectList = forwardRef<
 		onChange: onValueChange,
 	});
 
+	/**
+	 * handles filtering and sorting the list based on the checked items
+	 */
+	const handleFilter = useCallback(
+		(value: string, search: string) => {
+			if (search === "") {
+				if ((_value ?? []).includes(value)) {
+					return 1;
+				}
+
+				return 0;
+			}
+
+			return commandScore(value, search);
+		},
+		[_value],
+	);
+
 	return (
 		<MultiSelectListProvider value={_value} setValue={_setValue}>
-			<Command
-				{...rest}
-				ref={ref}
-				filter={(value, search) => {
-					if (value.includes("checked")) {
-						return 1;
-					}
-
-					return commandScore(value, search);
-				}}
-			>
+			<Command {...rest} ref={ref} filter={handleFilter}>
 				{children}
 			</Command>
 		</MultiSelectListProvider>
@@ -145,24 +163,103 @@ MultiSelectListGroup.displayName = "MultiSelectListGroup";
 /* -------------------------------------------------------------------------------------
  * MultiSelectListItem
  * -------------------------------------------------------------------------------------*/
-
-type MultiSelectListItemProps = CommandItemProps & {
+type MultiSelectListItemElement = ElementRef<typeof CommandItem>;
+type MultiSelectListItemProps = Omit<CommandItemProps, "value"> & {
 	/**
 	 * event handler that is called when the checkbox is selected
 	 *
 	 * @default undefined
 	 */
-	onCheckboxSelect?: (value: string, checked: boolean) => void;
+	onCheckedChange?: (value: string, checked: boolean) => void;
+
+	/**
+	 * value of the item
+	 */
+	value: string;
 };
-type MultiSelectListItemElement = ElementRef<typeof CommandItem>;
 
 const MultiSelectListItem = forwardRef<
 	MultiSelectListItemElement,
 	PropsWithChildren<MultiSelectListItemProps>
->(({ children, value, onSelect, ...rest }, ref) => {
+>(({ children, value, onCheckedChange, onSelect, ...rest }, ref) => {
+	/**
+	 * subscribe to multiselect-list context
+	 */
+	const { value: contextValue, setValue } = useMultiSelectListContext(
+		MULTISELECT_LIST_CONTEXT,
+	);
+
+	const checked = contextValue?.includes(value);
+
+	/**
+	 * handles appending an item to the value list
+	 */
+	const addItem = useCallback(
+		(value: string) => {
+			setValue((v) => {
+				return [...(v ?? []), value];
+			});
+		},
+		[setValue],
+	);
+
+	/**
+	 * handles removing an item from the value list
+	 */
+	const removeItem = useCallback(
+		(value: string) => {
+			const [v] = parseItemValue(value);
+			setValue((items) => {
+				return items?.filter((i) => i !== v);
+			});
+		},
+		[setValue],
+	);
+
+	/**
+	 * handles the onSelect and onCheckboxSelect events
+	 */
+	const handleItemSelect = useCallback(
+		(value: string) => {
+			if (checked) {
+				removeItem(value);
+				return;
+			}
+
+			addItem(value);
+		},
+		[checked],
+	);
+
+	/**
+	 * handles the onSelect event
+	 */
+	const _onSelect = useCallback(
+		(value: string) => {
+			onSelect?.(value);
+			handleItemSelect(value);
+		},
+		[handleItemSelect, onSelect],
+	);
+
+	/**
+	 * handles the onCheckboxSelect event
+	 */
+	const _onCheckboxChange = useCallback(
+		(checked: boolean) => {
+			onCheckedChange?.(value, checked);
+			handleItemSelect(value);
+		},
+		[handleItemSelect, onSelect],
+	);
+
 	return (
-		<CommandItem {...rest} value={value} onSelect={onSelect} ref={ref}>
-			<Checkbox />
+		<CommandItem {...rest} value={value} onSelect={_onSelect} ref={ref}>
+			<Checkbox
+				checked={checked}
+				onCheckedChange={_onCheckboxChange}
+				attributes={{ onClick: (e) => e.stopPropagation() }}
+			/>
 			{children}
 		</CommandItem>
 	);
