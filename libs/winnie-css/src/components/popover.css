@@ -1,21 +1,21 @@
 @layer components {
 	:where(.light) {
 		[w-popover-content] {
-			background-color: var(--w-color-white);
+			background-color: var(--white);
 		}
 	}
 
 	:where(.dark) {
 		[w-popover-content] {
-			background-color: var(--w-color-grey-2);
+			background-color: var(--gray-2);
 		}
 	}
 
 	[w-popover-content] {
 		box-shadow: var(--w-shadow-2);
-		border: var(--w-border-width-1) solid var(--w-color-grey-a5);
+		border: var(--w-border-width-1) solid var(--gray-a5);
 		border-radius: var(--w-border-radius-2);
-		color: var(--w-color-grey-11);
+		color: var(--gray-11);
 		transform-origin: var(--radix-popover-content-transform-origin);
 	}
 }

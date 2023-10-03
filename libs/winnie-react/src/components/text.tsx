@@ -99,7 +99,7 @@ type SharedTextProps = {
 	/**
 	 * modifies the color of the text
 	 *
-	 * @default "grey"
+	 * @default "gray"
 	 */
 	color?:
 		| "red"
@@ -109,7 +109,7 @@ type SharedTextProps = {
 		| "blue"
 		| "purple"
 		| "pink"
-		| "grey";
+		| "gray";
 
 	/**
 	 * modifies the contrast of the text
@@ -144,7 +144,7 @@ const Text = forwardRef<TextElement, PropsWithChildren<TextProps>>(
 			attributes,
 			children,
 			className,
-			color = "grey",
+			color = "gray",
 			contrast = "medium",
 			size = "2",
 			weight = "normal",

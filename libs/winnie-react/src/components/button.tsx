@@ -33,7 +33,7 @@ type ButtonProps = {
 	 *
 	 * @default "accent"
 	 */
-	color?: "accent" | "red" | "grey";
+	color?: "accent" | "red" | "gray";
 
 	/**
 	 * if true, the Button will merge its props and display the child element

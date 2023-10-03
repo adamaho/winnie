@@ -1,9 +1,9 @@
 @layer components {
 	[w-checkbox] {
 		align-items: center;
-		background-color: var(--w-checkbox-background-color, var(--w-color-grey-2));
+		background-color: var(--w-checkbox-background-color, var(--gray-2));
 		border: var(--w-border-width-1) solid
-			var(--w-checkbox-border-color, var(--w-color-grey-7));
+			var(--w-checkbox-border-color, var(--gray-7));
 		border-radius: min(var(--w-border-radius-2), var(--w-border-radius-max));
 		box-sizing: border-box;
 		display: inline-flex;
@@ -17,7 +17,7 @@
 		width: var(--w-checkbox-size);
 
 		&:where(:hover) {
-			--w-checkbox-border-color: var(--w-color-grey-8);
+			--w-checkbox-border-color: var(--gray-8);
 		}
 
 		&:where(:active) {
@@ -30,9 +30,9 @@
 		}
 
 		&:is(:disabled, &[aria-disabled="true"]) {
-			--w-checkbox-background-color: var(--w-color-grey-a3);
-			--w-checkbox-border-color: var(--w-color-grey-7);
-			--w-checkbox-indicator-color: var(--w-color-grey-10);
+			--w-checkbox-background-color: var(--gray-a3);
+			--w-checkbox-border-color: var(--gray-7);
+			--w-checkbox-indicator-color: var(--gray-10);
 
 			cursor: not-allowed;
 		}

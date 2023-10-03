@@ -33,12 +33,9 @@
 
 .background-polka {
 	opacity: 0.8;
-	background-image: radial-gradient(
-		var(--w-color-grey-7) 1px,
-		var(--w-color-grey-a1) 1px
-	);
+	background-image: radial-gradient(var(--gray-7) 1px, var(--gray-a1) 1px);
 	background-size: 19px 19px;
-	border: var(--w-border-width-1) solid var(--w-color-grey-5);
+	border: var(--w-border-width-1) solid var(--gray-5);
 	border-radius: min(var(--w-border-radius-2), 20px);
 	padding: var(--w-space-6);
 }

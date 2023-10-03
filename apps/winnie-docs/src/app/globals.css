@@ -1,6 +1,6 @@
 @import "winnie-css";
 
 body {
-	background-color: var(--w-color-grey-1);
+	background-color: var(--gray-1);
 	height: 100vh;
 }
