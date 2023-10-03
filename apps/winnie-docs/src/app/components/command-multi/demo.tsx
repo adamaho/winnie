@@ -1,21 +1,23 @@
 "use client";
 
 import {
-	MultiSelectList,
-	MultiSelectListContent,
-	MultiSelectListEmpty,
-	MultiSelectListInput,
-	MultiSelectListItem,
-} from "winnie-react/multiselect-list";
+	CommandMulti,
+	CommandMultiContent,
+	CommandMultiEmpty,
+	CommandMultiInput,
+	CommandMultiItem,
+} from "winnie-react/command-multi";
 
 import { Avatar } from "./avatar";
 
 export function Demo() {
 	return (
-		<MultiSelectList size="small">
-			<MultiSelectListInput attributes={{ placeholder: "Assignee" }} />
-			<MultiSelectListContent>
-				<MultiSelectListEmpty>No Assignees found</MultiSelectListEmpty>
+		<CommandMulti size="small">
+			<CommandMultiInput attributes={{ placeholder: "Assignee" }} />
+			<CommandMultiContent>
+				<CommandMultiEmpty className="command-multi-demo-empty">
+					No Assignees found
+				</CommandMultiEmpty>
 				{[
 					["George Springer", "purple"],
 					["Bo Bichette", "yellow"],
@@ -24,13 +26,13 @@ export function Demo() {
 					["Dalton Varsho", "pink"],
 				].map((n) => {
 					return (
-						<MultiSelectListItem value={n[0].toLocaleLowerCase()} key={n[0]}>
+						<CommandMultiItem value={n[0].toLocaleLowerCase()} key={n[0]}>
 							<Avatar name={n[0]} color={n[1]} />
 							{n[0]}
-						</MultiSelectListItem>
+						</CommandMultiItem>
 					);
 				})}
-			</MultiSelectListContent>
-		</MultiSelectList>
+			</CommandMultiContent>
+		</CommandMulti>
 	);
 }

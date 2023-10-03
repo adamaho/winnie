@@ -8,7 +8,7 @@ export default function Page() {
 	return (
 		<Flex align="center" className="h-full w-full" justify="center" gap="4">
 			<Flex align="center" justify="center" className="background-polka">
-				<div className="multiselect-list-demo-container">
+				<div className="command-multi-demo-container">
 					<Demo />
 				</div>
 			</Flex>

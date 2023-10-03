@@ -1,11 +1,11 @@
-.multiselect-list-demo-container {
+.command-multi-demo-container {
 	background-color: var(--w-color-grey-2);
 	border: var(--w-border-width-1) solid var(--w-color-grey-6);
 	border-radius: min(var(--w-border-radius-2), 20px);
 	box-shadow: var(--w-shadow-3);
 	width: 500px;
 
-	.multiselect-list-demo-empty {
+	.command-multi-demo-empty {
 		display: flex;
 		justify-content: center;
 		padding: var(--w-space-2);
