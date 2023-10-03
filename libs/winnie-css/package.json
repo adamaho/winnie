@@ -15,5 +15,8 @@
   "devDependencies": {
     "stylelint": "^15.10.3",
     "stylelint-config-winnie": "workspace:*"
+  },
+  "dependencies": {
+    "@radix-ui/colors": "^3.0.0"
   }
 }

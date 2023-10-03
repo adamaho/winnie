@@ -16,8 +16,8 @@
 		}
 
 		[w-command-input] {
-			border-bottom: var(--w-border-width-1) solid var(--w-color-grey-6);
-			color: var(--w-color-grey-12);
+			border-bottom: var(--w-border-width-1) solid var(--gray-6);
+			color: var(--gray-12);
 			font-size: var(--w-command-font-size);
 			font-weight: var(--w-font-weight-normal);
 			padding: calc(var(--w-command-space) + var(--w-space-1))
@@ -25,7 +25,7 @@
 			width: 100%;
 
 			&::placeholder {
-				color: var(--w-color-grey-a10);
+				color: var(--gray-a10);
 			}
 		}
 
@@ -38,11 +38,11 @@
 
 			[w-command-empty] {
 				font-size: var(--w-command-font-size);
-				color: var(--w-color-grey-11);
+				color: var(--gray-11);
 			}
 
 			[w-command-separator] {
-				background-color: var(--w-color-grey-6);
+				background-color: var(--gray-6);
 				margin-block: var(--w-space-1);
 				height: 1px;
 				width: 100%;
@@ -50,7 +50,7 @@
 
 			[w-command-group] {
 				& > div[aria-hidden="true"] {
-					color: var(--w-color-grey-11);
+					color: var(--gray-11);
 					font-size: var(--w-font-size-1);
 					font-weight: var(--w-font-weight-medium);
 					padding: var(--w-command-space);
@@ -60,7 +60,7 @@
 			[w-command-item] {
 				align-items: center;
 				border-radius: var(--w-border-radius-2);
-				color: var(--w-color-grey-12);
+				color: var(--gray-12);
 				cursor: default;
 				display: flex;
 				font-size: var(--w-command-font-size);
@@ -68,13 +68,13 @@
 				padding: var(--w-command-space);
 
 				&[data-selected="true"] {
-					background-color: var(--w-color-grey-4);
-					color: var(--w-color-grey-12);
+					background-color: var(--gray-4);
+					color: var(--gray-12);
 				}
 
 				& > svg {
 					aspect-ratio: 1;
-					color: var(--w-color-grey-11);
+					color: var(--gray-11);
 					height: var(--w-font-size-3);
 				}
 			}

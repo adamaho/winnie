@@ -36,7 +36,7 @@ type HeadingProps = {
 	/**
 	 * modifies the color of the heading
 	 *
-	 * @default "grey"
+	 * @default "gray"
 	 */
 	color?:
 		| "red"
@@ -46,7 +46,7 @@ type HeadingProps = {
 		| "blue"
 		| "purple"
 		| "pink"
-		| "grey";
+		| "gray";
 
 	/**
 	 * modifies the contrast of the heading
@@ -77,7 +77,7 @@ const Heading = forwardRef<HeadingElement, PropsWithChildren<HeadingProps>>(
 			displayAs: Comp = "h1",
 			attributes,
 			children,
-			color = "grey",
+			color = "gray",
 			contrast = "high",
 			size = "7",
 			weight = "bold",

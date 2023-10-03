@@ -4,8 +4,8 @@
 	.tc-chiclet {
 		--w-tc-padding: var(--w-space-1);
 
-		background-color: var(--w-color-grey-2);
-		border: var(--w-border-width-1) solid var(--w-color-grey-a4);
+		background-color: var(--gray-2);
+		border: var(--w-border-width-1) solid var(--gray-a4);
 		border-radius: var(--w-border-radius-2);
 		height: 30px;
 		padding: var(--w-tc-padding);

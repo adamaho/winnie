@@ -21,7 +21,7 @@
 		.cr-grid-item-preview {
 			aspect-ratio: 1;
 			background-color: var(--w-accent-4);
-			border: var(--w-border-width-1) solid var(--w-accent-7);
+			border: var(--w-border-width-1) solid var(--w-accent-8);
 			height: 30px;
 
 			&[data-border-radius="none"] {
@@ -46,7 +46,7 @@
 		}
 
 		&:has(> input[data-checked="true"]) {
-			outline: var(--w-border-width-2) solid var(--w-accent-9);
+			outline: var(--w-border-width-1) solid var(--w-accent-9);
 			border-color: transparent;
 		}
 	}

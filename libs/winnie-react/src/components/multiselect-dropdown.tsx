@@ -1,34 +1,7 @@
 "use client";
 
 /**
- * - Need to figure out how to do a custom sort on mount
- *
- * - Just need to sort the checked items from the non-checked items
- *
- * <MultiSelectDropdown>
- * </Multi
- *
- *
- *
- *
- *
+ * - should filter checked items into a group at the top with a separator on the bottom
+ * - should support a custom trigger to allow for different variations of triggers
+ *    - Like when you want to create a table filter or a multiselectfield of some sort
  */
-
-// function Foo() {
-// 	return (
-// 		<MiultiSelectDropdown>
-// 			<MultiSelectDropdownTrigger>
-// 				<MultiSelectDropdownValue>
-// 					{({ value }) => {
-// 						return <div>{value}</div>;
-// 					}}
-// 				</MultiSelectDropdownValue>
-// 			</MultiSelectDropdownTrigger>
-//       <MultiSelectDropdownContent>
-//           <MultiSelectDropdownGroup>
-//             <MultiSelectDropdownCheckboxItem />
-//           </MultiSelectDropdownGroup>
-//       </MultiSelectDropdownContent>
-// 		</MiultiSelectDropdown>
-// 	);
-// }

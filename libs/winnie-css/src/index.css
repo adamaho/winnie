@@ -18,11 +18,11 @@
 @import "reset.css";
 
 /* components */
-@import "button.css";
-@import "checkbox.css";
-@import "command.css";
-@import "flex.css";
-@import "popover.css";
+@import "components/button.css";
+@import "components/checkbox.css";
+@import "components/command.css";
+@import "components/flex.css";
+@import "components/popover.css";
 
 /* utilities */
 @import "utilities.css";

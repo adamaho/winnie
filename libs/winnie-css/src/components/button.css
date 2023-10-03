@@ -9,6 +9,7 @@
 		display: inline-flex;
 		font-family: inherit;
 		font-size: var(--w-button-font-size);
+		font-weight: var(--w-font-weight-medium);
 		height: calc(var(--w-button-height) * var(--w-scale));
 		gap: var(--w-space-2);
 		justify-content: center;
@@ -122,8 +123,8 @@
 			}
 
 			&:where(:disabled, &[aria-disabled="true"]) {
-				--w-button-background-color: var(--w-color-grey-a3);
-				--w-button-color: var(--w-color-grey-9);
+				--w-button-background-color: var(--gray-a3);
+				--w-button-color: var(--gray-9);
 
 				cursor: not-allowed;
 			}
@@ -148,8 +149,8 @@
 			}
 
 			&:where(:disabled, &[aria-disabled="true"]) {
-				--w-button-background-color: var(--w-color-grey-a3);
-				--w-button-color: var(--w-color-grey-9);
+				--w-button-background-color: var(--gray-a3);
+				--w-button-color: var(--gray-9);
 
 				cursor: not-allowed;
 			}
@@ -170,8 +171,8 @@
 			}
 
 			&:where(:disabled, &[aria-disabled="true"]) {
-				--w-button-background-color: var(--w-color-grey-a3);
-				--w-button-color: var(--w-color-grey-9);
+				--w-button-background-color: var(--gray-a3);
+				--w-button-color: var(--gray-9);
 
 				cursor: not-allowed;
 			}
