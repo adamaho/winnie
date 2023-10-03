@@ -11,6 +11,7 @@ import {
 
 import { createContext } from "@radix-ui/react-context";
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
+import { CommandSeparator } from "cmdk";
 
 import { Checkbox } from "./checkbox";
 import {
@@ -142,10 +143,26 @@ const CommandMultiGroup = CommandGroup;
 CommandMultiGroup.displayName = "CommandMultiGroup";
 
 /* -------------------------------------------------------------------------------------
+ * CommandMultiSeparator
+ * -------------------------------------------------------------------------------------*/
+type CommandMultiSeparatorProps = CommandGroupProps;
+
+const CommandMultiSeparator = CommandSeparator;
+CommandMultiSeparator.displayName = " CommandMultiSeparator";
+
+/* -------------------------------------------------------------------------------------
  * CommandMultiItem
  * -------------------------------------------------------------------------------------*/
-type CommandMultiItemElement = ElementRef<typeof CommandItem>;
-type CommandMultiItemProps = Omit<CommandItemProps, "value"> & {
+type CommandMultiItemProps = CommandItemProps;
+
+const CommandMultiItem = CommandItem;
+CommandMultiItem.displayName = "CommandMultiItem";
+
+/* -------------------------------------------------------------------------------------
+ * CommandMultiCheckboxItem
+ * -------------------------------------------------------------------------------------*/
+type CommandMultiCheckboxItemElement = ElementRef<typeof CommandItem>;
+type CommandMultiCheckboxItemProps = Omit<CommandItemProps, "value"> & {
 	/**
 	 * event handler that is called when the checkbox is selected
 	 *
@@ -159,9 +176,9 @@ type CommandMultiItemProps = Omit<CommandItemProps, "value"> & {
 	value: string;
 };
 
-const CommandMultiItem = forwardRef<
-	CommandMultiItemElement,
-	PropsWithChildren<CommandMultiItemProps>
+const CommandMultiCheckboxItem = forwardRef<
+	CommandMultiCheckboxItemElement,
+	PropsWithChildren<CommandMultiCheckboxItemProps>
 >(({ children, value, onCheckedChange, onSelect, ...rest }, ref) => {
 	/**
 	 * subscribe to multiselect-list context
@@ -248,7 +265,7 @@ const CommandMultiItem = forwardRef<
 	);
 });
 
-CommandMultiItem.displayName = "CommandMultiItem";
+CommandMultiCheckboxItem.displayName = "CommandMultiCheckboxItem";
 
 export {
 	CommandMulti,
@@ -256,7 +273,9 @@ export {
 	CommandMultiContent,
 	CommandMultiEmpty,
 	CommandMultiGroup,
+	CommandMultiSeparator,
 	CommandMultiItem,
+	CommandMultiCheckboxItem,
 };
 
 export type {
@@ -265,5 +284,7 @@ export type {
 	CommandMultiContentProps,
 	CommandMultiEmptyProps,
 	CommandMultiGroupProps,
+	CommandMultiSeparatorProps,
 	CommandMultiItemProps,
+	CommandMultiCheckboxItemProps,
 };

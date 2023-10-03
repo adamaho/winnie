@@ -12,7 +12,7 @@ import { Avatar } from "./avatar";
 
 export function Demo() {
 	return (
-		<CommandMulti size="small">
+		<CommandMulti size="medium">
 			<CommandMultiInput attributes={{ placeholder: "Assignee" }} />
 			<CommandMultiContent>
 				<CommandMultiEmpty className="command-multi-demo-empty">
