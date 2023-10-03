@@ -254,7 +254,13 @@ const CommandMultiCheckboxItem = forwardRef<
 	);
 
 	return (
-		<CommandItem {...rest} value={value} onSelect={_onSelect} ref={ref}>
+		<CommandItem
+			{...rest}
+			value={value}
+			onSelect={_onSelect}
+			ref={ref}
+			data-checked={checked}
+		>
 			<Checkbox
 				checked={checked}
 				onCheckedChange={_onCheckboxChange}

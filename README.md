@@ -9,6 +9,8 @@ An personal design system with an alternate approach to managing components and 
 
 ## TODO
 
-- work on multiselect list state management for checkboxes
-- consider adding a size variable set that is similar to spacing but for squarish ui elements
-    - like avatars and checkboxes
+- add disabled style support to command
+- create a MultiSelectDropdown component
+    - should support a custom filter with a MultiSelectDropdownValue component with render prop
+    - Should group checked items vs non-checked items somehow
+
