@@ -1,0 +1,27 @@
+@layer components {
+	[w-kbd] {
+		align-items: center;
+		background-color: var(--gray-1);
+		border: var(--w-border-width-1) solid var(--gray-7);
+		border-radius: var(--w-border-radius-2);
+		box-shadow: 0 2px 0 0 var(--gray-6);
+		color: var(--gray-12);
+		display: inline-flex;
+		font-family: inherit;
+		font-size: var(--w-kbd-font-size);
+		height: var(--w-kbd-height);
+		justify-content: center;
+		min-width: var(--w-kbd-height);
+		padding: var(--w-space-1);
+
+		&[w-kbd-size="medium"] {
+			--w-kbd-font-size: var(--w-font-size-1);
+			--w-kbd-height: 24px;
+		}
+
+		&[w-kbd-size="small"] {
+			--w-kbd-font-size: var(--w-font-size-1);
+			--w-kbd-height: 20px;
+		}
+	}
+}

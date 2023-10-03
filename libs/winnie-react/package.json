@@ -32,6 +32,10 @@
       "import": "./src/components/heading.tsx",
       "types": "./src/components/heading.tsx"
     },
+    "./kbd": {
+      "import": "./src/components/kbd.tsx",
+      "types": "./src/components/kbd.tsx"
+    },
     "./multiselect-list": {
       "import": "./src/components/multiselect-list.tsx",
       "types": "./src/components/multiselect-list.tsx"
@@ -46,14 +50,13 @@
     }
   },
   "scripts": {
-    "dev": "tsc --noEmit --watch",
     "clean": "rm -rf node_modules",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@types/react": "18.2.22",
+    "@types/react": "18.2.24",
     "eslint-config-winnie": "workspace:*",
     "react": "18.2.0",
     "typescript": "^5.2.2"
@@ -64,10 +67,10 @@
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-context": "^1.0.1",
-    "@radix-ui/react-popover": "^1.0.6",
+    "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-use-controllable-state": "^1.0.1",
     "cmdk": "^0.2.0",
-    "lucide-react": "^0.279.0"
+    "lucide-react": "^0.284.0"
   }
 }
