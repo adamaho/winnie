@@ -2,10 +2,10 @@
 
 import {
 	CommandMulti,
+	CommandMultiCheckboxItem,
 	CommandMultiContent,
 	CommandMultiEmpty,
 	CommandMultiInput,
-	CommandMultiItem,
 } from "winnie-react/command-multi";
 
 import { Avatar } from "./avatar";
@@ -26,10 +26,13 @@ export function Demo() {
 					["Dalton Varsho", "pink"],
 				].map((n) => {
 					return (
-						<CommandMultiItem value={n[0].toLocaleLowerCase()} key={n[0]}>
+						<CommandMultiCheckboxItem
+							value={n[0].toLocaleLowerCase()}
+							key={n[0]}
+						>
 							<Avatar name={n[0]} color={n[1]} />
 							{n[0]}
-						</CommandMultiItem>
+						</CommandMultiCheckboxItem>
 					);
 				})}
 			</CommandMultiContent>
