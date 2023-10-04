@@ -177,5 +177,29 @@
 				cursor: not-allowed;
 			}
 		}
+
+		&[w-button-variant="dotted"] {
+			--w-button-background-color: transparent;
+			--w-button-border-color: var(--w-accent-8);
+			--w-button-color: var(--w-accent-11);
+			--w-button-outline-color: var(--w-accent-7);
+
+			border-style: dashed;
+
+			&:where(:hover:not(:disabled)) {
+				--w-button-background-color: var(--w-accent-3);
+			}
+
+			&:where(:active:not(:disabled), [data-state="open"]) {
+				--w-button-background-color: var(--w-accent-4);
+			}
+
+			&:where(:disabled, &[aria-disabled="true"]) {
+				--w-button-background-color: var(--gray-a3);
+				--w-button-color: var(--gray-9);
+
+				cursor: not-allowed;
+			}
+		}
 	}
 }

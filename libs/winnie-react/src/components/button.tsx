@@ -61,7 +61,7 @@ type ButtonProps = {
 	 *
 	 * @default "solid"
 	 */
-	variant?: "solid" | "soft" | "ghost";
+	variant?: "solid" | "soft" | "ghost" | "dotted";
 };
 
 const Button = forwardRef<ButtonElement, PropsWithChildren<ButtonProps>>(

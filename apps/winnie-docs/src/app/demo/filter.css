@@ -1,0 +1,18 @@
+.filter-customers-command {
+	min-width: 250px;
+}
+
+.filter-cadence-command {
+	min-width: 200px;
+}
+
+.filter-focus-command {
+	min-width: 200px;
+}
+
+.filter-command-empty {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: var(--w-space-2);
+}

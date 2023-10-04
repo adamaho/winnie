@@ -119,12 +119,12 @@ const CommandMultiTextFieldInput = CommandTextFieldInput;
 CommandMultiTextFieldInput.displayName = "CommandMultiTextFieldInput";
 
 /* -------------------------------------------------------------------------------------
- * CommandMultiContent
+ * CommandMultiList
  * -------------------------------------------------------------------------------------*/
-type CommandMultiContentProps = CommandListProps;
+type CommandMultiListProps = CommandListProps;
 
-const CommandMultiContent = CommandList;
-CommandMultiContent.displayName = "CommandMultiContent";
+const CommandMultiList = CommandList;
+CommandMultiList.displayName = "CommandMultiList";
 
 /* -------------------------------------------------------------------------------------
  * CommandMultiEmpty
@@ -276,7 +276,7 @@ CommandMultiCheckboxItem.displayName = "CommandMultiCheckboxItem";
 export {
 	CommandMulti,
 	CommandMultiTextFieldInput,
-	CommandMultiContent,
+	CommandMultiList,
 	CommandMultiEmpty,
 	CommandMultiGroup,
 	CommandMultiSeparator,
@@ -287,7 +287,7 @@ export {
 export type {
 	CommandMultiProps,
 	CommandMultiTextFieldInputProps,
-	CommandMultiContentProps,
+	CommandMultiListProps,
 	CommandMultiEmptyProps,
 	CommandMultiGroupProps,
 	CommandMultiSeparatorProps,

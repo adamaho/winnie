@@ -3,8 +3,8 @@
 import {
 	CommandMulti,
 	CommandMultiCheckboxItem,
-	CommandMultiContent,
 	CommandMultiEmpty,
+	CommandMultiList,
 	CommandMultiTextFieldInput,
 } from "winnie-react/command-multi";
 
@@ -14,7 +14,7 @@ export function Demo() {
 	return (
 		<CommandMulti size="1">
 			<CommandMultiTextFieldInput attributes={{ placeholder: "Assignee" }} />
-			<CommandMultiContent>
+			<CommandMultiList>
 				<CommandMultiEmpty className="command-multi-demo-empty">
 					No Assignees found
 				</CommandMultiEmpty>
@@ -35,7 +35,7 @@ export function Demo() {
 						</CommandMultiCheckboxItem>
 					);
 				})}
-			</CommandMultiContent>
+			</CommandMultiList>
 		</CommandMulti>
 	);
 }
