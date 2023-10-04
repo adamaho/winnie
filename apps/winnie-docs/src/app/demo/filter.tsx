@@ -21,6 +21,8 @@ import {
 } from "winnie-react/command-multi";
 import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
 
+import { Avatar } from "~/components";
+
 import "./filter.css";
 
 /**
@@ -127,15 +129,15 @@ function FilterFocusPage() {
 					No results found
 				</CommandMultiEmpty>
 				{[
-					["George Springer", "george springer"],
-					["Bo Bichette", "bo bichette"],
-					["Valdimir Guererro Jr.", "vladimir guererror jr"],
-					["Brandon Belt", "brandon belt"],
-					["Dalton Varsho", "dalton varsho"],
+					["George Springer", "george springer", "red"],
+					["Bo Bichette", "bo bichette", "orange"],
+					["Valdimir Guererro Jr.", "vladimir guererror jr", "yellow"],
+					["Brandon Belt", "brandon belt", "green"],
+					["Dalton Varsho", "dalton varsho", "blue"],
 				].map((t) => {
 					return (
 						<CommandMultiCheckboxItem key={t[1]} value={t[1]}>
-							<Focus />
+							<Avatar name={t[0]} color={t[2]} />
 							{t[0]}
 						</CommandMultiCheckboxItem>
 					);

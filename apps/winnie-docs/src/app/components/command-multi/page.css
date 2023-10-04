@@ -11,25 +11,4 @@
 		padding: var(--w-space-2);
 		width: 100%;
 	}
-
-	[w-command] {
-		&[w-command-size="2"] {
-			--avatar-font-size: calc(var(--w-font-size-1) * 0.9);
-		}
-
-		&[w-command-size="1"] {
-			--avatar-font-size: calc(var(--w-font-size-1) * 0.8);
-		}
-
-		.avatar {
-			aspect-ratio: 1;
-			border-radius: var(--w-border-radius-1);
-			background-color: var(--w-accent-9);
-			color: var(--w-accent-9-contrast);
-			padding: var(--w-space-1);
-			font-size: var(--avatar-font-size);
-			font-weight: var(--w-font-weight-medium);
-			text-transform: uppercase;
-		}
-	}
 }

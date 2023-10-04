@@ -8,7 +8,7 @@ import {
 	CommandMultiTextFieldInput,
 } from "winnie-react/command-multi";
 
-import { Avatar } from "./avatar";
+import { Avatar } from "~/components";
 
 export function Demo() {
 	return (
