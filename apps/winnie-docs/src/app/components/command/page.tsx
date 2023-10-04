@@ -2,10 +2,10 @@ import {
 	Command,
 	CommandEmpty,
 	CommandGroup,
-	CommandInput,
 	CommandItem,
 	CommandList,
 	CommandSeparator,
+	CommandTextFieldInput,
 } from "winnie-react/command";
 import { Flex } from "winnie-react/flex";
 
@@ -16,8 +16,8 @@ export default function Page() {
 		<Flex align="center" className="h-full w-full" justify="center" gap="4">
 			<Flex align="center" justify="center" className="background-polka">
 				<div className="command-demo-container">
-					<Command label="Command Menu" size="medium">
-						<CommandInput
+					<Command label="Command Menu" size="2">
+						<CommandTextFieldInput
 							attributes={{ placeholder: "Type a command or search..." }}
 						/>
 						<CommandList>

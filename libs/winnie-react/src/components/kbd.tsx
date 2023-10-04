@@ -29,13 +29,13 @@ type KbdProps = {
 	/**
 	 * modifies the size of the button including text
 	 *
-	 * @default "medium"
+	 * @default "2"
 	 */
-	size?: "small" | "medium" | "large";
+	size?: "1" | "2" | "3";
 };
 
 const Kbd = forwardRef<KbdElement, PropsWithChildren<KbdProps>>(
-	({ attributes, className, children, size = "medium", ...rest }, ref) => {
+	({ attributes, className, children, size = "2", ...rest }, ref) => {
 		return (
 			<kbd
 				{...attributes}

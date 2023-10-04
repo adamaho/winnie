@@ -10,9 +10,9 @@ export default function Page() {
 				gap="2"
 				className="background-polka"
 			>
-				<Kbd>control</Kbd>
-				<Kbd>shift</Kbd>
-				<Kbd size="small">A</Kbd>
+				<Kbd size="3">control</Kbd>
+				<Kbd size="2">shift</Kbd>
+				<Kbd size="1">A</Kbd>
 			</Flex>
 		</Flex>
 	);

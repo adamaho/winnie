@@ -90,9 +90,9 @@ type CheckboxProps = {
 	/**
 	 * modifies the side of the checkbox
 	 *
-	 * @default "medium"
+	 * @default "2"
 	 */
-	size?: "small" | "medium";
+	size?: "1" | "2";
 
 	/**
 	 * the value of the checkbox when form is submitted
@@ -103,7 +103,7 @@ type CheckboxProps = {
 };
 
 const Checkbox = forwardRef<CheckboxElement, CheckboxProps>(
-	({ attributes, className, size = "medium", ...rest }, ref) => {
+	({ attributes, className, size = "2", ...rest }, ref) => {
 		return (
 			<RadixCheckbox
 				{...attributes}

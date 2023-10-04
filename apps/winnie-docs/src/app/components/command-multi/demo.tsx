@@ -5,15 +5,15 @@ import {
 	CommandMultiCheckboxItem,
 	CommandMultiContent,
 	CommandMultiEmpty,
-	CommandMultiInput,
+	CommandMultiTextFieldInput,
 } from "winnie-react/command-multi";
 
 import { Avatar } from "./avatar";
 
 export function Demo() {
 	return (
-		<CommandMulti size="medium">
-			<CommandMultiInput attributes={{ placeholder: "Assignee" }} />
+		<CommandMulti size="1">
+			<CommandMultiTextFieldInput attributes={{ placeholder: "Assignee" }} />
 			<CommandMultiContent>
 				<CommandMultiEmpty className="command-multi-demo-empty">
 					No Assignees found

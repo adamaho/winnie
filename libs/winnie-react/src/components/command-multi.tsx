@@ -18,15 +18,15 @@ import {
 	Command,
 	CommandEmpty,
 	CommandGroup,
-	CommandInput,
 	CommandItem,
 	CommandList,
+	CommandTextFieldInput,
 	type CommandEmptyProps,
 	type CommandGroupProps,
-	type CommandInputProps,
 	type CommandItemProps,
 	type CommandListProps,
 	type CommandProps,
+	type CommandTextFieldInputProps,
 } from "./command";
 
 /* -------------------------------------------------------------------------------------
@@ -111,12 +111,12 @@ const CommandMulti = forwardRef<
 CommandMulti.displayName = "CommandMulti";
 
 /* -------------------------------------------------------------------------------------
- * CommandMultiInput
+ * CommandMultiTextFieldInput
  * -------------------------------------------------------------------------------------*/
-type CommandMultiInputProps = CommandInputProps;
+type CommandMultiTextFieldInputProps = CommandTextFieldInputProps;
 
-const CommandMultiInput = CommandInput;
-CommandMultiInput.displayName = "CommandMultiInput";
+const CommandMultiTextFieldInput = CommandTextFieldInput;
+CommandMultiTextFieldInput.displayName = "CommandMultiTextFieldInput";
 
 /* -------------------------------------------------------------------------------------
  * CommandMultiContent
@@ -275,7 +275,7 @@ CommandMultiCheckboxItem.displayName = "CommandMultiCheckboxItem";
 
 export {
 	CommandMulti,
-	CommandMultiInput,
+	CommandMultiTextFieldInput,
 	CommandMultiContent,
 	CommandMultiEmpty,
 	CommandMultiGroup,
@@ -286,7 +286,7 @@ export {
 
 export type {
 	CommandMultiProps,
-	CommandMultiInputProps,
+	CommandMultiTextFieldInputProps,
 	CommandMultiContentProps,
 	CommandMultiEmptyProps,
 	CommandMultiGroupProps,

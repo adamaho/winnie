@@ -52,9 +52,9 @@ type ButtonProps = {
 	/**
 	 * modifies the size of the button including text
 	 *
-	 * @default "medium"
+	 * @default "2"
 	 */
-	size?: "small" | "medium" | "large";
+	size?: "1" | "2" | "3";
 
 	/**
 	 * modifies the appearance of the button
@@ -73,7 +73,7 @@ const Button = forwardRef<ButtonElement, PropsWithChildren<ButtonProps>>(
 			color,
 			displayAsChild,
 			radius = "medium",
-			size = "medium",
+			size = "2",
 			variant = "solid",
 			...rest
 		},

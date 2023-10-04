@@ -85,9 +85,9 @@ type CommandProps = {
 	/**
 	 * modifes the overall size of command including spacing and font sizes
 	 *
-	 * @default "medium"
+	 * @default "2"
 	 */
-	size?: "small" | "medium";
+	size?: "1" | "2";
 
 	/**
 	 * optionally controls the state of the selected command item
@@ -98,7 +98,7 @@ type CommandProps = {
 };
 
 const Command = forwardRef<CommandElement, PropsWithChildren<CommandProps>>(
-	({ attributes, className, children, size = "medium", ...rest }, ref) => {
+	({ attributes, className, children, size = "2", ...rest }, ref) => {
 		return (
 			<CmdkCommand
 				{...attributes}
@@ -117,24 +117,24 @@ const Command = forwardRef<CommandElement, PropsWithChildren<CommandProps>>(
 Command.displayName = "Command";
 
 /* -------------------------------------------------------------------------------------
- * CommandInput
+ * CommandTextFieldInput
  * -------------------------------------------------------------------------------------*/
-type CommandInputComponentProps = ComponentPropsWithoutRef<
+type CommandTextFieldInputComponentProps = ComponentPropsWithoutRef<
 	typeof CmdkCommandInput
 >;
-type CommandInputElementAttributes = Omit<
-	CommandInputComponentProps,
+type CommandTextFieldInputElementAttributes = Omit<
+	CommandTextFieldInputComponentProps,
 	"value" | "onValueChange"
 >;
-type CommandInputElement = ElementRef<typeof CmdkCommandInput>;
+type CommandTextFieldInputElement = ElementRef<typeof CmdkCommandInput>;
 
-type CommandInputProps = {
+type CommandTextFieldInputProps = {
 	/**
-	 * default html attributes for CommandInput
+	 * default html attributes forCommandTextFieldInput
 	 *
 	 * @default undefined
 	 */
-	attributes?: CommandInputElementAttributes;
+	attributes?: CommandTextFieldInputElementAttributes;
 
 	/**
 	 * component className
@@ -148,31 +148,32 @@ type CommandInputProps = {
 	 *
 	 * @default undefined
 	 */
-	onValueChange?: CommandInputComponentProps["onValueChange"];
+	onValueChange?: CommandTextFieldInputComponentProps["onValueChange"];
 
 	/**
 	 * optionally controls the value of the input
 	 *
 	 * @default undefined
 	 */
-	value?: CommandInputComponentProps["value"];
+	value?: CommandTextFieldInputComponentProps["value"];
 };
 
-const CommandInput = forwardRef<CommandInputElement, CommandInputProps>(
-	({ attributes, className, ...rest }, ref) => {
-		return (
-			<CmdkCommandInput
-				{...attributes}
-				{...rest}
-				className={className}
-				ref={ref}
-				w-command-input=""
-			/>
-		);
-	},
-);
+const CommandTextFieldInput = forwardRef<
+	CommandTextFieldInputElement,
+	CommandTextFieldInputProps
+>(({ attributes, className, ...rest }, ref) => {
+	return (
+		<CmdkCommandInput
+			{...attributes}
+			{...rest}
+			className={className}
+			ref={ref}
+			w-command-input=""
+		/>
+	);
+});
 
-CommandInput.displayName = "CommandInput";
+CommandTextFieldInput.displayName = "CommandTextFieldInput";
 
 /* -------------------------------------------------------------------------------------
  * CommandList
@@ -482,7 +483,7 @@ CommandLoading.displayName = "CommandLoading";
 
 export {
 	Command,
-	CommandInput,
+	CommandTextFieldInput,
 	CommandList,
 	CommandEmpty,
 	CommandGroup,
@@ -493,7 +494,7 @@ export {
 
 export type {
 	CommandProps,
-	CommandInputProps,
+	CommandTextFieldInputProps,
 	CommandListProps,
 	CommandEmptyProps,
 	CommandGroupProps,
