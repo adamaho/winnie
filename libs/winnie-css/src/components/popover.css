@@ -14,7 +14,7 @@
 	[w-popover-content] {
 		box-shadow: var(--w-shadow-2);
 		border: var(--w-border-width-1) solid var(--gray-a5);
-		border-radius: var(--w-border-radius-2);
+		border-radius: min(var(--w-border-radius-2), 20px);
 		color: var(--gray-11);
 		transform-origin: var(--radix-popover-content-transform-origin);
 	}

@@ -24,9 +24,17 @@ import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
 import "./filter.css";
 
 /**
- * customers
- * focuses
- * meeting cadences
+ * I wonder what the proposed filter types should be
+ *
+ *
+ * type: array, date, string, number, which is the type of the value via typeof
+ * key: "customer", "assignee", "delivered date"
+ * predicate: is any of, is not, is after date, is before date
+ * value: [], string, date, etc.
+ *
+ * - There should be a context that keeps track of all of the active filters
+ * - Filters should also denote how much data is matching for each of the provided things
+ *
  */
 
 // type FilterItem = {
