@@ -164,7 +164,7 @@ function FilterCadencePage() {
 					["Bi-weekly", "bi-weekly"],
 					["Monthly", "monthly"],
 					["Quarterly", "quarterly"],
-					["MSP", "msp"],
+					["Yearly", "yearly"],
 				].map((t) => {
 					return (
 						<CommandMultiCheckboxItem key={t[1]} value={t[1]}>
