@@ -11,7 +11,6 @@ import {
 
 import { createContext } from "@radix-ui/react-context";
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
-import { CommandSeparator } from "cmdk";
 
 import { Checkbox } from "./checkbox";
 import {
@@ -20,6 +19,8 @@ import {
 	CommandGroup,
 	CommandItem,
 	CommandList,
+	CommandSeparator,
+	CommandSeparatorProps,
 	CommandTextFieldInput,
 	type CommandEmptyProps,
 	type CommandGroupProps,
@@ -145,7 +146,7 @@ CommandMultiGroup.displayName = "CommandMultiGroup";
 /* -------------------------------------------------------------------------------------
  * CommandMultiSeparator
  * -------------------------------------------------------------------------------------*/
-type CommandMultiSeparatorProps = CommandGroupProps;
+type CommandMultiSeparatorProps = CommandSeparatorProps;
 
 const CommandMultiSeparator = CommandSeparator;
 CommandMultiSeparator.displayName = " CommandMultiSeparator";
@@ -264,7 +265,7 @@ const CommandMultiCheckboxItem = forwardRef<
 			<Checkbox
 				checked={checked}
 				onCheckedChange={_onCheckboxChange}
-				attributes={{ onClick: (e) => e.stopPropagation() }}
+				attributes={{ onClick: (e) => e.stopPropagation(), tabIndex: -1 }}
 			/>
 			{children}
 		</CommandItem>
