@@ -6,7 +6,7 @@
 		width: 100%;
 
 		&[w-command-size="1"] {
-			--w-command-font-size: calc(var(--w-font-size-2) * 0.9);
+			--w-command-font-size: var(--w-font-size-1);
 			--w-command-space: 1em;
 		}
 
@@ -61,7 +61,7 @@
 			[w-command-item] {
 				align-items: center;
 				border-radius: var(--w-border-radius-2);
-				color: var(--gray-11);
+				color: var(--gray-12);
 				cursor: default;
 				display: flex;
 				font-size: var(--w-command-font-size);
@@ -70,7 +70,7 @@
 				padding-block: calc((var(--w-command-space) / 1.4));
 				white-space: nowrap;
 
-				& > svg {
+				& svg {
 					color: var(--gray-11);
 					height: var(--w-font-size-3);
 					width: var(--w-font-size-3);
@@ -80,8 +80,14 @@
 					background-color: var(--gray-3);
 					color: var(--gray-12);
 
-					& > svg {
+					& svg {
 						color: var(--gray-12);
+					}
+				}
+
+				& button[role="checkbox"] {
+					& > svg {
+						color: var(--w-accent-9-contrast);
 					}
 				}
 			}

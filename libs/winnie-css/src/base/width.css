@@ -1,0 +1,9 @@
+@layer base {
+	[w-width="0"] {
+		width: 0;
+	}
+
+	[w-width="100%"] {
+		width: 100%;
+	}
+}

@@ -74,6 +74,14 @@ type FlexProps = {
 	justify?: "start" | "center" | "end" | "between" | "around" | "evenly";
 
 	/**
+	 * width of the flex container
+	 *
+	 * @default undefined
+	 * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap | flex-wrap}
+	 */
+	width?: "100%" | "0";
+
+	/**
 	 * items wrapping within the flex container
 	 *
 	 * @default undefined
@@ -94,6 +102,7 @@ const Flex = forwardRef<FlexElement, PropsWithChildren<FlexProps>>(
 			gap = "0",
 			justify,
 			wrap,
+			width,
 			...rest
 		},
 		ref,
@@ -110,6 +119,7 @@ const Flex = forwardRef<FlexElement, PropsWithChildren<FlexProps>>(
 				w-gap={gap}
 				w-flex-justify={justify}
 				w-flex-wrap={wrap}
+				w-width={width}
 				ref={ref}
 			>
 				{children}

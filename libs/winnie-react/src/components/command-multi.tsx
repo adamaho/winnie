@@ -1,16 +1,15 @@
 "use client";
 
 import {
-	Dispatch,
+	createContext,
 	forwardRef,
 	useCallback,
+	useContext,
+	useEffect,
+	useState,
 	type ElementRef,
 	type PropsWithChildren,
-	type SetStateAction,
 } from "react";
-
-import { createContext } from "@radix-ui/react-context";
-import { useControllableState } from "@radix-ui/react-use-controllable-state";
 
 import { Checkbox } from "./checkbox";
 import {
@@ -31,29 +30,37 @@ import {
 } from "./command";
 
 /* -------------------------------------------------------------------------------------
- * constants
- * -------------------------------------------------------------------------------------*/
-const COMMAND_MULTI = "MultiSelectList";
-
-/* -------------------------------------------------------------------------------------
- * utilities
- * -------------------------------------------------------------------------------------*/
-function parseItemValue(value: string): [string, boolean] {
-	const regex = new RegExp(/__checked/);
-	const splitValue = value.split(regex);
-	return [splitValue[0], splitValue?.[1] === "__checked"];
-}
-
-/* -------------------------------------------------------------------------------------
  * CommandMultiContext
  * -------------------------------------------------------------------------------------*/
 type CommandMultiContextProps = {
-	setValue: Dispatch<SetStateAction<string[] | undefined>>;
-	value?: string[];
+	addItem: (value: string) => void;
+	removeItem: (value: string) => void;
+	selectedItems: string[];
 };
 
-const [CommandMultiProvider, useCommandMultiContext] =
-	createContext<CommandMultiContextProps>(COMMAND_MULTI);
+const CommandMultiContext = createContext<CommandMultiContextProps>({
+	addItem: () => {
+		return;
+	},
+	removeItem: () => {
+		return;
+	},
+	selectedItems: [],
+});
+
+const CommandMultiProvider = (
+	props: PropsWithChildren<CommandMultiContextProps>,
+) => {
+	return (
+		<CommandMultiContext.Provider value={props}>
+			{props.children}
+		</CommandMultiContext.Provider>
+	);
+};
+
+const useCommandMultiContext = () => {
+	return useContext(CommandMultiContext);
+};
 
 /* -------------------------------------------------------------------------------------
  * CommandMulti
@@ -70,44 +77,71 @@ type CommandMultiProps = Omit<
 	 *
 	 * @default undefined
 	 */
-	defaultValue?: string[];
+	defaultSelectedItems?: string[];
 
 	/**
 	 * event handler that is called when the selected command item has changed
 	 *
 	 * @default undefined
 	 */
-	onValueChange?: (value: string[]) => void;
-
-	/**
-	 * optionally controls the state of the selected items
-	 *
-	 * @default undefined
-	 */
-	value?: string[];
+	onSelectedItemsChange?: (value: string[]) => void;
 };
 
 const CommandMulti = forwardRef<
 	CommandMultiElement,
 	PropsWithChildren<CommandMultiProps>
->(({ children, defaultValue, onValueChange, value, ...rest }, ref) => {
-	/**
-	 * tracks the controllable value
-	 */
-	const [_value, _setValue] = useControllableState({
-		prop: value,
-		defaultProp: defaultValue,
-		onChange: onValueChange,
-	});
+>(
+	(
+		{ children, defaultSelectedItems = [], onSelectedItemsChange, ...rest },
+		ref,
+	) => {
+		/**
+		 * Tracks the selected items
+		 */
+		const [selectedItems, setSelectedItems] = useState(defaultSelectedItems);
 
-	return (
-		<CommandMultiProvider value={_value} setValue={_setValue}>
+		/**
+		 * adds an item to the value array
+		 *
+		 * @param item the value of the item
+		 */
+		const addItem = useCallback((item: string) => {
+			setSelectedItems((v) => {
+				return [...v, item];
+			});
+		}, []);
+
+		/**
+		 * removes an item from the value array
+		 *
+		 * @param item the value of the item
+		 */
+		function removeItem(item: string) {
+			setSelectedItems((v) => {
+				return [...v].filter((i) => i !== item);
+			});
+		}
+
+		/**
+		 * Call onSelectedItemsChange when the items change
+		 */
+		useEffect(() => {
+			onSelectedItemsChange?.(selectedItems);
+		}, [selectedItems, onSelectedItemsChange]);
+
+		return (
 			<Command {...rest} ref={ref}>
-				{children}
+				<CommandMultiProvider
+					selectedItems={selectedItems ?? []}
+					addItem={addItem}
+					removeItem={removeItem}
+				>
+					{children}
+				</CommandMultiProvider>
 			</Command>
-		</CommandMultiProvider>
-	);
-});
+		);
+	},
+);
 
 CommandMulti.displayName = "CommandMulti";
 
@@ -184,38 +218,12 @@ const CommandMultiCheckboxItem = forwardRef<
 	/**
 	 * subscribe to multiselect-list context
 	 */
-	const { value: contextValue, setValue } =
-		useCommandMultiContext(COMMAND_MULTI);
+	const { selectedItems, addItem, removeItem } = useCommandMultiContext();
 
 	/**
 	 * determines if the item is selected
 	 */
-	const checked = contextValue?.includes(value);
-
-	/**
-	 * handles appending an item to the value list
-	 */
-	const addItem = useCallback(
-		(value: string) => {
-			setValue((v) => {
-				return [...(v ?? []), value];
-			});
-		},
-		[setValue],
-	);
-
-	/**
-	 * handles removing an item from the value list
-	 */
-	const removeItem = useCallback(
-		(value: string) => {
-			const [v] = parseItemValue(value);
-			setValue((items) => {
-				return items?.filter((i) => i !== v);
-			});
-		},
-		[setValue],
-	);
+	const checked = selectedItems.includes(value);
 
 	/**
 	 * handles the onSelect and onCheckboxSelect events

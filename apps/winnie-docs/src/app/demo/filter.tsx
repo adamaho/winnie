@@ -1,6 +1,6 @@
-import { useMemo, type ReactNode } from "react";
+"use client";
 
-import { useControllableState } from "@radix-ui/react-use-controllable-state";
+import { useEffect, useState, type ReactNode } from "react";
 
 import {
 	CommandMulti,
@@ -9,10 +9,31 @@ import {
 	CommandMultiGroup,
 	CommandMultiItem,
 	CommandMultiList,
-	CommandMultiProps,
 	CommandMultiSeparator,
 	CommandMultiTextFieldInput,
+	type CommandMultiProps,
 } from "winnie-react/command-multi";
+import { Flex } from "winnie-react/flex";
+import { Text } from "winnie-react/text";
+
+import "./filter.css";
+
+type FilterItemCountProps = {
+	count: number;
+	label: string;
+};
+
+function FilterItemCount(props: FilterItemCountProps) {
+	if (props.count === 0) {
+		return null;
+	}
+
+	return (
+		<Text size="1">
+			{props.count} {props.label}
+		</Text>
+	);
+}
 
 type FilterItem = {
 	type: "item" | "checkbox-item";
@@ -37,35 +58,51 @@ type FilterSeparator = {
 type AvailableFilterItem = FilterItem | FilterGroup | FilterSeparator;
 
 type FilterProps = {
-	defaultValue?: CommandMultiProps["defaultValue"];
+	defaultSelectedItems?: CommandMultiProps["defaultSelectedItems"];
 	items: AvailableFilterItem[];
 	label?: string;
-	onValueChange?: CommandMultiProps["onValueChange"];
+	onSelectedItemsChange?: CommandMultiProps["onSelectedItemsChange"];
 	placeholder: string;
-	value?: CommandMultiProps["value"];
 };
 
 function renderItem(item: AvailableFilterItem) {
 	switch (item.type) {
 		case "group": {
 			return (
-				<CommandMultiGroup key={item.heading} heading={item.heading}>
+				<CommandMultiGroup
+					key={item.heading}
+					heading={item.heading}
+					w-filter-group=""
+				>
 					{item.items.map(renderItem)}
 				</CommandMultiGroup>
 			);
 		}
 		case "checkbox-item": {
 			return (
-				<CommandMultiCheckboxItem key={item.value} value={item.value}>
-					{item.start}
-					{item.text}
-					{item.end}
+				<CommandMultiCheckboxItem
+					key={item.value}
+					value={item.value}
+					w-filter-checkbox-item=""
+				>
+					<Flex
+						align="center"
+						justify="between"
+						width="100%"
+						className="flex-1"
+					>
+						<Flex align="center" gap="2">
+							{item.start}
+							{item.text}
+						</Flex>
+						{item.end}
+					</Flex>
 				</CommandMultiCheckboxItem>
 			);
 		}
 		case "item": {
 			return (
-				<CommandMultiItem key={item.value} value={item.value}>
+				<CommandMultiItem key={item.value} value={item.value} w-filter-item="">
 					{item.start}
 					{item.text}
 					{item.end}
@@ -73,7 +110,11 @@ function renderItem(item: AvailableFilterItem) {
 			);
 		}
 		case "separator": {
-			return <CommandMultiSeparator key={item.key} />;
+			if (item.separator) {
+				return <CommandMultiSeparator key={item.key} w-filter-separator="" />;
+			}
+
+			return null;
 		}
 	}
 }
@@ -82,11 +123,16 @@ function renderItem(item: AvailableFilterItem) {
  * filters the items based on the checked item value
  */
 function sortItems(
-	value: FilterProps["value"] = [],
+	selectedItems: string[] = [],
 	items: FilterProps["items"],
-): { checked: FilterProps["items"]; rest: FilterProps["items"] } {
+): {
+	checked: FilterProps["items"];
+	unchecked: FilterProps["items"];
+	itemsUnchecked: number;
+} {
 	const checked: FilterProps["items"] = [];
-	const rest: FilterProps["items"] = [];
+	const unchecked: FilterProps["items"] = [];
+	let itemsUnchecked = 0;
 
 	function sort(i: AvailableFilterItem) {
 		switch (i.type) {
@@ -95,19 +141,20 @@ function sortItems(
 				break;
 			}
 			case "separator": {
-				rest.push(i);
+				unchecked.push(i);
 				break;
 			}
 			case "item": {
-				rest.push(i);
+				unchecked.push(i);
 				break;
 			}
 			case "checkbox-item": {
-				if (value.includes(i.value)) {
+				if (selectedItems.includes(i.value)) {
 					checked.push(i);
 					break;
 				}
-				rest.push(i);
+				itemsUnchecked += 1;
+				unchecked.push(i);
 				break;
 			}
 		}
@@ -117,48 +164,63 @@ function sortItems(
 
 	return {
 		checked,
-		rest,
+		unchecked,
+		itemsUnchecked,
 	};
 }
 
 function Filter({
-	defaultValue,
-	items,
+	defaultSelectedItems = [],
+	items: itemsProp,
 	label,
-	onValueChange,
+	onSelectedItemsChange,
 	placeholder,
-	value,
 }: FilterProps) {
 	/**
-	 * handle value state
+	 * tracks the currently selected items in the list
 	 */
-	const [_value, _setValue] = useControllableState({
-		prop: value,
-		defaultProp: defaultValue,
-		onChange: onValueChange,
+	const [selectedItems, setSelectedItems] =
+		useState<string[]>(defaultSelectedItems);
+
+	/**
+	 * the items rendered in the list based on whether or not they are
+	 * checked when the component first renders
+	 */
+	const [items] = useState(() => {
+		return sortItems(selectedItems, itemsProp);
 	});
 
-	const sortedItems = useMemo(() => {
-		return sortItems(_value, items);
-	}, [_value, items]);
+	/**
+	 * handles calling onSelectedItemsChange when the items change
+	 */
+	useEffect(() => {
+		onSelectedItemsChange?.(selectedItems);
+	}, [selectedItems, onSelectedItemsChange]);
 
 	return (
 		<CommandMulti
-			value={_value}
-			onValueChange={_setValue}
+			defaultSelectedItems={selectedItems}
+			onSelectedItemsChange={setSelectedItems}
 			label={label}
 			size="1"
+			w-filter=""
 		>
 			<CommandMultiTextFieldInput attributes={{ placeholder }} />
 			<CommandMultiList>
 				<CommandMultiEmpty className="filter-command-empty">
 					No results found
 				</CommandMultiEmpty>
-				{sortedItems.rest.map(renderItem)}
+				{items.checked.length > 0 && (
+					<>
+						{items.checked.map(renderItem)}
+						{items.itemsUnchecked > 0 && <CommandMultiSeparator />}
+					</>
+				)}
+				{items.unchecked.map(renderItem)}
 			</CommandMultiList>
 		</CommandMulti>
 	);
 }
 
-export { Filter };
-export type { FilterProps };
+export { Filter, FilterItemCount };
+export type { FilterProps, FilterItemCountProps };
