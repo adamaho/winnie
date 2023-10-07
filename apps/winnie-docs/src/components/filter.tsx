@@ -35,13 +35,24 @@ function FilterItemCount(props: FilterItemCountProps) {
 	);
 }
 
-type FilterItem = {
-	type: "item" | "checkbox-item";
-	end?: ReactNode;
-	start?: ReactNode;
-	text: string;
-	value: string;
-};
+type FilterItem =
+	| {
+			type: "item";
+			end?: ReactNode;
+			onItemClick?: () => void;
+			start?: ReactNode;
+			text: string;
+			value: string;
+	  }
+	| {
+			type: "checkbox-item";
+			end?: ReactNode;
+			onItemClick?: () => void;
+			onCheckboxItemClick?: () => void;
+			start?: ReactNode;
+			text: string;
+			value: string;
+	  };
 
 type FilterGroup = {
 	type: "group";
@@ -83,6 +94,8 @@ function renderItem(item: AvailableFilterItem) {
 				<CommandMultiCheckboxItem
 					key={item.value}
 					value={item.value}
+					onSelect={item?.onItemClick}
+					onCheckboxClick={item?.onCheckboxItemClick}
 					w-filter-checkbox-item=""
 				>
 					<Flex
@@ -102,7 +115,12 @@ function renderItem(item: AvailableFilterItem) {
 		}
 		case "item": {
 			return (
-				<CommandMultiItem key={item.value} value={item.value} w-filter-item="">
+				<CommandMultiItem
+					key={item.value}
+					value={item.value}
+					onSelect={item.onItemClick}
+					w-filter-item=""
+				>
 					{item.start}
 					{item.text}
 					{item.end}
@@ -207,8 +225,10 @@ function Filter({
 		>
 			<CommandMultiTextFieldInput attributes={{ placeholder }} />
 			<CommandMultiList>
-				<CommandMultiEmpty className="filter-command-empty">
-					No results found
+				<CommandMultiEmpty>
+					<Flex justify="center" className="p-2">
+						No results found
+					</Flex>
 				</CommandMultiEmpty>
 				{items.checked.length > 0 && (
 					<>

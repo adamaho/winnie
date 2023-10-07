@@ -68,6 +68,7 @@
 				gap: calc(var(--w-command-space) * 0.75);
 				padding-inline: var(--w-command-space);
 				padding-block: calc((var(--w-command-space) / 1.4));
+				user-select: none;
 				white-space: nowrap;
 
 				& svg {

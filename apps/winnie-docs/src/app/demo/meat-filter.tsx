@@ -1,6 +1,6 @@
 import { Beef } from "lucide-react";
 
-import { Filter, FilterProps } from "./filter";
+import { Filter, FilterProps } from "../../components/filter";
 
 const items = [
 	{

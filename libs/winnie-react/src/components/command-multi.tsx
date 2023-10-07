@@ -8,6 +8,7 @@ import {
 	useEffect,
 	useState,
 	type ElementRef,
+	type MouseEvent,
 	type PropsWithChildren,
 } from "react";
 
@@ -206,6 +207,14 @@ type CommandMultiCheckboxItemProps = Omit<CommandItemProps, "value"> & {
 	onCheckedChange?: (value: string, checked: boolean) => void;
 
 	/**
+	 * event handler that is called when the checkbox is clicked
+	 *
+	 * @param e mouse event for the html button element
+	 * @returns void
+	 */
+	onCheckboxClick?: () => void;
+
+	/**
 	 * value of the item
 	 */
 	value: string;
@@ -214,71 +223,75 @@ type CommandMultiCheckboxItemProps = Omit<CommandItemProps, "value"> & {
 const CommandMultiCheckboxItem = forwardRef<
 	CommandMultiCheckboxItemElement,
 	PropsWithChildren<CommandMultiCheckboxItemProps>
->(({ children, value, onCheckedChange, onSelect, ...rest }, ref) => {
-	/**
-	 * subscribe to multiselect-list context
-	 */
-	const { selectedItems, addItem, removeItem } = useCommandMultiContext();
+>(
+	(
+		{ children, value, onCheckedChange, onCheckboxClick, onSelect, ...rest },
+		ref,
+	) => {
+		/**
+		 * subscribe to multiselect-list context
+		 */
+		const { selectedItems, addItem, removeItem } = useCommandMultiContext();
 
-	/**
-	 * determines if the item is selected
-	 */
-	const checked = selectedItems.includes(value);
+		/**
+		 * determines if the item is selected
+		 */
+		const checked = selectedItems.includes(value);
 
-	/**
-	 * handles the onSelect and onCheckboxSelect events
-	 */
-	const handleItemSelect = useCallback(
-		(value: string) => {
+		/**
+		 * handles the onSelect and onCheckboxSelect events
+		 */
+		function handleItemSelect(value: string) {
 			if (checked) {
 				removeItem(value);
 				return;
 			}
 
 			addItem(value);
-		},
-		[checked],
-	);
+		}
 
-	/**
-	 * handles the onSelect event
-	 */
-	const _onSelect = useCallback(
-		(value: string) => {
+		/**
+		 * handles the onSelect event
+		 */
+		function _onSelect(value: string) {
 			onSelect?.(value);
 			handleItemSelect(value);
-		},
-		[handleItemSelect, onSelect],
-	);
+		}
 
-	/**
-	 * handles the onCheckboxSelect event
-	 */
-	const _onCheckboxChange = useCallback(
-		(checked: boolean) => {
+		/**
+		 * handles the onCheckboxSelect event
+		 */
+		function _onCheckboxChange(checked: boolean) {
 			onCheckedChange?.(value, checked);
-			handleItemSelect(value);
-		},
-		[handleItemSelect, onSelect],
-	);
+		}
 
-	return (
-		<CommandItem
-			{...rest}
-			value={value}
-			onSelect={_onSelect}
-			ref={ref}
-			data-checked={checked}
-		>
-			<Checkbox
-				checked={checked}
-				onCheckedChange={_onCheckboxChange}
-				attributes={{ onClick: (e) => e.stopPropagation(), tabIndex: -1 }}
-			/>
-			{children}
-		</CommandItem>
-	);
-});
+		/**
+		 * handles checkbox click
+		 */
+		function _onCheckboxClick(e: MouseEvent<HTMLButtonElement>) {
+			e.stopPropagation();
+			handleItemSelect(value);
+			onCheckboxClick?.();
+		}
+
+		return (
+			<CommandItem
+				{...rest}
+				value={value}
+				onSelect={_onSelect}
+				ref={ref}
+				data-checked={checked}
+			>
+				<Checkbox
+					checked={checked}
+					onCheckedChange={_onCheckboxChange}
+					attributes={{ onClick: _onCheckboxClick, tabIndex: -1 }}
+				/>
+				{children}
+			</CommandItem>
+		);
+	},
+);
 
 CommandMultiCheckboxItem.displayName = "CommandMultiCheckboxItem";
 
