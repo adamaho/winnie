@@ -2,10 +2,11 @@
 
 import { useMemo, useState } from "react";
 
-import { Sandwich } from "lucide-react";
+import { Sandwich, X } from "lucide-react";
 
-import { Button } from "winnie-react/button";
+import { Flex } from "winnie-react";
 import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
+import { Text } from "winnie-react/text";
 
 import {
 	Filter,
@@ -69,20 +70,26 @@ export function CheeseFilter() {
 	}, []);
 
 	return (
-		<Popover open={open} onOpenChange={setOpen}>
-			<PopoverTrigger displayAsChild>
-				<Button color="gray" variant="dotted">
-					Cheese
-				</Button>
-			</PopoverTrigger>
-			<PopoverContent>
-				<Filter
-					placeholder="Cheese"
-					defaultSelectedItems={selectedItems}
-					onSelectedItemsChange={setSelectedItems}
-					items={items}
-				/>
-			</PopoverContent>
-		</Popover>
+		<Flex align="center">
+			<Flex align="center">
+				<Sandwich />
+				<Text>Cheese</Text>
+			</Flex>
+			<Text>Dropdown Menu</Text>
+			<Popover open={open} onOpenChange={setOpen}>
+				<PopoverTrigger>{selectedItems.length} cheese</PopoverTrigger>
+				<PopoverContent align="start">
+					<Filter
+						placeholder="Cheese"
+						defaultSelectedItems={selectedItems}
+						onSelectedItemsChange={setSelectedItems}
+						items={items}
+					/>
+				</PopoverContent>
+			</Popover>
+			<button>
+				<X />
+			</button>
+		</Flex>
 	);
 }
