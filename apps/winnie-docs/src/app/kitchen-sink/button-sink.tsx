@@ -13,7 +13,7 @@ export function ButtonSink() {
 			<Heading size="4" displayAs="h3">
 				Theme Colors
 			</Heading>
-			<table className="button-sink-table">
+			<table className="button-sink-table" w-theme="" w-radius-scale="medium">
 				<thead>
 					<tr>
 						<th />
@@ -126,7 +126,7 @@ export function ButtonSink() {
 			<Heading size="4" displayAs="h3">
 				Size and Radius
 			</Heading>
-			<table className="button-sink-table">
+			<table className="button-sink-table" w-theme="" w-radius-scale="medium">
 				<thead>
 					<tr>
 						<th />
