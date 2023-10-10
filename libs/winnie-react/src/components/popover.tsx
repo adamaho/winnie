@@ -336,6 +336,7 @@ const PopoverContent = forwardRef<
 		{
 			attributes,
 			children,
+			container,
 			displayAsChild,
 			portalled = true,
 			sideOffset = 8,
@@ -346,7 +347,7 @@ const PopoverContent = forwardRef<
 		const Comp = portalled ? RadixPopoverPortal : Fragment;
 
 		return (
-			<Comp>
+			<Comp container={container}>
 				<RadixPopoverContent
 					{...attributes}
 					{...rest}

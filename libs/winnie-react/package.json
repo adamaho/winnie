@@ -24,6 +24,10 @@
       "import": "./src/components/command-multi.tsx",
       "types": "./src/components/command-multi.tsx"
     },
+    "./dropdown-menu": {
+      "import": "./src/components/dropdown-menu.tsx",
+      "types": "./src/components/dropdown-menu.tsx"
+    },
     "./flex": {
       "import": "./src/components/flex.tsx",
       "types": "./src/components/flex.tsx"
@@ -67,6 +71,7 @@
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-context": "^1.0.1",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-use-controllable-state": "^1.0.1",
