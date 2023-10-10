@@ -20,6 +20,41 @@ import {
 	type FilterProps,
 } from "../../components/filter";
 
+/* -------------------------------------------------------------------------------------
+ * PredicateDropdown
+ * -------------------------------------------------------------------------------------*/
+function PredicateDropdown() {
+	const [predicate, setPredicate] = useState<"NOT_EQUAL" | "EQUAL">("EQUAL");
+
+	const buttonText = useMemo(() => {
+		switch (predicate) {
+			case "EQUAL": {
+				return "is";
+			}
+			case "NOT_EQUAL": {
+				return "is not";
+			}
+		}
+	}, [predicate]);
+
+	return (
+		<DropdownMenu>
+			<DropdownMenuTrigger>{buttonText}</DropdownMenuTrigger>
+			<DropdownMenuContent>
+				<DropdownMenuItem onSelect={() => setPredicate("EQUAL")}>
+					<Plus /> is
+				</DropdownMenuItem>
+				<DropdownMenuItem onSelect={() => setPredicate("NOT_EQUAL")}>
+					<CircleSlashed /> is not
+				</DropdownMenuItem>
+			</DropdownMenuContent>
+		</DropdownMenu>
+	);
+}
+
+/* -------------------------------------------------------------------------------------
+ * CheeseFilter
+ * -------------------------------------------------------------------------------------*/
 export function CheeseFilter() {
 	/**
 	 * tracks the open state of the popover
@@ -81,17 +116,7 @@ export function CheeseFilter() {
 				<Sandwich />
 				<Text>Cheese</Text>
 			</Flex>
-			<DropdownMenu>
-				<DropdownMenuTrigger>is equal to</DropdownMenuTrigger>
-				<DropdownMenuContent>
-					<DropdownMenuItem>
-						<Plus /> is equal to
-					</DropdownMenuItem>
-					<DropdownMenuItem>
-						<CircleSlashed /> is not equal to
-					</DropdownMenuItem>
-				</DropdownMenuContent>
-			</DropdownMenu>
+			<PredicateDropdown />
 			<Popover open={open} onOpenChange={setOpen}>
 				<PopoverTrigger>{selectedItems.length} cheese</PopoverTrigger>
 				<PopoverContent align="start">

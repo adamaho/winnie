@@ -196,6 +196,7 @@
 
 			&:where(:disabled, &[aria-disabled="true"]) {
 				--w-button-background-color: var(--gray-a3);
+				--w-button-border-color: var(--gray-8);
 				--w-button-color: var(--gray-9);
 
 				cursor: not-allowed;

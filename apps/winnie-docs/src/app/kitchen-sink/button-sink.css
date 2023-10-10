@@ -1,0 +1,10 @@
+.button-sink-table {
+	& th {
+		text-align: left;
+	}
+
+	/* prettier-ignore */
+	& th, td {
+		padding: var(--w-space-2);
+	}
+}

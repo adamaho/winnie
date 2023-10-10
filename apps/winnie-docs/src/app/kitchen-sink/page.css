@@ -1,0 +1,9 @@
+.ks-main {
+	& h2 {
+		margin-bottom: var(--w-space-4);
+	}
+
+	& h3 {
+		margin-block: var(--w-space-5);
+	}
+}
