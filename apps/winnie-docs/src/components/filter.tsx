@@ -220,7 +220,7 @@ function Filter({
 			defaultSelectedItems={selectedItems}
 			onSelectedItemsChange={setSelectedItems}
 			label={label}
-			size="1"
+			size="2"
 			w-filter=""
 		>
 			<CommandMultiTextFieldInput attributes={{ placeholder }} />

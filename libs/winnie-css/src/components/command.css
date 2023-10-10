@@ -79,7 +79,6 @@
 
 				&[data-selected="true"] {
 					background-color: var(--gray-3);
-					color: var(--gray-12);
 
 					& svg {
 						color: var(--gray-12);

@@ -291,6 +291,13 @@ type DropdownMenuContentProps = {
 	 * @default undefined
 	 */
 	sticky?: DropdownMenuContentElementProps["sticky"];
+
+	/**
+	 * modifies the size of the dropdown menu content
+	 *
+	 * @default "2"
+	 */
+	size?: "1" | "2";
 };
 
 const DropdownMenuContent = forwardRef<
@@ -305,6 +312,7 @@ const DropdownMenuContent = forwardRef<
 			displayAsChild,
 			portalled = true,
 			sideOffset = 8,
+			size = "2",
 			...rest
 		},
 		ref,
@@ -319,6 +327,7 @@ const DropdownMenuContent = forwardRef<
 					asChild={displayAsChild}
 					sideOffset={sideOffset}
 					w-dropdown-menu-content=""
+					w-dropdown-menu-content-size={size}
 					w-popper-content=""
 					ref={ref}
 				>
@@ -536,14 +545,14 @@ type DropdownMenuCheckboxItemProps = {
 	 *
 	 * @default undefined
 	 */
-	onCheckedChange: DropdownMenuCheckboxItemElementProps["onCheckedChange"];
+	onCheckedChange?: DropdownMenuCheckboxItemElementProps["onCheckedChange"];
 
 	/**
 	 * event handler called when the item is interacted with
 	 *
 	 * @default undefined
 	 */
-	onSelect: DropdownMenuCheckboxItemElementProps["onSelect"];
+	onSelect?: DropdownMenuCheckboxItemElementProps["onSelect"];
 
 	/**
 	 * optional text value of the item
@@ -563,6 +572,7 @@ const DropdownMenuCheckboxItem = forwardRef<
 			{...rest}
 			asChild={displayAsChild}
 			ref={ref}
+			w-dropdown-menu-item=""
 			w-dropdown-menu-checkbox-item=""
 		>
 			<RadixDropdownMenuItemIndicator>
@@ -677,7 +687,7 @@ type DropdownMenuRadioItemProps = {
 	 *
 	 * @default undefined
 	 */
-	onSelect: DropdownMenuRadioItemElementProps["onSelect"];
+	onSelect?: DropdownMenuRadioItemElementProps["onSelect"];
 
 	/**
 	 * optional text value of the item
@@ -704,6 +714,7 @@ const DropdownMenuRadioItem = forwardRef<
 			{...rest}
 			ref={ref}
 			asChild={displayAsChild}
+			w-dropdown-menu-item=""
 			w-dropdown-menu-radio-item=""
 		>
 			<RadixDropdownMenuItemIndicator>
@@ -766,6 +777,10 @@ export {
 	DropdownMenuItem,
 	DropdownMenuGroup,
 	DropdownMenuLabel,
+	DropdownMenuRadioGroup,
+	DropdownMenuRadioItem,
+	DropdownMenuCheckboxItem,
+	DropdownMenuSeparator,
 };
 export type {
 	DropdownMenuProps,
@@ -774,4 +789,8 @@ export type {
 	DropdownMenuItemProps,
 	DropdownMenuGroupProps,
 	DropdownMenuLabelProps,
+	DropdownMenuRadioGroupProps,
+	DropdownMenuRadioItemProps,
+	DropdownMenuCheckboxItemProps,
+	DropdownMenuSeparatorProps,
 };

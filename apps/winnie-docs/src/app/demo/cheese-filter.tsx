@@ -2,9 +2,15 @@
 
 import { useMemo, useState } from "react";
 
-import { Sandwich, X } from "lucide-react";
+import { CircleSlashed, Plus, Sandwich, X } from "lucide-react";
 
-import { Flex } from "winnie-react";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from "winnie-react/dropdown-menu";
+import { Flex } from "winnie-react/flex";
 import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
 import { Text } from "winnie-react/text";
 
@@ -75,7 +81,17 @@ export function CheeseFilter() {
 				<Sandwich />
 				<Text>Cheese</Text>
 			</Flex>
-			<Text>Dropdown Menu</Text>
+			<DropdownMenu>
+				<DropdownMenuTrigger>is equal to</DropdownMenuTrigger>
+				<DropdownMenuContent>
+					<DropdownMenuItem>
+						<Plus /> is equal to
+					</DropdownMenuItem>
+					<DropdownMenuItem>
+						<CircleSlashed /> is not equal to
+					</DropdownMenuItem>
+				</DropdownMenuContent>
+			</DropdownMenu>
 			<Popover open={open} onOpenChange={setOpen}>
 				<PopoverTrigger>{selectedItems.length} cheese</PopoverTrigger>
 				<PopoverContent align="start">
