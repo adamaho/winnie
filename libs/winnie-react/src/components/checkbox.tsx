@@ -48,6 +48,13 @@ type CheckboxProps = {
 	className?: string;
 
 	/**
+	 * optionally change the color of the checkbox
+	 *
+	 * @default undefined
+	 */
+	color?: "accent" | "red" | "green" | "yellow" | "gray";
+
+	/**
 	 * if true, the Checkbox will be checked when it first mounts
 	 *
 	 * @default false
@@ -103,13 +110,14 @@ type CheckboxProps = {
 };
 
 const Checkbox = forwardRef<CheckboxElement, CheckboxProps>(
-	({ attributes, className, size = "2", ...rest }, ref) => {
+	({ attributes, className, size = "2", color, ...rest }, ref) => {
 		return (
 			<RadixCheckbox
 				{...attributes}
 				{...rest}
 				className={className}
 				ref={ref}
+				w-accent-color={color}
 				w-checkbox=""
 				w-checkbox-size={size}
 			>
