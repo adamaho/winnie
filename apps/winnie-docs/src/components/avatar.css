@@ -8,13 +8,13 @@
 	}
 
 	.avatar {
-		aspect-ratio: 1;
 		border-radius: var(--w-border-radius-1);
 		background-color: var(--w-accent-9);
 		color: var(--w-accent-9-contrast);
-		padding: 0.4em;
+		height: 1.5rem;
 		font-size: var(--avatar-font-size);
 		font-weight: var(--w-font-weight-medium);
 		text-transform: uppercase;
+		width: 1.5rem;
 	}
 }

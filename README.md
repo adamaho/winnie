@@ -13,3 +13,4 @@ An personal design system with an alternate approach to managing components and 
 - add support for command text field slots for the purposes of adding icons and such beside the command input
 - consider adding tokens for square components
 - consider creating `w-menu-item` as a base for all menu item styles that are shared between command, command-multi, dropdown-menu, select, etc.
+- create icon button

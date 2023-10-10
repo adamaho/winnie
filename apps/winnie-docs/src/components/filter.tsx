@@ -66,16 +66,15 @@ type FilterSeparator = {
 	key: string;
 };
 
-type AvailableFilterItem = FilterItem | FilterGroup | FilterSeparator;
-
-type FilterProps = {
-	defaultSelectedItems?: CommandMultiProps["defaultSelectedItems"];
-	items: AvailableFilterItem[];
-	label?: string;
-	onSelectedItemsChange?: CommandMultiProps["onSelectedItemsChange"];
-	placeholder: string;
-};
-
+/* -------------------------------------------------------------------------------------
+ * Utilities
+ * -------------------------------------------------------------------------------------*/
+/**
+ * takes an item config and renders the ReactNode for it
+ *
+ * @param item the item to render
+ * @returns a ReactNode to render
+ */
 function renderItem(item: AvailableFilterItem) {
 	switch (item.type) {
 		case "group": {
@@ -187,8 +186,23 @@ function sortItems(
 	};
 }
 
+/* -------------------------------------------------------------------------------------
+ * Filter
+ * -------------------------------------------------------------------------------------*/
+type AvailableFilterItem = FilterItem | FilterGroup | FilterSeparator;
+
+type FilterProps = {
+	defaultSelectedItems?: CommandMultiProps["defaultSelectedItems"];
+	emptyText?: string;
+	items: AvailableFilterItem[];
+	label?: string;
+	onSelectedItemsChange?: CommandMultiProps["onSelectedItemsChange"];
+	placeholder: string;
+};
+
 function Filter({
 	defaultSelectedItems = [],
+	emptyText,
 	items: itemsProp,
 	label,
 	onSelectedItemsChange,
@@ -227,7 +241,7 @@ function Filter({
 			<CommandMultiList>
 				<CommandMultiEmpty>
 					<Flex justify="center" className="p-2">
-						No results found
+						{emptyText ?? "No results found"}
 					</Flex>
 				</CommandMultiEmpty>
 				{items.checked.length > 0 && (

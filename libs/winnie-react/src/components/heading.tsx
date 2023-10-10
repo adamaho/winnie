@@ -8,7 +8,10 @@ import {
 import { Slot } from "@radix-ui/react-slot";
 
 type HeadingComponentProps = ComponentPropsWithoutRef<"div">;
-type HeadingElementAttributes = Omit<HeadingComponentProps, "children">;
+type HeadingElementAttributes = Omit<
+	HeadingComponentProps,
+	"children" | "className"
+>;
 
 type HeadingElement = ElementRef<"h1">;
 type HeadingProps = {
@@ -20,18 +23,18 @@ type HeadingProps = {
 	align?: "left" | "center" | "right";
 
 	/**
-	 * changes the rendered html element
-	 *
-	 * @default "span"
-	 */
-	displayAs?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-
-	/**
 	 * rendered html attributes
 	 *
 	 * @default undefined
 	 */
 	attributes?: HeadingElementAttributes;
+
+	/**
+	 * changes the rendered html element
+	 *
+	 * @default "span"
+	 */
+	displayAs?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 	/**
 	 * modifies the color of the heading
@@ -54,6 +57,13 @@ type HeadingProps = {
 	 * @default "high"
 	 */
 	contrast?: "low" | "medium" | "high";
+
+	/**
+	 * component className
+	 *
+	 * @default undefined
+	 */
+	className?: string;
 
 	/**
 	 * modifies the font-size of the heading
