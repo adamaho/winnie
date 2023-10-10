@@ -39,15 +39,15 @@
 
 		&[w-checkbox-size="2"] {
 			--w-border-radius-max: 5px;
-			--w-checkbox-size: var(--w-space-4);
+			--w-checkbox-size: calc(16px * var(--w-scale, 1));
 			--w-checkbox-indicator-size: var(--w-space-3);
 			--w-checkbox-indicator-center-margin: 0px;
 		}
 
 		&[w-checkbox-size="1"] {
 			--w-border-radius-max: 3px;
-			--w-checkbox-size: var(--w-space-3);
-			--w-checkbox-indicator-size: var(--w-space-2);
+			--w-checkbox-size: calc(14px * var(--w-scale, 1));
+			--w-checkbox-indicator-size: var(--w-space-3);
 			--w-checkbox-indicator-center-margin: 0px;
 		}
 

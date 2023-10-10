@@ -4,8 +4,6 @@ import { Button } from "winnie-react/button";
 import { Heading } from "winnie-react/heading";
 import { Text } from "winnie-react/text";
 
-import "./button-sink.css";
-
 export function ButtonSink() {
 	return (
 		<>
@@ -13,7 +11,7 @@ export function ButtonSink() {
 			<Heading size="4" displayAs="h3">
 				Theme Colors
 			</Heading>
-			<table className="button-sink-table" w-theme="" w-radius-scale="medium">
+			<table className="kitchen-sink-table" w-theme="" w-radius-scale="medium">
 				<thead>
 					<tr>
 						<th />
@@ -126,7 +124,7 @@ export function ButtonSink() {
 			<Heading size="4" displayAs="h3">
 				Size and Radius
 			</Heading>
-			<table className="button-sink-table" w-theme="" w-radius-scale="medium">
+			<table className="kitchen-sink-table" w-theme="" w-radius-scale="medium">
 				<thead>
 					<tr>
 						<th />
