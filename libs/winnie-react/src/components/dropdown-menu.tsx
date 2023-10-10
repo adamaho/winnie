@@ -14,10 +14,15 @@ import {
 	DropdownMenuContent as RadixDropdownMenuContent,
 	DropdownMenuGroup as RadixDropdownMenuGroup,
 	DropdownMenuItem as RadixDropdownMenuItem,
+	DropdownMenuItemIndicator as RadixDropdownMenuItemIndicator,
 	DropdownMenuLabel as RadixDropdownMenuLabel,
 	DropdownMenuPortal as RadixDropdownMenuPortal,
+	DropdownMenuRadioGroup as RadixDropdownMenuRadioGroup,
+	DropdownMenuRadioItem as RadixDropdownMenuRadioItem,
+	DropdownMenuSeparator as RadixDropdownMenuSeparator,
 	DropdownMenuTrigger as RadixDropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
+import { Check, Dot } from "lucide-react";
 
 /* -------------------------------------------------------------------------------------
  * DropdownMenu
@@ -491,7 +496,7 @@ type DropdownMenuCheckboxItemElement = ElementRef<
 
 type DropdownMenuCheckboxItemProps = {
 	/**
-	 * underlying DropdownMenuLabel html element attributes
+	 * underlying DropdownMenuCheckboxItem html element attributes
 	 *
 	 * @default undefined
 	 */
@@ -520,7 +525,7 @@ type DropdownMenuCheckboxItemProps = {
 	disabled?: DropdownMenuCheckboxItemElementProps["disabled"];
 
 	/**
-	 * if true, the DropdownMenuLabel will merge its props and display the child element
+	 * if true, the DropdownMenuCheckboxItem will merge its props and display the child element
 	 *
 	 * @default false
 	 */
@@ -560,12 +565,199 @@ const DropdownMenuCheckboxItem = forwardRef<
 			ref={ref}
 			w-dropdown-menu-checkbox-item=""
 		>
+			<RadixDropdownMenuItemIndicator>
+				<Check />
+			</RadixDropdownMenuItemIndicator>
 			{children}
 		</RadixDropdownMenuCheckboxItem>
 	);
 });
 
 DropdownMenuCheckboxItem.displayName = "DropdownMenuCheckboxItem";
+
+/* -------------------------------------------------------------------------------------
+ * DropdownMenuRadioGroup
+ * -------------------------------------------------------------------------------------*/
+type DropdownMenuRadioGroupElementProps = ComponentPropsWithoutRef<
+	typeof RadixDropdownMenuRadioGroup
+>;
+type DropdownMenuRadioGroupElement = ElementRef<
+	typeof RadixDropdownMenuRadioGroup
+>;
+
+type DropdownMenuRadioGroupProps = {
+	/**
+	 * underlying DropdownMenuRadioGroup html element attributes
+	 *
+	 * @default undefined
+	 */
+	attributes?: Omit<
+		DropdownMenuRadioGroupElementProps,
+		"asChild" | "children" | "value" | "onValueChange"
+	>;
+
+	/**
+	 * if true, the DropdownMenuRadioGroup will merge its props and display the child element
+	 *
+	 * @default false
+	 */
+	displayAsChild?: boolean;
+
+	/**
+	 * optionally control the value of the radio group
+	 *
+	 * @default undefined
+	 */
+	value?: DropdownMenuRadioGroupElementProps["value"];
+
+	/**
+	 * event handler that is called when the value of the radio group changes
+	 *
+	 * @detault undefined
+	 */
+	onValueChange?: DropdownMenuRadioGroupElementProps["onValueChange"];
+};
+
+const DropdownMenuRadioGroup = forwardRef<
+	DropdownMenuRadioGroupElement,
+	PropsWithChildren<DropdownMenuRadioGroupProps>
+>(({ attributes, children, displayAsChild, ...rest }, ref) => {
+	return (
+		<RadixDropdownMenuRadioGroup
+			{...attributes}
+			{...rest}
+			ref={ref}
+			asChild={displayAsChild}
+			w-dropdown-menu-radio-group=""
+		>
+			{children}
+		</RadixDropdownMenuRadioGroup>
+	);
+});
+
+DropdownMenuRadioGroup.displayName = "DropdownMenuRadioGroup";
+
+/* -------------------------------------------------------------------------------------
+ * DropdownMenuRadioItem
+ * -------------------------------------------------------------------------------------*/
+type DropdownMenuRadioItemElementProps = ComponentPropsWithoutRef<
+	typeof RadixDropdownMenuRadioItem
+>;
+type DropdownMenuRadioItemElement = ElementRef<
+	typeof RadixDropdownMenuRadioItem
+>;
+
+type DropdownMenuRadioItemProps = {
+	/**
+	 * underlying DropdownMenuRadioItem html element attributes
+	 *
+	 * @default undefined
+	 */
+	attributes?: Omit<
+		DropdownMenuRadioItemElementProps,
+		"asChild" | "children" | "value" | "disabled" | "onSelect" | "textValue"
+	>;
+
+	/**
+	 * if true, interaction with the item will be disabled
+	 *
+	 * @default undefined
+	 */
+	disabled?: DropdownMenuRadioItemElementProps["disabled"];
+
+	/**
+	 * if true, the DropdownMenuRadioItem will merge its props and display the child element
+	 *
+	 * @default false
+	 */
+	displayAsChild?: boolean;
+
+	/**
+	 * event handler called when the item is interacted with
+	 *
+	 * @default undefined
+	 */
+	onSelect: DropdownMenuRadioItemElementProps["onSelect"];
+
+	/**
+	 * optional text value of the item
+	 *
+	 * @default undefined
+	 */
+	textValue?: DropdownMenuRadioItemElementProps["textValue"];
+
+	/**
+	 * optional unique value of the item
+	 *
+	 * @default undefined
+	 */
+	value: DropdownMenuRadioItemElementProps["value"];
+};
+
+const DropdownMenuRadioItem = forwardRef<
+	DropdownMenuRadioItemElement,
+	PropsWithChildren<DropdownMenuRadioItemProps>
+>(({ attributes, children, displayAsChild, ...rest }, ref) => {
+	return (
+		<RadixDropdownMenuRadioItem
+			{...attributes}
+			{...rest}
+			ref={ref}
+			asChild={displayAsChild}
+			w-dropdown-menu-radio-item=""
+		>
+			<RadixDropdownMenuItemIndicator>
+				<Dot />
+			</RadixDropdownMenuItemIndicator>
+			{children}
+		</RadixDropdownMenuRadioItem>
+	);
+});
+
+DropdownMenuRadioItem.displayName = "DropdownMenuRadioItem";
+
+/* -------------------------------------------------------------------------------------
+ * DropdownMenuSeparator
+ * -------------------------------------------------------------------------------------*/
+type DropdownMenuSeparatorElementProps = ComponentPropsWithoutRef<
+	typeof RadixDropdownMenuSeparator
+>;
+type DropdownMenuSeparatorElement = ElementRef<
+	typeof RadixDropdownMenuSeparator
+>;
+
+type DropdownMenuSeparatorProps = {
+	/**
+	 * underlying DropdownMenuSeparator html element attributes
+	 *
+	 * @default undefined
+	 */
+	attributes?: Omit<DropdownMenuSeparatorElementProps, "asChild" | "children">;
+
+	/**
+	 * if true, the DropdownMenuSeparator will merge its props and display the child element
+	 *
+	 * @default false
+	 */
+	displayAsChild?: boolean;
+};
+
+const DropdownMenuSeparator = forwardRef<
+	DropdownMenuSeparatorElement,
+	DropdownMenuSeparatorProps
+>(({ attributes, displayAsChild, ...rest }, ref) => {
+	return (
+		<RadixDropdownMenuSeparator
+			{...attributes}
+			{...rest}
+			ref={ref}
+			asChild={displayAsChild}
+			w-dropdown-menu-separator=""
+		/>
+	);
+});
+
+DropdownMenuSeparator.displayName = "DropdownMenuSeparator";
 
 export {
 	DropdownMenu,

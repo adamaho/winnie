@@ -24,6 +24,10 @@
       "import": "./src/components/command-multi.tsx",
       "types": "./src/components/command-multi.tsx"
     },
+    "./dropdown-menu": {
+      "import": "./src/components/dropdown-menu.tsx",
+      "types": "./src/components/dropdown-menu.tsx"
+    },
     "./flex": {
       "import": "./src/components/flex.tsx",
       "types": "./src/components/flex.tsx"
