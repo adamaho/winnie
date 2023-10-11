@@ -1,5 +1,7 @@
 .filter-subject {
 	color: var(--gray-11);
+	line-height: 1;
+	margin-left: var(--w-space-1);
 
 	& svg {
 		height: 16px;

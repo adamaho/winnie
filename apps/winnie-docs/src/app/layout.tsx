@@ -21,7 +21,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${inter.className} dark`}
+				className={`${inter.className} light`}
 				w-theme=""
 				w-accent-color="purple"
 				w-radius-scale="medium"

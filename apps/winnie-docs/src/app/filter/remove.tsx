@@ -1,12 +1,16 @@
 "use client";
 
+import { type ComponentPropsWithoutRef } from "react";
+
 import { X } from "lucide-react";
 
 import "./remove.css";
 
-export function RemoveFilterButton() {
+type RemoveFilterButtonProps = ComponentPropsWithoutRef<"button">;
+
+export function RemoveFilterButton(props: RemoveFilterButtonProps) {
 	return (
-		<button className="remove-filter-button">
+		<button {...props} className="remove-filter-button">
 			<X />
 		</button>
 	);

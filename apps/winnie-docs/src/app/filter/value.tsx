@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { PropsWithChildren, useMemo, useState, type ReactNode } from "react";
 
 import {
 	CommandMulti,
@@ -9,12 +9,21 @@ import {
 	CommandMultiSeparator,
 	CommandMultiTextFieldInput,
 } from "winnie-react";
-import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
+import {
+	Popover,
+	PopoverContent,
+	PopoverProps,
+	PopoverTrigger,
+	PopoverTriggerProps,
+} from "winnie-react/popover";
 
 import { useFilterContext } from "./filter-provider";
 
 import "./value.css";
 
+/* -------------------------------------------------------------------------------------
+ * Utilities
+ * -------------------------------------------------------------------------------------*/
 type Item = {
 	value: string;
 	text: string;
@@ -27,7 +36,92 @@ const items = new Array(5).fill(0).map((_, i) => {
 	};
 }) satisfies Item[];
 
-function ValueDropdownContent() {
+/* -------------------------------------------------------------------------------------
+ * ValueDropdown
+ * -------------------------------------------------------------------------------------*/
+type ValueDropdownProps = PopoverProps;
+function ValueDropdown({
+	children,
+	...rest
+}: PropsWithChildren<ValueDropdownProps>) {
+	return <Popover {...rest}>{children}</Popover>;
+}
+
+/* -------------------------------------------------------------------------------------
+ * ValueDropdownTrigger
+ * -------------------------------------------------------------------------------------*/
+type ValueDropdownTriggerRenderProp = {
+	value: string[];
+	text: string;
+	count: number;
+};
+
+type ValueDropdownTriggerCommonProps = {
+	attributes?: PopoverTriggerProps["attributes"];
+	className?: string;
+};
+
+type ValueDropdownTriggerProps =
+	| {
+			children?: (args: ValueDropdownTriggerRenderProp) => ReactNode;
+			displayAsChild?: false;
+	  }
+	| {
+			children?: ReactNode;
+			displayAsChild?: boolean;
+	  };
+
+function ValueDropdownTrigger({
+	attributes,
+	children,
+	displayAsChild,
+	...rest
+}: ValueDropdownTriggerProps & ValueDropdownTriggerCommonProps) {
+	/**
+	 * Subscribe to filter context
+	 */
+	const { value } = useFilterContext();
+
+	/**
+	 * trigger text
+	 */
+	const text = useMemo(() => {
+		if (value.length > 1) {
+			return `${value.length} items`;
+		}
+
+		if (value.length === 0) {
+			return "Select Focus";
+		}
+
+		return items.find((i) => i.value === value[0])?.text ?? "Select Focus";
+	}, [value]);
+
+	return (
+		<PopoverTrigger
+			{...attributes}
+			{...rest}
+			data-empty={value.length === 0}
+			displayAsChild={displayAsChild}
+		>
+			{typeof children === "function"
+				? children({ value, text, count: value.length })
+				: children}
+		</PopoverTrigger>
+	);
+}
+
+/* -------------------------------------------------------------------------------------
+ * ValueDropdownContent
+ * -------------------------------------------------------------------------------------*/
+function ValueDropdownContent({ children }: PropsWithChildren) {
+	return <PopoverContent align="start">{children}</PopoverContent>;
+}
+
+/* -------------------------------------------------------------------------------------
+ * ValueDropdownList
+ * -------------------------------------------------------------------------------------*/
+function ValueDropdownList() {
 	/**
 	 * subscribe to filter context
 	 */
@@ -84,38 +178,9 @@ function ValueDropdownContent() {
 	);
 }
 
-export function ValueDropdown() {
-	/**
-	 * subscribe to filter context
-	 */
-	const { value } = useFilterContext();
-
-	/**
-	 * trigger text
-	 */
-	const text = useMemo(() => {
-		if (value.length > 1) {
-			return `${value.length} items`;
-		}
-
-		if (value.length === 0) {
-			return "Select Focus";
-		}
-
-		return items.find((i) => i.value === value[0])?.text;
-	}, [value]);
-
-	return (
-		<Popover>
-			<PopoverTrigger
-				className="value-dropdown-trigger"
-				data-empty={value.length === 0}
-			>
-				{text}
-			</PopoverTrigger>
-			<PopoverContent align="start">
-				<ValueDropdownContent />
-			</PopoverContent>
-		</Popover>
-	);
-}
+export {
+	ValueDropdown,
+	ValueDropdownTrigger,
+	ValueDropdownContent,
+	ValueDropdownList,
+};

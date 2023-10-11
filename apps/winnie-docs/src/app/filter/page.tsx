@@ -1,6 +1,6 @@
 import { Flex } from "winnie-react/flex";
 
-import { Filter } from "./filter";
+import { FilterBar } from "./filter-bar";
 
 export default function Page() {
 	return (
@@ -11,7 +11,7 @@ export default function Page() {
 				gap="4"
 				className="background-polka"
 			>
-				<Filter />
+				<FilterBar />
 			</Flex>
 		</Flex>
 	);

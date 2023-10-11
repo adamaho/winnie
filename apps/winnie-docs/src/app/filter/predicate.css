@@ -1,8 +1,14 @@
 .predicate-dropdown-trigger {
 	border-radius: var(--w-border-radius-2);
 	color: var(--gray-11);
+	line-height: 1;
 	font-size: var(--w-font-size-2);
 	padding: var(--w-space-1);
+	outline: var(--w-border-width-2) solid transparent;
+
+	&:focus-visible {
+		outline-color: var(--gray-7);
+	}
 
 	&[data-state="open"] {
 		background-color: var(--gray-3);
