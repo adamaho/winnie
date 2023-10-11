@@ -1,6 +1,13 @@
 "use client";
 
-import { PropsWithChildren, useMemo, useState, type ReactNode } from "react";
+import {
+	createContext,
+	PropsWithChildren,
+	useContext,
+	useMemo,
+	useState,
+	type ReactNode,
+} from "react";
 
 import {
 	CommandMulti,
@@ -21,30 +28,51 @@ import { useFilterContext } from "./filter-provider";
 
 import "./value.css";
 
-/* -------------------------------------------------------------------------------------
- * Utilities
- * -------------------------------------------------------------------------------------*/
-type Item = {
+export type ValueItem = {
 	value: string;
 	text: string;
 };
 
-const items = new Array(5).fill(0).map((_, i) => {
-	return {
-		value: `item-${i + 1}`,
-		text: `Item ${i + 1}`,
-	};
-}) satisfies Item[];
+/* -------------------------------------------------------------------------------------
+ * ValueDropdownContext
+ * -------------------------------------------------------------------------------------*/
+type ValueDropdownContextProps = {
+	items: ValueItem[];
+};
+
+const ValueDropdownContext = createContext<ValueDropdownContextProps>({
+	items: [],
+});
+
+function useValueDropdownContext() {
+	return useContext(ValueDropdownContext);
+}
+
+function ValueDropdownProvider({
+	children,
+	items,
+}: PropsWithChildren<ValueDropdownContextProps>) {
+	return (
+		<ValueDropdownContext.Provider value={{ items }}>
+			{children}
+		</ValueDropdownContext.Provider>
+	);
+}
 
 /* -------------------------------------------------------------------------------------
  * ValueDropdown
  * -------------------------------------------------------------------------------------*/
-type ValueDropdownProps = PopoverProps;
+type ValueDropdownProps = PopoverProps & ValueDropdownContextProps;
 function ValueDropdown({
 	children,
+	items,
 	...rest
 }: PropsWithChildren<ValueDropdownProps>) {
-	return <Popover {...rest}>{children}</Popover>;
+	return (
+		<ValueDropdownProvider items={items}>
+			<Popover {...rest}>{children}</Popover>
+		</ValueDropdownProvider>
+	);
 }
 
 /* -------------------------------------------------------------------------------------
@@ -83,6 +111,11 @@ function ValueDropdownTrigger({
 	const { value } = useFilterContext();
 
 	/**
+	 * Subscribe to value dropdown context
+	 */
+	const { items } = useValueDropdownContext();
+
+	/**
 	 * trigger text
 	 */
 	const text = useMemo(() => {
@@ -95,7 +128,7 @@ function ValueDropdownTrigger({
 		}
 
 		return items.find((i) => i.value === value[0])?.text ?? "Select Focus";
-	}, [value]);
+	}, [value, items]);
 
 	return (
 		<PopoverTrigger
@@ -128,11 +161,16 @@ function ValueDropdownList() {
 	const { value, setValue } = useFilterContext();
 
 	/**
+	 * subscribe to value dropdown context
+	 */
+	const { items } = useValueDropdownContext();
+
+	/**
 	 * sorts the items when the component first mounts
 	 */
 	const [sortedItems] = useState(() => {
-		const checked: Item[] = [];
-		const unchecked: Item[] = [];
+		const checked: ValueItem[] = [];
+		const unchecked: ValueItem[] = [];
 
 		for (const item of items) {
 			if (value.includes(item.value)) {

@@ -1,5 +1,6 @@
 .filter-subject {
 	color: var(--gray-12);
+	font-size: var(--w-font-size-2);
 	line-height: 1;
 	margin-left: var(--w-space-1);
 

@@ -1,9 +1,10 @@
 "use client";
 
-import { type MouseEvent } from "react";
+import { Focus } from "lucide-react";
 
 import { Flex } from "winnie-react/flex";
 
+import { type FilterProps } from "./common-types";
 import { FilterProvider } from "./filter-provider";
 import { PredicateDropdown } from "./predicate";
 import { RemoveFilterButton } from "./remove";
@@ -13,15 +14,9 @@ import {
 	ValueDropdownContent,
 	ValueDropdownList,
 	ValueDropdownTrigger,
-	type ValueItem,
 } from "./value";
 
 import "./filter.css";
-
-type FilterProps = {
-	items: ValueItem[];
-	onRemoveClick: (e: MouseEvent<HTMLButtonElement>) => void;
-};
 
 /**
  * Filter
@@ -35,11 +30,14 @@ type FilterProps = {
  * FilterRemove
  */
 
-export function Filter(props: FilterProps) {
+export function FocusFilter(props: FilterProps) {
 	return (
 		<FilterProvider>
 			<Flex align="center" gap="2" className="filter">
-				<Subject />
+				<Subject>
+					<Focus />
+					Focus
+				</Subject>
 				<PredicateDropdown />
 				<ValueDropdown defaultOpen items={props.items}>
 					<ValueDropdownTrigger className="value-dropdown-trigger">
