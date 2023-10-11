@@ -1,0 +1,28 @@
+.value-dropdown-trigger {
+	border-radius: var(--w-border-radius-2);
+	color: var(--gray-11);
+	font-size: var(--w-font-size-2);
+	font-variant-numeric: tabular-nums;
+	padding: var(--w-space-1);
+
+	&[data-state="open"] {
+		background-color: var(--gray-3);
+	}
+
+	&[data-empty="true"] {
+		color: var(--w-accent-11);
+	}
+
+	&[data-empty="true"][data-state="open"] {
+		background-color: var(--w-accent-3);
+		color: var(--w-accent-11);
+	}
+
+	&:hover {
+		background-color: var(--gray-3);
+	}
+
+	&[data-empty="true"]:hover {
+		background-color: var(--w-accent-3);
+	}
+}

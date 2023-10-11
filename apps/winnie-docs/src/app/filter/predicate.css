@@ -1,0 +1,14 @@
+.predicate-dropdown-trigger {
+	border-radius: var(--w-border-radius-2);
+	color: var(--gray-11);
+	font-size: var(--w-font-size-2);
+	padding: var(--w-space-1);
+
+	&[data-state="open"] {
+		background-color: var(--gray-3);
+	}
+
+	&:hover {
+		background-color: var(--gray-3);
+	}
+}

@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 
-import { colors, type Color } from "~/constants";
-
 import { Flex } from "winnie-react/flex";
 import { Text } from "winnie-react/text";
+
+import { colors, type Color } from "~/constants";
 
 import "./choose-accent-color.css";
 

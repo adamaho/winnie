@@ -82,6 +82,13 @@ type PopoverTriggerProps = {
 	attributes?: PopoverTriggerElementAttributes;
 
 	/**
+	 * component className
+	 *
+	 * @default undefined
+	 */
+	className?: string;
+
+	/**
 	 * if true, the PopoverTrigger will merge its props and display the child element
 	 *
 	 * @default false
