@@ -9,7 +9,9 @@ export function Subject() {
 	return (
 		<Flex align="center" gap="2" className="filter-subject">
 			<Focus />
-			<Text size="2">Focus</Text>
+			<Text size="2" contrast="high">
+				Focus
+			</Text>
 		</Flex>
 	);
 }

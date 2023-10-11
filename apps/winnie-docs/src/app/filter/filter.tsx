@@ -27,7 +27,7 @@ export function Filter(props: FilterProps) {
 			<Flex align="center" gap="2" className="filter">
 				<Subject />
 				<PredicateDropdown />
-				<ValueDropdown>
+				<ValueDropdown defaultOpen>
 					<ValueDropdownTrigger className="value-dropdown-trigger">
 						{({ text }) => {
 							return text;
