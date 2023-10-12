@@ -6,7 +6,6 @@ import {
 	useCallback,
 	useContext,
 	useEffect,
-	useMemo,
 	useRef,
 	useState,
 	type ElementRef,
@@ -39,7 +38,6 @@ import {
 /* -------------------------------------------------------------------------------------
  * Constants
  * -------------------------------------------------------------------------------------*/
-const ITEM_CHECKBOX_SELECTOR_CHECKED = `[w-command-checkbox-item][data-checked="true"]`;
 const ITEM_CHECKBOX_SELECTOR = `[w-command-checkbox-item]`;
 const GROUP_CHECKED = `[w-command-group-checked]`;
 
@@ -51,6 +49,7 @@ type CommandMultiContextProps = {
 	removeItem: (value: string) => void;
 	selectedItems: string[];
 	sortOnMount: boolean;
+	showCheckedGroupSeparator: boolean;
 };
 
 const CommandMultiContext = createContext<CommandMultiContextProps>({
@@ -62,6 +61,7 @@ const CommandMultiContext = createContext<CommandMultiContextProps>({
 	},
 	selectedItems: [],
 	sortOnMount: true,
+	showCheckedGroupSeparator: false,
 });
 
 const CommandMultiProvider = (
@@ -131,6 +131,12 @@ const CommandMulti = forwardRef<
 		const [selectedItems, setSelectedItems] = useState(defaultSelectedItems);
 
 		/**
+		 * tracks if the checked item separator should show
+		 */
+		const [showCheckedGroupSeparator, setShowCheckedGroupSeparator] =
+			useState(false);
+
+		/**
 		 * init ref for the command element
 		 */
 		const commandRef = useRef<HTMLDivElement>(null);
@@ -175,13 +181,29 @@ const CommandMulti = forwardRef<
 		useEffect(() => {
 			if (commandRef.current && sortOnMount) {
 				const checkedGroup = commandRef.current.querySelector(GROUP_CHECKED);
-				const checkedItems = commandRef.current.querySelectorAll(
-					ITEM_CHECKBOX_SELECTOR_CHECKED,
+				const allItems = commandRef.current.querySelectorAll(
+					ITEM_CHECKBOX_SELECTOR,
 				);
 
-				for (const i of checkedItems) {
-					checkedGroup?.appendChild(i);
+				const itemCount = {
+					checked: 0,
+					unchecked: 0,
+				};
+
+				for (const i of allItems) {
+					if (i.getAttribute("data-checked") === "true") {
+						checkedGroup?.appendChild(i);
+						itemCount.checked += 1;
+					}
+
+					itemCount.unchecked += 1;
 				}
+
+				setShowCheckedGroupSeparator(
+					sortOnMount &&
+						itemCount.checked > 0 &&
+						itemCount.checked < itemCount.unchecked,
+				);
 			}
 		}, []);
 
@@ -192,6 +214,7 @@ const CommandMulti = forwardRef<
 					addItem={addItem}
 					removeItem={removeItem}
 					sortOnMount={sortOnMount}
+					showCheckedGroupSeparator={showCheckedGroupSeparator}
 				>
 					{children}
 				</CommandMultiProvider>
@@ -229,14 +252,9 @@ const CommandMultiList = forwardRef<
 	PropsWithChildren<CommandMultiListProps>
 >(({ children, ...rest }, ref) => {
 	/**
-	 * tracks whether or not the separator should be visible
-	 */
-	const [showSeparator, setShowSeparator] = useState(false);
-
-	/**
 	 * subscribe to command multi context
 	 */
-	const { sortOnMount, selectedItems } = useCommandMultiContext();
+	const { sortOnMount, showCheckedGroupSeparator } = useCommandMultiContext();
 
 	/**
 	 * init ref for the list element
@@ -248,30 +266,16 @@ const CommandMultiList = forwardRef<
 	 */
 	const composedRefs = useComposedRefs(listRef, ref);
 
-	/**
-	 * compute if the separator should be visible
-	 */
-	useEffect(() => {
-		if (!sortOnMount) {
-			setShowSeparator(false);
-			return;
-		}
-
-		if (listRef.current) {
-			const allItems = listRef.current.querySelectorAll(ITEM_CHECKBOX_SELECTOR);
-			setShowSeparator(
-				selectedItems.length > 0 && selectedItems.length < allItems.length,
-			);
-			return;
-		}
-	}, [listRef.current]);
-
 	return (
 		<CommandList {...rest} ref={composedRefs}>
 			{sortOnMount && (
 				<>
 					<CommandGroup w-command-group-checked="" />
-					{/* {showSeparator && <CommandSeparator />} */}
+					<CommandSeparator
+						attributes={{
+							style: { display: showCheckedGroupSeparator ? "block" : "none" },
+						}}
+					/>
 				</>
 			)}
 			{children}
