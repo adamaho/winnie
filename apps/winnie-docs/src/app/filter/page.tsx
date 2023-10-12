@@ -1,6 +1,6 @@
 import { Flex } from "winnie-react/flex";
 
-import { FilterBar } from "./filter-bar";
+import { FilterBar } from "./filter-bar/filter-bar";
 
 export default function Page() {
 	return (

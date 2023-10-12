@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { BarChart, Focus, ListFilter, UserCircle } from "lucide-react";
+import { Award, Focus, ListFilter } from "lucide-react";
 
 import { Button } from "winnie-react/button";
 import {
@@ -17,9 +17,8 @@ import { Flex } from "winnie-react/flex";
 import { Kbd } from "winnie-react/kbd";
 import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
 
-import { AssigneeFilter } from "./assignee-filter";
-import { FocusFilter } from "./focus-filter";
-import { PriorityFilter } from "./priority-filter";
+import { PlayerFilter } from "./player-filter";
+import { PositionFilter } from "./position-filter";
 
 /* -------------------------------------------------------------------------------------
  * Constants
@@ -32,9 +31,8 @@ const items = new Array(5).fill(0).map((_, i) => {
 });
 
 const FILTER_MAP = {
-	assignee: AssigneeFilter,
-	focus: FocusFilter,
-	priority: PriorityFilter,
+	player: PlayerFilter,
+	position: PositionFilter,
 } as const;
 
 /* -------------------------------------------------------------------------------------
@@ -67,7 +65,7 @@ export function FilterBar() {
 	}, []);
 
 	return (
-		<Flex direction="column" align="start" gap="4">
+		<Flex align="center" gap="4">
 			<Popover open={open} onOpenChange={setOpen}>
 				<PopoverTrigger displayAsChild>
 					<Button variant="dotted" color="gray">
@@ -87,47 +85,37 @@ export function FilterBar() {
 							</CommandEmpty>
 							<CommandItem
 								onSelect={() => {
-									setFilters((v) => [...v, `assignee-${crypto.randomUUID()}`]);
+									setFilters((v) => [...v, `player-${crypto.randomUUID()}`]);
 									setOpen(false);
 								}}
 							>
-								<UserCircle /> Assignee
+								<Award /> Player
 							</CommandItem>
 							<CommandItem
 								onSelect={() => {
-									setFilters((v) => [...v, `focus-${crypto.randomUUID()}`]);
+									setFilters((v) => [...v, `position-${crypto.randomUUID()}`]);
 									setOpen(false);
 								}}
 							>
-								<Focus /> Focus
-							</CommandItem>
-							<CommandItem
-								onSelect={() => {
-									setFilters((v) => [...v, `priority-${crypto.randomUUID()}`]);
-									setOpen(false);
-								}}
-							>
-								<BarChart /> Priority
+								<Focus /> Position
 							</CommandItem>
 						</CommandList>
 					</Command>
 				</PopoverContent>
 			</Popover>
-			<Flex align="center" gap="4">
-				{filters.map((f) => {
-					const [filterType] = f.split("-");
-					const Filter = FILTER_MAP[filterType as keyof typeof FILTER_MAP];
-					return (
-						<Filter
-							key={f}
-							items={items}
-							onRemoveClick={() =>
-								setFilters((curr) => [...curr].filter((filter) => filter !== f))
-							}
-						/>
-					);
-				})}
-			</Flex>
+			{filters.map((f) => {
+				const [filterType] = f.split("-");
+				const Filter = FILTER_MAP[filterType as keyof typeof FILTER_MAP];
+				return (
+					<Filter
+						key={f}
+						items={items}
+						onRemoveClick={() =>
+							setFilters((curr) => [...curr].filter((filter) => filter !== f))
+						}
+					/>
+				);
+			})}
 		</Flex>
 	);
 }
