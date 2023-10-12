@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { Button } from "winnie-react/button";
-
 import { ThemeConfigurator } from "./theme-configurator";
 
 import "./globals.css";
 import "./layout.css";
-
-import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
