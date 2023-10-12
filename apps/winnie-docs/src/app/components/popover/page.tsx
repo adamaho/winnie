@@ -10,8 +10,8 @@ export default function Page() {
 					<PopoverTrigger displayAsChild>
 						<Button>Open</Button>
 					</PopoverTrigger>
-					<PopoverContent align="start">
-						TODO: add some sort of example here
+					<PopoverContent align="start" className="p-2">
+						Popover Content
 					</PopoverContent>
 				</Popover>
 			</Flex>

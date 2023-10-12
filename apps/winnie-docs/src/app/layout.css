@@ -14,9 +14,10 @@
 
 .header {
 	align-items: center;
+	border-bottom: var(--w-border-width-1) solid var(--gray-6);
 	display: flex;
 	grid-area: header;
-	justify-content: flex-end;
+	justify-content: space-between;
 	padding-inline: var(--w-space-4);
 }
 
@@ -24,6 +25,14 @@
 	align-items: center;
 	display: flex;
 	gap: var(--w-space-2);
+	height: 100%;
+	padding: var(--w-space-2);
+
+	.vertical-separator {
+		background-color: var(--gray-6);
+		height: 100%;
+		width: 1px;
+	}
 }
 
 .main {

@@ -12,6 +12,7 @@ export default function Page() {
 			>
 				<Button>Button</Button>
 				<Button variant="soft">Button</Button>
+				<Button variant="dotted">Button</Button>
 				<Button variant="ghost">Button</Button>
 			</Flex>
 		</Flex>
