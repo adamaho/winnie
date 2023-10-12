@@ -21,6 +21,7 @@ import {
 	CommandList,
 	CommandSeparator,
 	CommandSeparatorProps,
+	CommandTextField,
 	CommandTextFieldInput,
 	type CommandEmptyProps,
 	type CommandGroupProps,
@@ -28,6 +29,7 @@ import {
 	type CommandListProps,
 	type CommandProps,
 	type CommandTextFieldInputProps,
+	type CommandTextFieldProps,
 } from "./command";
 
 /* -------------------------------------------------------------------------------------
@@ -145,6 +147,14 @@ const CommandMulti = forwardRef<
 );
 
 CommandMulti.displayName = "CommandMulti";
+
+/* -------------------------------------------------------------------------------------
+ * CommandMultiTextField
+ * -------------------------------------------------------------------------------------*/
+type CommandMultiTextFieldProps = CommandTextFieldProps;
+
+const CommandMultiTextField = CommandTextField;
+CommandMultiTextField.displayName = "CommandMultiTextField";
 
 /* -------------------------------------------------------------------------------------
  * CommandMultiTextFieldInput
@@ -297,6 +307,7 @@ CommandMultiCheckboxItem.displayName = "CommandMultiCheckboxItem";
 
 export {
 	CommandMulti,
+	CommandMultiTextField,
 	CommandMultiTextFieldInput,
 	CommandMultiList,
 	CommandMultiEmpty,
@@ -308,6 +319,7 @@ export {
 
 export type {
 	CommandMultiProps,
+	CommandMultiTextFieldProps,
 	CommandMultiTextFieldInputProps,
 	CommandMultiListProps,
 	CommandMultiEmptyProps,

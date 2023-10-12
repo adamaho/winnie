@@ -15,21 +15,27 @@
 			--w-command-space: 1em;
 		}
 
-		[w-command-input] {
+		[w-command-text-field] {
+			align-items: center;
 			border-bottom: var(--w-border-width-1) solid var(--gray-6);
-			color: var(--gray-12);
-			font-size: var(--w-command-font-size);
-			font-weight: var(--w-font-weight-normal);
-			padding: calc(var(--w-command-space) * 0.75)
-				calc(var(--w-command-space) + var(--w-space-1));
+			display: flex;
+			justify-content: space-between;
+			padding: calc(var(--w-command-space) * 0.5) calc(var(--w-command-space));
 			width: 100%;
 
-			&::placeholder {
-				color: var(--gray-a10);
+			[w-command-text-field-input] {
+				color: var(--gray-12);
+				font-size: var(--w-command-font-size);
+				font-weight: var(--w-font-weight-normal);
+				flex: 1;
+
+				&::placeholder {
+					color: var(--gray-a10);
+				}
 			}
 		}
 
-		[w-command-input]:has(+ [w-command-list] > [w-command-group]) {
+		[w-command-text-field]:has(+ [w-command-list] > [w-command-group]) {
 			margin-bottom: var(--w-space-1);
 		}
 

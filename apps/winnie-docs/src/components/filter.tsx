@@ -10,6 +10,7 @@ import {
 	CommandMultiItem,
 	CommandMultiList,
 	CommandMultiSeparator,
+	CommandMultiTextField,
 	CommandMultiTextFieldInput,
 	type CommandMultiProps,
 } from "winnie-react/command-multi";
@@ -237,7 +238,9 @@ function Filter({
 			size="2"
 			w-filter=""
 		>
-			<CommandMultiTextFieldInput attributes={{ placeholder }} />
+			<CommandMultiTextField>
+				<CommandMultiTextFieldInput attributes={{ placeholder }} />
+			</CommandMultiTextField>
 			<CommandMultiList>
 				<CommandMultiEmpty>
 					<Flex justify="center" className="p-2">

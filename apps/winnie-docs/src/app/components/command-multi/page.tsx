@@ -3,6 +3,7 @@ import {
 	CommandMultiCheckboxItem,
 	CommandMultiEmpty,
 	CommandMultiList,
+	CommandMultiTextField,
 	CommandMultiTextFieldInput,
 } from "winnie-react/command-multi";
 import { Flex } from "winnie-react/flex";
@@ -17,9 +18,11 @@ export default function Page() {
 			<Flex align="center" justify="center" className="background-polka">
 				<div className="command-multi-demo-container">
 					<CommandMulti>
-						<CommandMultiTextFieldInput
-							attributes={{ placeholder: "Assignee" }}
-						/>
+						<CommandMultiTextField>
+							<CommandMultiTextFieldInput
+								attributes={{ placeholder: "Assignee" }}
+							/>
+						</CommandMultiTextField>
 						<CommandMultiList>
 							<CommandMultiEmpty className="command-multi-demo-empty">
 								No Assignees found

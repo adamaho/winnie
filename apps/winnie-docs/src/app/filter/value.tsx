@@ -14,8 +14,9 @@ import {
 	CommandMultiCheckboxItem,
 	CommandMultiList,
 	CommandMultiSeparator,
+	CommandMultiTextField,
 	CommandMultiTextFieldInput,
-} from "winnie-react";
+} from "winnie-react/command-multi";
 import {
 	Popover,
 	PopoverContent,
@@ -191,7 +192,9 @@ function ValueDropdownList() {
 			defaultSelectedItems={value}
 			onSelectedItemsChange={(value) => setValue(value)}
 		>
-			<CommandMultiTextFieldInput attributes={{ placeholder: "Item" }} />
+			<CommandMultiTextField>
+				<CommandMultiTextFieldInput attributes={{ placeholder: "Item" }} />
+			</CommandMultiTextField>
 			<CommandMultiList>
 				{sortedItems?.checked.map((i) => {
 					return (

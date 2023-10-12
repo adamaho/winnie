@@ -1,22 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { Focus, ListFilter, UserCircle } from "lucide-react";
+import { BarChart, Focus, ListFilter, UserCircle } from "lucide-react";
 
 import { Button } from "winnie-react/button";
 import {
 	Command,
+	CommandEmpty,
 	CommandItem,
 	CommandList,
+	CommandTextField,
 	CommandTextFieldInput,
 } from "winnie-react/command";
 import { Flex } from "winnie-react/flex";
+import { Kbd } from "winnie-react/kbd";
 import { Popover, PopoverContent, PopoverTrigger } from "winnie-react/popover";
 
 import { AssigneeFilter } from "./assignee-filter";
-import { FilterProps } from "./common-types";
 import { FocusFilter } from "./focus-filter";
+import { PriorityFilter } from "./priority-filter";
 
 /* -------------------------------------------------------------------------------------
  * Constants
@@ -28,13 +31,11 @@ const items = new Array(5).fill(0).map((_, i) => {
 	};
 });
 
-const FILTER_MAP: Record<
-	"assignee" | "focus",
-	(props: FilterProps) => JSX.Element
-> = {
+const FILTER_MAP = {
 	assignee: AssigneeFilter,
 	focus: FocusFilter,
-};
+	priority: PriorityFilter,
+} as const;
 
 /* -------------------------------------------------------------------------------------
  * FilterBar
@@ -50,8 +51,23 @@ export function FilterBar() {
 	 */
 	const [open, setOpen] = useState(false);
 
+	/**
+	 * attach a keyboard event handler to open the filter
+	 */
+	useEffect(() => {
+		function handleKeyDown(e: KeyboardEvent) {
+			if (e.key === "f") {
+				e.preventDefault();
+				setOpen(true);
+			}
+		}
+
+		window.addEventListener("keydown", handleKeyDown);
+		return () => window.removeEventListener("keydown", handleKeyDown);
+	}, []);
+
 	return (
-		<Flex align="center" gap="4">
+		<Flex direction="column" align="start" gap="4">
 			<Popover open={open} onOpenChange={setOpen}>
 				<PopoverTrigger displayAsChild>
 					<Button variant="dotted" color="gray">
@@ -61,8 +77,22 @@ export function FilterBar() {
 				</PopoverTrigger>
 				<PopoverContent align="start">
 					<Command>
-						<CommandTextFieldInput attributes={{ placeholder: "Filter" }} />
+						<CommandTextField>
+							<CommandTextFieldInput attributes={{ placeholder: "Filter" }} />
+							<Kbd>F</Kbd>
+						</CommandTextField>
 						<CommandList>
+							<CommandEmpty className="p-2">
+								<Flex justify="center">No filters found</Flex>
+							</CommandEmpty>
+							<CommandItem
+								onSelect={() => {
+									setFilters((v) => [...v, `assignee-${crypto.randomUUID()}`]);
+									setOpen(false);
+								}}
+							>
+								<UserCircle /> Assignee
+							</CommandItem>
 							<CommandItem
 								onSelect={() => {
 									setFilters((v) => [...v, `focus-${crypto.randomUUID()}`]);
@@ -73,29 +103,31 @@ export function FilterBar() {
 							</CommandItem>
 							<CommandItem
 								onSelect={() => {
-									setFilters((v) => [...v, `assignee-${crypto.randomUUID()}`]);
+									setFilters((v) => [...v, `priority-${crypto.randomUUID()}`]);
 									setOpen(false);
 								}}
 							>
-								<UserCircle /> Assignee
+								<BarChart /> Priority
 							</CommandItem>
 						</CommandList>
 					</Command>
 				</PopoverContent>
 			</Popover>
-			{filters.map((f) => {
-				const [filterType] = f.split("-");
-				const Filter = FILTER_MAP[filterType as keyof typeof FILTER_MAP];
-				return (
-					<Filter
-						key={f}
-						items={items}
-						onRemoveClick={() =>
-							setFilters((curr) => [...curr].filter((filter) => filter !== f))
-						}
-					/>
-				);
-			})}
+			<Flex align="center" gap="4">
+				{filters.map((f) => {
+					const [filterType] = f.split("-");
+					const Filter = FILTER_MAP[filterType as keyof typeof FILTER_MAP];
+					return (
+						<Filter
+							key={f}
+							items={items}
+							onRemoveClick={() =>
+								setFilters((curr) => [...curr].filter((filter) => filter !== f))
+							}
+						/>
+					);
+				})}
+			</Flex>
 		</Flex>
 	);
 }

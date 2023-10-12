@@ -5,9 +5,11 @@ import {
 	CommandItem,
 	CommandList,
 	CommandSeparator,
+	CommandTextField,
 	CommandTextFieldInput,
 } from "winnie-react/command";
 import { Flex } from "winnie-react/flex";
+import { Kbd } from "winnie-react/kbd";
 
 import "./page.css";
 
@@ -17,9 +19,12 @@ export default function Page() {
 			<Flex align="center" justify="center" className="background-polka">
 				<div className="command-demo-container">
 					<Command label="Command Menu" size="2">
-						<CommandTextFieldInput
-							attributes={{ placeholder: "Type a command or search..." }}
-						/>
+						<CommandTextField>
+							<CommandTextFieldInput
+								attributes={{ placeholder: "Type a command or search..." }}
+							/>
+							<Kbd>S</Kbd>
+						</CommandTextField>
 						<CommandList>
 							<CommandEmpty className="command-demo-empty">
 								No results found

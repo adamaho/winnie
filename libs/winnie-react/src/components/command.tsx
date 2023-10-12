@@ -117,6 +117,42 @@ const Command = forwardRef<CommandElement, PropsWithChildren<CommandProps>>(
 Command.displayName = "Command";
 
 /* -------------------------------------------------------------------------------------
+ * CommandTextField
+ * -------------------------------------------------------------------------------------*/
+type CommandTextFieldElementProps = ComponentPropsWithoutRef<"div">;
+type CommandTextFieldElement = ElementRef<"div">;
+
+type CommandTextFieldProps = {
+	/**
+	 * default html attributes for CommandTextField
+	 *
+	 * @default attributes
+	 */
+	attributes?: Omit<CommandTextFieldElementProps, "className" | "children">;
+
+	/**
+	 * component className
+	 *
+	 * @default undefined
+	 */
+	className?: string;
+};
+
+const CommandTextField = forwardRef<
+	CommandTextFieldElement,
+	PropsWithChildren<CommandTextFieldProps>
+>(({ attributes, children, ...rest }, ref) => {
+	return (
+		// eslint-disable-next-line react/no-unknown-property
+		<div {...attributes} {...rest} ref={ref} w-command-text-field="">
+			{children}
+		</div>
+	);
+});
+
+CommandTextField.displayName = "CommandTextField";
+
+/* -------------------------------------------------------------------------------------
  * CommandTextFieldInput
  * -------------------------------------------------------------------------------------*/
 type CommandTextFieldInputComponentProps = ComponentPropsWithoutRef<
@@ -130,7 +166,7 @@ type CommandTextFieldInputElement = ElementRef<typeof CmdkCommandInput>;
 
 type CommandTextFieldInputProps = {
 	/**
-	 * default html attributes forCommandTextFieldInput
+	 * default html attributes for CommandTextFieldInput
 	 *
 	 * @default undefined
 	 */
@@ -168,7 +204,7 @@ const CommandTextFieldInput = forwardRef<
 			{...rest}
 			className={className}
 			ref={ref}
-			w-command-input=""
+			w-command-text-field-input=""
 		/>
 	);
 });
@@ -483,6 +519,7 @@ CommandLoading.displayName = "CommandLoading";
 
 export {
 	Command,
+	CommandTextField,
 	CommandTextFieldInput,
 	CommandList,
 	CommandEmpty,
@@ -494,6 +531,7 @@ export {
 
 export type {
 	CommandProps,
+	CommandTextFieldProps,
 	CommandTextFieldInputProps,
 	CommandListProps,
 	CommandEmptyProps,
