@@ -33,33 +33,6 @@ export default function RootLayout({
 			>
 				<div className="app">
 					<header className="header">
-						<nav className="nav" w-theme w-accent-color="gray">
-							<Button displayAsChild variant="ghost">
-								<Link href="/components/button">Button</Link>
-							</Button>
-							<Button displayAsChild variant="ghost">
-								<Link href="/components/command">Command</Link>
-							</Button>
-							<Button displayAsChild variant="ghost">
-								<Link href="/components/command-multi">CommandMulti</Link>
-							</Button>
-							<Button displayAsChild variant="ghost">
-								<Link href="/components/dropdown-menu">DropdownMenu</Link>
-							</Button>
-							<Button displayAsChild variant="ghost">
-								<Link href="/components/kbd">Kbd</Link>
-							</Button>
-							<Button displayAsChild variant="ghost">
-								<Link href="/components/popover">Popover</Link>
-							</Button>
-							<Button displayAsChild variant="ghost">
-								<Link href="/components/text">Text</Link>
-							</Button>
-							<div className="vertical-separator" />
-							<Button displayAsChild variant="ghost">
-								<Link href="/filter">Demo</Link>
-							</Button>
-						</nav>
 						<ThemeConfigurator />
 					</header>
 					<main className="main">{children}</main>

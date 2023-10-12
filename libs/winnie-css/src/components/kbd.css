@@ -12,6 +12,7 @@
 		font-size: var(--w-kbd-font-size);
 		justify-content: center;
 		line-height: var(--w-kbd-line-height);
+		min-width: calc(var(--w-kbd-line-height) + 0.5rem);
 		padding-inline: 0.5em;
 		padding-top: 0.2em;
 		padding-bottom: 0.3em;
