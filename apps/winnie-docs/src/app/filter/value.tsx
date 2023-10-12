@@ -12,6 +12,7 @@ import {
 import {
 	CommandMulti,
 	CommandMultiCheckboxItem,
+	CommandMultiGroup,
 	CommandMultiList,
 	CommandMultiSeparator,
 	CommandMultiTextField,
@@ -196,7 +197,15 @@ function ValueDropdownList() {
 				<CommandMultiTextFieldInput attributes={{ placeholder: "Item" }} />
 			</CommandMultiTextField>
 			<CommandMultiList>
-				{sortedItems?.checked.map((i) => {
+				{items?.map((i) => {
+					return (
+						<CommandMultiCheckboxItem key={i.value} value={i.value}>
+							{i.text}
+						</CommandMultiCheckboxItem>
+					);
+				})}
+
+				{/* {sortedItems?.checked.map((i) => {
 					return (
 						<CommandMultiCheckboxItem key={i.value} value={i.value}>
 							{i.text}
@@ -213,7 +222,7 @@ function ValueDropdownList() {
 							{i.text}
 						</CommandMultiCheckboxItem>
 					);
-				})}
+				})} */}
 			</CommandMultiList>
 		</CommandMulti>
 	);

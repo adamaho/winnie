@@ -17,7 +17,7 @@ export default function Page() {
 		<Flex align="center" className="h-full w-full" justify="center" gap="4">
 			<Flex align="center" justify="center" className="background-polka">
 				<div className="command-multi-demo-container">
-					<CommandMulti>
+					<CommandMulti defaultSelectedItems={["brandon belt"]}>
 						<CommandMultiTextField>
 							<CommandMultiTextFieldInput
 								attributes={{ placeholder: "Assignee" }}

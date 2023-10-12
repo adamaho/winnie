@@ -6,11 +6,15 @@ import {
 	useCallback,
 	useContext,
 	useEffect,
+	useMemo,
+	useRef,
 	useState,
 	type ElementRef,
 	type MouseEvent,
 	type PropsWithChildren,
 } from "react";
+
+import { useComposedRefs } from "@radix-ui/react-compose-refs";
 
 import { Checkbox } from "./checkbox";
 import {
@@ -33,12 +37,20 @@ import {
 } from "./command";
 
 /* -------------------------------------------------------------------------------------
+ * Constants
+ * -------------------------------------------------------------------------------------*/
+const ITEM_CHECKBOX_SELECTOR_CHECKED = `[w-command-checkbox-item][data-checked="true"]`;
+const ITEM_CHECKBOX_SELECTOR = `[w-command-checkbox-item]`;
+const GROUP_CHECKED = `[w-command-group-checked]`;
+
+/* -------------------------------------------------------------------------------------
  * CommandMultiContext
  * -------------------------------------------------------------------------------------*/
 type CommandMultiContextProps = {
 	addItem: (value: string) => void;
 	removeItem: (value: string) => void;
 	selectedItems: string[];
+	sortOnMount: boolean;
 };
 
 const CommandMultiContext = createContext<CommandMultiContextProps>({
@@ -49,6 +61,7 @@ const CommandMultiContext = createContext<CommandMultiContextProps>({
 		return;
 	},
 	selectedItems: [],
+	sortOnMount: true,
 });
 
 const CommandMultiProvider = (
@@ -88,6 +101,14 @@ type CommandMultiProps = Omit<
 	 * @default undefined
 	 */
 	onSelectedItemsChange?: (value: string[]) => void;
+
+	/**
+	 * if true, sorts the checked items to the top of the list in a separate group
+	 * with a visual separator
+	 *
+	 * @default true
+	 */
+	sortOnMount?: boolean;
 };
 
 const CommandMulti = forwardRef<
@@ -95,13 +116,29 @@ const CommandMulti = forwardRef<
 	PropsWithChildren<CommandMultiProps>
 >(
 	(
-		{ children, defaultSelectedItems = [], onSelectedItemsChange, ...rest },
+		{
+			children,
+			defaultSelectedItems = [],
+			onSelectedItemsChange,
+			sortOnMount = true,
+			...rest
+		},
 		ref,
 	) => {
 		/**
 		 * Tracks the selected items
 		 */
 		const [selectedItems, setSelectedItems] = useState(defaultSelectedItems);
+
+		/**
+		 * init ref for the command element
+		 */
+		const commandRef = useRef<HTMLDivElement>(null);
+
+		/**
+		 * merge the refs
+		 */
+		const composedRefs = useComposedRefs(commandRef, ref);
 
 		/**
 		 * adds an item to the value array
@@ -132,12 +169,29 @@ const CommandMulti = forwardRef<
 			onSelectedItemsChange?.(selectedItems);
 		}, [selectedItems, onSelectedItemsChange]);
 
+		/**
+		 * Sort selected items into a group when the component mounts
+		 */
+		useEffect(() => {
+			if (commandRef.current && sortOnMount) {
+				const checkedGroup = commandRef.current.querySelector(GROUP_CHECKED);
+				const checkedItems = commandRef.current.querySelectorAll(
+					ITEM_CHECKBOX_SELECTOR_CHECKED,
+				);
+
+				for (const i of checkedItems) {
+					checkedGroup?.appendChild(i);
+				}
+			}
+		}, []);
+
 		return (
-			<Command {...rest} ref={ref}>
+			<Command {...rest} ref={composedRefs}>
 				<CommandMultiProvider
 					selectedItems={selectedItems ?? []}
 					addItem={addItem}
 					removeItem={removeItem}
+					sortOnMount={sortOnMount}
 				>
 					{children}
 				</CommandMultiProvider>
@@ -168,8 +222,62 @@ CommandMultiTextFieldInput.displayName = "CommandMultiTextFieldInput";
  * CommandMultiList
  * -------------------------------------------------------------------------------------*/
 type CommandMultiListProps = CommandListProps;
+type CommandMultiListElement = ElementRef<typeof CommandList>;
 
-const CommandMultiList = CommandList;
+const CommandMultiList = forwardRef<
+	CommandMultiListElement,
+	PropsWithChildren<CommandMultiListProps>
+>(({ children, ...rest }, ref) => {
+	/**
+	 * tracks whether or not the separator should be visible
+	 */
+	const [showSeparator, setShowSeparator] = useState(false);
+
+	/**
+	 * subscribe to command multi context
+	 */
+	const { sortOnMount, selectedItems } = useCommandMultiContext();
+
+	/**
+	 * init ref for the list element
+	 */
+	const listRef = useRef<HTMLDivElement>(null);
+
+	/**
+	 * merge the refs
+	 */
+	const composedRefs = useComposedRefs(listRef, ref);
+
+	/**
+	 * compute if the separator should be visible
+	 */
+	useEffect(() => {
+		if (!sortOnMount) {
+			setShowSeparator(false);
+			return;
+		}
+
+		if (listRef.current) {
+			const allItems = listRef.current.querySelectorAll(ITEM_CHECKBOX_SELECTOR);
+			setShowSeparator(
+				selectedItems.length > 0 && selectedItems.length < allItems.length,
+			);
+			return;
+		}
+	}, [listRef.current]);
+
+	return (
+		<CommandList {...rest} ref={composedRefs}>
+			{sortOnMount && (
+				<>
+					<CommandGroup w-command-group-checked="" />
+					{/* {showSeparator && <CommandSeparator />} */}
+				</>
+			)}
+			{children}
+		</CommandList>
+	);
+});
 CommandMultiList.displayName = "CommandMultiList";
 
 /* -------------------------------------------------------------------------------------
@@ -291,6 +399,7 @@ const CommandMultiCheckboxItem = forwardRef<
 				onSelect={_onSelect}
 				ref={ref}
 				data-checked={checked}
+				w-command-checkbox-item=""
 			>
 				<Checkbox
 					checked={checked}
