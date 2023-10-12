@@ -5,16 +5,13 @@ import {
 	PropsWithChildren,
 	useContext,
 	useMemo,
-	useState,
 	type ReactNode,
 } from "react";
 
 import {
 	CommandMulti,
 	CommandMultiCheckboxItem,
-	CommandMultiGroup,
 	CommandMultiList,
-	CommandMultiSeparator,
 	CommandMultiTextField,
 	CommandMultiTextFieldInput,
 } from "winnie-react/command-multi";
@@ -167,27 +164,6 @@ function ValueDropdownList() {
 	 */
 	const { items } = useValueDropdownContext();
 
-	/**
-	 * sorts the items when the component first mounts
-	 */
-	const [sortedItems] = useState(() => {
-		const checked: ValueItem[] = [];
-		const unchecked: ValueItem[] = [];
-
-		for (const item of items) {
-			if (value.includes(item.value)) {
-				checked.push(item);
-			} else {
-				unchecked.push(item);
-			}
-		}
-
-		return {
-			checked,
-			unchecked,
-		};
-	});
-
 	return (
 		<CommandMulti
 			defaultSelectedItems={value}
@@ -204,25 +180,6 @@ function ValueDropdownList() {
 						</CommandMultiCheckboxItem>
 					);
 				})}
-
-				{/* {sortedItems?.checked.map((i) => {
-					return (
-						<CommandMultiCheckboxItem key={i.value} value={i.value}>
-							{i.text}
-						</CommandMultiCheckboxItem>
-					);
-				})}
-				{sortedItems.checked.length > 0 &&
-					sortedItems.checked.length < items.length && (
-						<CommandMultiSeparator />
-					)}
-				{sortedItems?.unchecked.map((i) => {
-					return (
-						<CommandMultiCheckboxItem key={i.value} value={i.value}>
-							{i.text}
-						</CommandMultiCheckboxItem>
-					);
-				})} */}
 			</CommandMultiList>
 		</CommandMulti>
 	);
