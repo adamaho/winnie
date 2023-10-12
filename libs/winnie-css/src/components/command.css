@@ -20,7 +20,7 @@
 			border-bottom: var(--w-border-width-1) solid var(--gray-6);
 			display: flex;
 			justify-content: space-between;
-			padding: calc(var(--w-command-space) * 0.5) calc(var(--w-command-space));
+			padding: calc(var(--w-command-space) * 0.75) calc(var(--w-command-space));
 			width: 100%;
 
 			[w-command-text-field-input] {
