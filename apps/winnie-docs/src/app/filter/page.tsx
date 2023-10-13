@@ -82,7 +82,7 @@ export default function Page() {
 			</Flex>
 
 			<Heading className="mt-7" displayAs="h2" size="6">
-				CommandMulti
+				Command
 			</Heading>
 			<Text>A searchable menu that allows for selecting multiple items</Text>
 			<Flex justify="center" className="mt-4">
@@ -113,7 +113,7 @@ export default function Page() {
 			</Flex>
 
 			<Heading className="mt-7" displayAs="h2" size="6">
-				Command
+				CommandMulti
 			</Heading>
 			<Text>A searchable menu that allows for selecting a single item</Text>
 			<Flex justify="center" className="mt-4">
