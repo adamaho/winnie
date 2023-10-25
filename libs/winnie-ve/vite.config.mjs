@@ -16,6 +16,7 @@ export default defineConfig({
 	plugins: [
 		vanillaExtractPlugin({
 			identifiers(params) {
+				console.log(params);
 				if (!params.debugId) {
 					return params.hash;
 				}
