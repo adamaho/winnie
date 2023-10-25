@@ -347,7 +347,7 @@ const colors = createGlobalThemeContract({
 	white_a12: "w-color-white-a12",
 });
 
-globalStyle("root, .light, .light-theme", {
+globalStyle(":root, .light, .light-theme", {
 	vars: assignVars(colors, {
 		grey_1: gray.gray1,
 		grey_2: gray.gray2,
@@ -862,7 +862,7 @@ globalStyle("root, .light, .light-theme", {
 	},
 });
 
-globalStyle("root, .dark, .dark-theme", {
+globalStyle(":root, .dark, .dark-theme", {
 	vars: assignVars(colors, {
 		grey_1: grayDark.gray1,
 		grey_2: grayDark.gray2,
