@@ -1,9 +1,0 @@
-.row {
-	align-items: center;
-	display: flex;
-	gap: var(--w-space-2);
-}
-
-.text {
-	background-color: var(--w-accent-9);
-}
