@@ -31,9 +31,3 @@ const responsiveProperties = defineProperties({
 });
 
 export const cls = createSprinkles(responsiveProperties);
-
-cls({
-	m: {
-		xs: "1",
-	},
-});
