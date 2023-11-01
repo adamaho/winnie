@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "shared eslint config for typescript projects",
   "exports": {
+    "./base": "./base.js",
+    "./next": "./next.js",
     "./react": "./react.js",
-    "./next": "./next.js"
+    "./solid": "./solid.js"
   },
   "scripts": {
     "clean": "rm -rf node_modules"
@@ -20,5 +22,8 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-turbo": "^1.10.14",
     "eslint-plugin-react": "^7.33.2"
+  },
+  "devDependencies": {
+    "eslint-plugin-solid": "^0.13.0"
   }
 }

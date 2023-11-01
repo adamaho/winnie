@@ -4,13 +4,18 @@
   "description": "",
   "author": "Adam Aho",
   "exports": {
-    ".": "./dist/winnie-ve.mjs",
+    ".": {
+      "import": "./dist/winnie-ve.mjs",
+      "types": "./dist/index.d.ts"
+    },
     "./styles.css": "./dist/style.css"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "pnpm build:js && pnpm build:tsc",
+    "build:js": "vite build",
+    "build:types": "tsc",
     "clean": "rm -rf node_modules && rm -rf dist",
-    "dev": "vite build --watch"
+    "dev": "vite build --watch && tsc --watch"
   },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0"
@@ -20,6 +25,7 @@
     "@vanilla-extract/css": "^1.13.0",
     "@vanilla-extract/sprinkles": "^1.6.1",
     "@vanilla-extract/vite-plugin": "^3.9.0",
+    "eslint-config-winnie": "workspace:*",
     "typescript": "^5.2.2",
     "vite": "^4.4.11"
   }
