@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "winnie-ve": "workspace:*",
-    "solid-js": "^1.7.8"
+    "@vanilla-extract/css": "^1.13.0",
+    "solid-js": "^1.7.8",
+    "winnie-css": "workspace:*"
   },
   "devDependencies": {
+    "@vanilla-extract/vite-plugin": "^3.9.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-solid": "^2.7.0"

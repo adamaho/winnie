@@ -1,13 +1,10 @@
-import { createSignal } from "solid-js";
-
-import "winnie-ve/styles.css";
+import "./color.css";
 
 function App() {
-	const [count, setCount] = createSignal(0);
-
 	return (
 		<>
 			<h1>Hello world</h1>
+			<div class="box" />
 		</>
 	);
 }

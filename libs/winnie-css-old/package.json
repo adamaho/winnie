@@ -1,0 +1,22 @@
+{
+  "name": "winnie-css-old",
+  "version": "0.0.1",
+  "description": "high-level css styles and tokens",
+  "type": "module",
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "lint": "stylelint \"src/**/*.css\"",
+    "lint:fix": "stylelint \"src/**/*.css\" --fix"
+  },
+  "exports": {
+    ".": "./src/index.css"
+  },
+  "devDependencies": {
+    "stylelint": "^15.10.3",
+    "stylelint-config-winnie": "workspace:*"
+  },
+  "dependencies": {
+    "@radix-ui/colors": "^3.0.0"
+  }
+}
